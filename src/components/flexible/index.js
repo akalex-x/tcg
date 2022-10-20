@@ -1,8 +1,12 @@
 import Imagehero from './Imagehero'
 import Featuredportfolio from './Featuredportfolio'
 import FiftyFiftyParallax from './FiftyFiftyParallax'
-import Spotify from './Spotify'
 import LatestJournal from './LatestJournal'
+import dynamic from 'next/dynamic'
+
+const Spotify = dynamic(import('components/flexible/Spotify'), {
+    ssr: false
+})
 
 function FlexibleContent({flexibleContent,latestPort,latestPosts}){
 

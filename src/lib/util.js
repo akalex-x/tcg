@@ -60,8 +60,6 @@ export function SplitWords(string){
 
 export function checkIfPostsAreNeeded(acf,layout){
 
-  console.log('acf',acf)
-
   const type = acf.__typename
   const layouts = acf.flexiblecontent
 
