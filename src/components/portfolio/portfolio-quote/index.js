@@ -8,7 +8,7 @@ function PortfolioQuote(){
                 <div className="container">
                     <span>Quote</span>
                     <blockquote className={styles.port_quote__quote}>
-                        <p>"The seduction of media causes a phenomenon in which reproductive technological parts sprout from the image of the female, creating a cyborgian reformation as parts of the real body disappear."</p>
+                        <p>The seduction of media causes a phenomenon in which reproductive technological parts sprout from the image of the female, creating a cyborgian reformation as parts of the real body disappear.</p>
                     </blockquote>
                     <div className={styles.port_quote__footer}>
                         <span className="author">Lynn Hershman Leeson</span>
