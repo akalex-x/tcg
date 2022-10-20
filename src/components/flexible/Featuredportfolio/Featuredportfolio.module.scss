@@ -1,0 +1,57 @@
+.feat_port{
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid black;
+    &__intro{
+        padding: 0 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        :global{
+            h2,a{
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+    &__footer{
+        padding: 0 1rem;
+        text-align: center;
+    }
+    &__loop{
+        border-top: 1px solid black;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        :global{
+            .container{
+                display: grid;
+                grid-template-columns: repeat( 2, 1fr );
+                grid-column-gap: 1.5rem;
+                grid-row-gap: 1.5rem;
+                @media (min-width:600px){
+                    grid-template-columns: repeat( 3, 1fr );
+                }
+                @media (min-width:960px){
+                    grid-template-columns: repeat( 4, 1fr );
+                }
+                @media (min-width:1100px){
+                    grid-template-columns: repeat( 5, 1fr );
+                }
+                @media (min-width:1200px){
+                    grid-template-columns: repeat( 6, 1fr );
+                }
+            }
+        }
+    }
+    @media (min-width:960px){
+        padding-top: 3rem;
+        &__intro{
+            :global{
+                h2,a{
+                    margin-bottom: 3rem;
+                }
+            }
+        }
+    }
+}

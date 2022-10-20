@@ -1,0 +1,101 @@
+@import 'styles/includes/variables';
+
+.port_hero{
+    border-top: 1px solid $black;
+    border-bottom: 1px solid $black;
+    padding:0;
+    &__image{
+        border-bottom: 1px solid $black;
+        :global{
+            img{
+                width: 100%;
+            }
+        }
+    }
+    &__content{
+        :global{
+            .content-wrap{
+                padding: 3rem 1rem;
+                max-width: 550px;
+                margin: 0 auto;
+            }
+            table{
+                width: auto;
+                margin-top: 3rem;
+                font-size: .9rem;
+                tr{
+                    border: 0;
+                }
+                td{
+                    padding: .5rem 1rem;
+                    &:first-of-type{
+                        padding-left: 0;
+                    }
+                }
+            }
+            .socials-list{
+                margin-top: 1.5rem;
+            }
+        }
+    }
+    &__links{
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid $black;
+        align-items: center;
+        padding:1rem 1rem;
+        position: relative;
+        :global{
+            a{
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            .main-link{
+                color: $black;
+            }
+        }
+    }
+    @media (min-width:960px){
+        &__wrap{
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+        }
+        &__image{
+            border-bottom: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            :global{
+                img{
+                    object-fit: cover;
+                    height: 100%;
+                    max-width: none;
+                }
+            }
+        }
+        &__content{
+            width: 50%;
+            :global{
+                .content-wrap{
+                    padding: 4.5rem;
+                }
+            }
+        }
+        &__links{
+            justify-content: center;
+            :global{
+                .desk-only{
+                    position: absolute;
+                    left: 1rem;
+                }
+                .text-btn{
+                    position: absolute;
+                    right: 1rem;
+                }
+            }
+        }
+    }
+}

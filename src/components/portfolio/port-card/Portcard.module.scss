@@ -1,0 +1,23 @@
+.port_card{
+    transform: translateY(50%);
+    opacity: 0;
+    cursor: pointer;
+    &__thumb{
+        :global{
+            img{
+                transition-duration: .25s;
+                filter: grayscale(100%);
+                max-width: 100%;
+            }
+        }
+    }
+    &:hover{
+        .port_card__thumb{
+            :global{
+                img{
+                    filter: grayscale(0);
+                }
+            }
+        }
+    }
+}

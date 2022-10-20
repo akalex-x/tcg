@@ -1,0 +1,10 @@
+.image_hero{
+    :global{
+        img{
+            width: 100%;
+        }
+    }
+    @media (min-width:960px){
+        padding: 9rem 1rem;
+    }
+}

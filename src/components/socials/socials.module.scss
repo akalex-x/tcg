@@ -1,0 +1,25 @@
+.socials_list{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    :global{
+        li{
+            padding:0;
+            margin: 0;
+            margin-left: 1rem;
+            display: flex;
+            align-items: center;
+            &:first-of-type{
+                margin-left: 0;
+            }
+            a{
+                display: inline-block;
+                svg{
+                    display: block;
+                    width: 1.5rem;
+                }
+            }
+        }
+    }
+}

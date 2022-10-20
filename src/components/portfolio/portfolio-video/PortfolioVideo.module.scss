@@ -1,0 +1,47 @@
+.portfolio_video{
+    padding:1.5rem 1rem;
+    padding-bottom: 3rem;
+    &__player{
+        margin-top: 1.5rem;
+        margin-bottom: 3rem;
+        width: calc(100% + 2rem);
+        margin-left: -1rem;
+    }
+    &__content{
+        :global{
+            .content-wrap{
+                max-width: 700px;
+            }
+            .meta-wrap{
+                max-width: 200px;
+            }
+            ul{
+                list-style: none;
+                margin-top: 1.5rem;
+                li{
+                    padding: 0;
+                    margin-top: 1rem;
+                    margin-bottom: 0;
+                    font-size: .9rem;
+                }
+            }
+        }
+    }
+    @media (min-width:960px){
+        padding-bottom: 4.5rem;
+        &__player{
+            width: 100%;
+            margin: 4.5rem 0;
+        }
+        &__content{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            :global{
+                ul{
+                    text-align: right;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+@import 'styles/includes/variables';
+
+.port_quote{
+    padding: 1.5rem 1rem;
+    border-top: 1px solid $black;
+    blockquote{
+        margin: 3rem auto;
+        max-width: 1200px;
+        p{
+            color: $blue;
+            font-size: 1.5rem;
+        }
+    }
+    &__footer{
+        :global{
+            span{
+                display: block;
+                &.author{
+                    font-weight: bold;
+                }
+                &.meta{
+                    font-size: .9rem;
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+    @media (min-width:960px){
+        blockquote{
+            margin: 9rem auto;
+            p{
+                font-size: 2.5rem;
+            }
+        }
+        &__footer{
+            display: flex;
+            justify-content: space-between;
+            :global{
+                span{
+                    margin: 0!important;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,71 @@
+@import 'styles/includes/variables';
+
+.custom_video{
+    max-width: 1200px;
+    margin: 0 auto;
+    :global{
+        video{
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+    &__name{
+        overflow: hidden;
+        flex: 1 auto;
+        display: flex;
+        align-items: center;
+        padding:.5rem 1rem;
+        @media (min-width:960px){
+            padding-left: 3rem;
+        }
+    }
+    &__tools{
+        border: 1px solid $black;
+        position: relative;
+        display: flex;
+    }
+    &__controls{
+        border-right: 1px solid black;
+        :global{
+            button{
+                padding: .5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 3rem;
+                height: 100%;
+            }
+            img{
+                width: .5rem;
+                &.pause{
+                    width: 1rem;
+                }
+            }
+        }
+    }
+    &__progress{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        pointer-events: none;
+        // background-color: rgba(0,0,0,.1);
+        &__bar{
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background-color: rgba(0,0,0,.05);
+        }
+    }
+    &__counter{
+        margin-left: auto;
+        padding: .5rem 1rem;
+        :global{
+
+        }
+    }
+}
