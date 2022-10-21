@@ -11,7 +11,7 @@ function FiftyFiftyParallax({data}){
     useEffect(() => {
 
         function parallax(event) {
-            const position = 5
+            const position = 10
             const x = (window.innerWidth - event.pageX * position) / 90;
             const y = (window.innerHeight - event.pageY * position) / 90;
             $gradient.style.transform = 'translateX('+x+'px) translateY('+y+'px)';
@@ -24,6 +24,7 @@ function FiftyFiftyParallax({data}){
 
     return(
         <>
+            {console.log(data)}
             <section className={styles.fifty_fifty}>
                 <div className="container">
                     <div className={styles.fifty_fifty__wrap}>

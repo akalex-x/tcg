@@ -21,7 +21,7 @@ function Portcard({onClick,port,index}){
     },[]);
 
     return(
-        <div ref={el => $card = el} onClick={(event) => onClick(index) } className={[styles.port_card, 'port_card'].join(' ')}>
+        <div ref={el => $card = el} onClick={(event) => onClick(index)} className={[styles.port_card, 'port_card'].join(' ')}>
             <div className={styles.port_card__thumb}>
                 <Image src={port.featuredImage.node.sourceUrl} height={port.featuredImage.node.mediaDetails.height} width={port.featuredImage.node.mediaDetails.width} alt={port.title} />
             </div>

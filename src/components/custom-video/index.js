@@ -40,7 +40,7 @@ function CustomVideo({video, name}) {
             setCurrentTime(videoRef.current?.currentTime);
             setProgress((videoRef.current?.currentTime / videoTime) * 100);
         }, 1000);
-    });
+    },[]);
 
 	return (
 		<div className={styles.custom_video}>

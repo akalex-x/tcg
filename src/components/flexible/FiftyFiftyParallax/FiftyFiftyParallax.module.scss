@@ -35,12 +35,13 @@
                 position: absolute;
                 height: 200%;
                 width: 400%;
-                background-image: radial-gradient(ellipse, #1a166f 0%, rgba(255,255,255,0) 50%),
-                url(https://grainy-gradients.vercel.app/noise.svg);
-                animation: gradient 15s ease infinite;
+                background-image: radial-gradient(ellipse, #1a166f 0%, rgba(255,255,255,0) 50%);
+                // background-image: radial-gradient(ellipse, #1a166f 0%, rgba(255,255,255,0) 50%),
+                // url(https://grainy-gradients.vercel.app/noise.svg);
+                // animation: gradient 15s ease infinite;
                 background-position: 50% 50%;
                 transform: rotate(55deg);
-                filter: contrast(300%) brightness(100%);  
+                // filter: contrast(300%) brightness(100%);  
             }
         }
     }
