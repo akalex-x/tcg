@@ -8,6 +8,12 @@ export const QUERY_LATEST_PORTFOLIO = gql`
                 slug
                 portfolioId
                 content
+                categories {
+                    nodes {
+                        slug
+                        name
+                    }
+                }
                 featuredImage {
                     node {
                         sourceUrl

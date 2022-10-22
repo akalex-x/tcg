@@ -1,6 +1,7 @@
 import styles from './featured-portfolio.module.scss'
 import Image from 'next/future/image'
 import Button from 'components/btn'
+import CategoryIcons from 'components/category-icons'
 import React, { useState, useRef } from 'react'
 
 import Arrow from 'components/svgs/arrow'
@@ -44,6 +45,7 @@ function FeaturedPortfolio({port}){
                     </div>
 
                     <div className={styles.feat_port__contents}>
+                        {/* <CategoryIcons cats={port} /> */}
                         <Swiper
                         modules={[Controller,Pagination,Navigation]}
                         slidesPerView={1}
