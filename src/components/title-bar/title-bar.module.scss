@@ -1,0 +1,16 @@
+@import 'styles/includes/variables';
+
+.title_bar{
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid $black;
+    &__title{
+        margin: 0;
+        text-transform: uppercase;
+    }
+    @media (min-width:960px){
+        // padding: 3rem 1rem;
+        &__title{
+            font-size: 5rem;
+        }
+    }
+}

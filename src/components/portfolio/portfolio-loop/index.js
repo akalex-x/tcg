@@ -6,26 +6,31 @@ import gsap from 'gsap'
 
 function PortfolioLoop({latestPort,skip,limit}){
 
+    let $portLoop = useRef(null);
+    const [sPort,setPort] = useState(null)
+    const [showAll,setShow] = useState(false)
+
     const portfolios = [...latestPort];
     
     if( skip ){
         portfolios.splice(0, skip)    
     }
-
-    let $portLoop = useRef(null);
-    const [sPort,setPort] = useState(null)
-
+    
+    const portfolios2 = portfolios.splice(limit,portfolios.length)
+    
     const tl = gsap.timeline();
     
     const updatePort = (index) => {
 
-        if( sPort != latestPort[index] ){
+        const sIndex = index + skip;
+
+        if( sPort != latestPort[sIndex] ){
 
             tl.to('.post_details',{
                 height: 0,
                 'margin-bottom': 0,
                 onComplete: () => {
-                    setPort(latestPort[index])
+                    setPort(latestPort[sIndex])
                 }
             });
 
@@ -70,9 +75,22 @@ function PortfolioLoop({latestPort,skip,limit}){
                             )
                         })
                     }
+                    { showAll &&
+                        portfolios2.map((port,i)=>{
+                            const index = i + limit;
+                            return(
+                                <Portcard key={port.slug} index={index} port={port} onClick={ (index) => updatePort(index) } />
+                            )
+                        })
+                    }
                     <PortDetails sPort={sPort} />
                 </div>
             </div>
+            { portfolios2.length && !showAll && (
+                <div className={styles.feat_port__footer}>
+                    <button className='btn' type='button' onClick={() => setShow(true)}>Show All</button>
+                </div>
+            )}
         </>
     )
 }

@@ -486,5 +486,16 @@ iframe{
     display: block;
 }
 
-
-
+.swiper-pagination-bullet{
+    background-color: $white!important;
+    border: 1px solid $blue!important;
+    opacity: 1!important;
+    margin: 0!important;
+    margin-right: 1rem!important;
+    &:last-of-type{
+        margin-right: 0!important;
+    }
+    &.swiper-pagination-bullet-active{
+        background-color: $blue!important;
+    }
+}

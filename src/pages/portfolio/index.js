@@ -1,8 +1,9 @@
 import {getLatestPort} from 'fetch/portfolio'
 import {getLatestPosts} from 'fetch/posts'
 
-import PortfolioLoop from 'components/portfolio/portfolio-loop'
+import PortfolioArchive from 'components/portfolio/portfolio-archive'
 import FeaturedPortfolio from 'components/portfolio/featured-portfolio'
+import TitleBar from 'components/title-bar'
 
 import FlexibleContent from 'components/flexible';
 import {getFlexibleContent} from 'fetch/flexible';
@@ -13,12 +14,10 @@ function PortfolioArhive({latestPort,flexibleContent,latestPosts}){
   
     return(
         <>
-            <div className="container">
-                <h1>Portfolio</h1>
-            </div>
+            <TitleBar title="Portfolio" />
             <FeaturedPortfolio port={latestPort[0]} />
             <FlexibleContent flexibleContent={flexibleContent} latestPort={latestPort} latestPosts={latestPosts} />
-            <PortfolioLoop latestPort={latestPort} skip={1} limit={16} />
+            <PortfolioArchive latestPort={latestPort} />
         </>
     )
 

@@ -24,7 +24,6 @@ function FiftyFiftyParallax({data}){
 
     return(
         <>
-            {console.log(data)}
             <section className={styles.fifty_fifty}>
                 <div className="container">
                     <div className={styles.fifty_fifty__wrap}>

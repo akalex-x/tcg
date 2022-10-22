@@ -13,12 +13,14 @@
     "@apollo/client": "^3.7.0",
     "@next/bundle-analyzer": "^12.3.1",
     "cross-env": "^7.0.3",
+    "flickity": "^2.3.0",
     "gsap": "^3.11.3",
     "next": "12.3.1",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
     "react-spotify-widgets": "^0.1.7",
-    "sass": "^1.55.0"
+    "sass": "^1.55.0",
+    "swiper": "^8.4.4"
   },
   "devDependencies": {
     "eslint": "8.24.0",
