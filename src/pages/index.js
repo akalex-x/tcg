@@ -36,7 +36,7 @@ export async function getStaticProps(){
         flexibleContent:flexible_content,
         latestPort:latestPort,
         latestPosts: latestPosts,
-        revalidate: 1,
+        revalidate: 10,
       }
   };
 

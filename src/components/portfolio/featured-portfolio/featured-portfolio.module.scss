@@ -17,6 +17,9 @@
                 max-width: 550px;
                 margin: 0 auto;
             }
+            .port-cats{
+                border-bottom: 0;
+            }
         }
     }
     &__controls{
@@ -40,12 +43,16 @@
             display: flex;
             align-items: center;
             padding-bottom: 1rem;
+            padding-top: 1.5rem;
             :global{
-                // .swiper-pagination{
-                //     position: absolute;
-                //     left: 1rem;
-                //     bottom: .5rem;
-                // }
+                .port-cats{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    border-top: 0;
+                    border-bottom: 1px solid black;
+                }
             }
         }
         &__controls{

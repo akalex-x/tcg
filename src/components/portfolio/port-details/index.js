@@ -1,6 +1,8 @@
 import styles from './PortDetails.module.scss'
 import Button from 'components/btn'
 import Image from 'next/future/image'
+import PortCategories from 'components/portfolio/port-categories'
+
 
 function PortDetails({ sPort }){
 
@@ -12,6 +14,7 @@ function PortDetails({ sPort }){
                         <Image src={sPort.featuredImage.node.sourceUrl} height={sPort.featuredImage.node.mediaDetails.height} width={sPort.featuredImage.node.mediaDetails.width} alt={sPort.title} />
                     </div>
                     <div className={styles.port_details__content}>
+                        <PortCategories cats={sPort.categories.nodes} />
                         <div className='content-wrap'>
                             <h3>{sPort.title}</h3>
                             <div className="content" dangerouslySetInnerHTML={{ __html:sPort.content}}></div>

@@ -6,7 +6,6 @@ export const QUERY_LATEST_PORTFOLIO = gql`
             nodes {
                 title
                 slug
-                portfolioId
                 content
                 categories {
                     nodes {
@@ -44,6 +43,12 @@ export const QUERY_SINGLE_PORTFOLIO = gql`
             title
             slug
             content
+            categories {
+                nodes {
+                    slug
+                    name
+                }
+            }
             featuredImage {
                 node {
                 sourceUrl

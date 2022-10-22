@@ -2,6 +2,7 @@ import styles from './PortfolioHero.module.scss'
 import Image from 'next/future/image'
 import Socials from 'components/socials'
 import Button from 'components/btn'
+import PortCategories from 'components/portfolio/port-categories'
 
 function PortfolioHero({port}){
 
@@ -15,6 +16,7 @@ function PortfolioHero({port}){
                         <Image src={port.featuredImage.node.sourceUrl} height={port.featuredImage.node.mediaDetails.height} width={port.featuredImage.node.mediaDetails.width} alt={port.title} />
                     </div>
                     <div className={styles.port_hero__content}>
+                        <PortCategories cats={port.categories.nodes} />
                         <div className="content-wrap">
                             <h1>{port.title}</h1>
                             <div className="content" dangerouslySetInnerHTML={{__html:port.content}}></div>
