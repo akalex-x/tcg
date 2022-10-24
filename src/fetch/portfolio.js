@@ -1,5 +1,5 @@
 import { getApolloClient } from 'lib/apollo-client';
-import { QUERY_LATEST_PORTFOLIO, QUERY_PORTFOLIO_PATHS, QUERY_SINGLE_PORTFOLIO } from 'queries/portfolio';
+import { QUERY_LATEST_PORTFOLIO, QUERY_PORTFOLIO_PATHS, QUERY_SINGLE_PORTFOLIO,QUERY_PORT_ARCHIVE_ACF } from 'queries/portfolio';
 
 export async function getLatestPort(limit){
   
@@ -43,5 +43,17 @@ export async function getPortfolio(slug){
     })
 
     return singlePort.data.portfolio;
+
+}
+
+export async function getPortArchiveACF(){
+
+  const apolloClient = getApolloClient();
+    
+  let res = await apolloClient.query({
+    query: QUERY_PORT_ARCHIVE_ACF,
+  })
+
+  return res;
 
 }

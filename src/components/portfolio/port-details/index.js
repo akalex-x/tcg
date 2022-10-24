@@ -14,8 +14,8 @@ function PortDetails({ sPort }){
                         <Image src={sPort.featuredImage.node.sourceUrl} height={sPort.featuredImage.node.mediaDetails.height} width={sPort.featuredImage.node.mediaDetails.width} alt={sPort.title} />
                     </div>
                     <div className={styles.port_details__content}>
-                        <PortCategories cats={sPort.categories.nodes} />
                         <div className='content-wrap'>
+                            <PortCategories cats={sPort.categories.nodes} />
                             <h3>{sPort.title}</h3>
                             <div className="content" dangerouslySetInnerHTML={{ __html:sPort.content}}></div>
                             <Button type="text" href={'/portfolio/'+sPort.slug} content="Learn More" />

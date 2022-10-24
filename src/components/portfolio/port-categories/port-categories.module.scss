@@ -12,6 +12,17 @@
             padding: .75rem;
             border-right: 1px solid black;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            img{
+                width: 1.5rem;
+                margin-bottom: .5rem;
+            }
+            span{
+                font-size: .9rem;
+            }
             &:last-of-type{
                 border-right: 0;
             }
@@ -22,6 +33,12 @@
             li{
                 padding: .75rem 1rem;
                 text-align: left;
+                flex-direction: row;
+                justify-content: flex-start;
+                img{
+                    margin-right: .5rem;
+                    margin-bottom: 0;
+                }
             }
         }
     }

@@ -6,10 +6,22 @@ import PortCategories from 'components/portfolio/port-categories'
 
 function PortfolioHero({port}){
 
-    const socials = {twitter:'twitter.com'}
+    const acf = port.portfolioSingle
+
+    let content = port.content
+
+    if( acf.introOverwrite ){
+        content = acf.introOverwrite
+    }
+
+    const contacts = acf.contacts
+
+    const socials = acf.socials
 
     return(
         <>
+            {/* {console.log(port)} */}
+            {console.log(acf)}
             <section className={styles.port_hero}>
                 <div className={styles.port_hero__wrap}>
                     <div className={styles.port_hero__image}>
@@ -19,17 +31,19 @@ function PortfolioHero({port}){
                         <PortCategories cats={port.categories.nodes} />
                         <div className="content-wrap">
                             <h1>{port.title}</h1>
-                            <div className="content" dangerouslySetInnerHTML={{__html:port.content}}></div>
+                            <div className="content" dangerouslySetInnerHTML={{__html:content}}></div>
                             <table>
                                 <tbody>
-                                    <tr>
-                                        <td>CEO:</td>
-                                        <td>Jordan Topoleski</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Co-Founder:</td>
-                                        <td>Thomas McLeod</td>
-                                    </tr>
+                                    {
+                                        contacts.map((contact,i) => {
+                                            return(
+                                                <td key={i}>
+                                                    <tr>{contact.position}</tr>
+                                                    <tr>{contact.name}</tr>
+                                                </td>
+                                            )
+                                        })
+                                    }
                                 </tbody>
                             </table>
                             <div className="mob-only">
@@ -42,8 +56,8 @@ function PortfolioHero({port}){
                     <div className="desk-only">
                         <Socials socials={socials} />
                     </div>
-                    <a className="main-link" href="arkive.net" target="_blank">arkive.net</a>
-                    <Button type="text--blank" content="Apply Now" href="" />
+                    <a className="main-link" href={acf.website} target="_blank">{acf.website}</a>
+                    <Button type="text--blank" content={acf.cta.title} href={acf.cta.url} />
                 </div>
             </section>
         </>

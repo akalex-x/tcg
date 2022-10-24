@@ -39,6 +39,21 @@ function QUERY_FLEXIBLE_LAYOUTS(type){
                 ... on ${type}_FlexibleContent_Flexiblecontent_CenteredContent {
                     content
                 }
+                ... on ${type}_FlexibleContent_Flexiblecontent_Quote {
+                    blurb
+                    cite
+                    quote
+                  }
+                  ... on ${type}_FlexibleContent_Flexiblecontent_VideoWithContent {
+                      title
+                        video {
+                            mediaItemUrl
+                      }
+                      content
+                      meta {
+                        label
+                      }
+                  }
             }
         }
     `;

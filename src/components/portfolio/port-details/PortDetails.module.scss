@@ -41,6 +41,26 @@
                 margin: 0 auto;
                 width: 100%;
             }
+            .port-cats{
+                border: 0;
+                justify-content: flex-start;
+                margin-bottom: 3rem;
+                li{
+                    border: 0;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    width: auto;
+                    flex:none;
+                    padding-left: 0;
+                    padding-right: 0;
+                    span{
+                        display: none;
+                    }
+                    img{
+                        margin-right: .5rem;
+                    }
+                }
+            }
         }
     }
     @media (min-width:960px){

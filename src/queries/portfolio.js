@@ -58,6 +58,33 @@ export const QUERY_SINGLE_PORTFOLIO = gql`
                     }
                 }
             }
+            portfolioSingle {
+                introOverwrite
+                socials {
+                  twitter
+                }
+                website
+                cta {
+                  title
+                  url
+                }
+                contacts {
+                  name
+                  position
+                }
+              }
+        }
+    }
+`;
+
+export const QUERY_PORT_ARCHIVE_ACF = gql`
+    query getACF {
+        portfolioAcfcptOptions {
+            portfolio_acf {
+                arhiveOptions {
+                    introContent
+                }
+            }
         }
     }
 `;

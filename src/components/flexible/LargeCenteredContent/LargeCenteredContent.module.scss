@@ -1,0 +1,19 @@
+.lcenterd_content{
+    text-align: center;
+    :global{
+        p{
+            font-size: 1.25rem;
+        }
+    }
+    @media (min-width:960px){
+        :global{
+            .content-wrap{
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            p{
+                font-size: 2rem;
+            }
+        }
+    }
+}

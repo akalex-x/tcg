@@ -1,4 +1,5 @@
 import styles from './port-categories.module.scss'
+import {getCatImage} from 'lib/getCatImage'
 
 function PortCategories({cats}){
     
@@ -10,7 +11,7 @@ function PortCategories({cats}){
                     {
                         cats.map((cat,i)=>{
                             return(
-                                <li>{cat.name}</li>
+                                <li key={cat.slug}>{getCatImage(cat.slug)} <span>{cat.name}</span></li>
                             )
                         })
                     }
