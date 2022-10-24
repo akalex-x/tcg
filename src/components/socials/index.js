@@ -6,14 +6,16 @@ function Socials({socials}){
 
     return(
         <>
-            <ul className={ [styles.socials_list, 'socials-list'].join(' ')}>
-                {socials.twitter &&
-                    <li><a href={socials.twitter} target="_blank" rel="noreferrer" ><Twitter /></a></li>
-                }
-                {socials.facebook &&
-                    <li><a href={socials.facebook} target="_blank" rel="noreferrer" ><Facebook /></a></li>
-                }
-            </ul>
+            { socials && 
+                <ul className={ [styles.socials_list, 'socials-list'].join(' ')}>
+                    {socials.twitter &&
+                        <li><a href={socials.twitter} target="_blank" rel="noreferrer" ><Twitter /></a></li>
+                    }
+                    {socials.facebook &&
+                        <li><a href={socials.facebook} target="_blank" rel="noreferrer" ><Facebook /></a></li>
+                    }
+                </ul>
+            }
         </>
     )
 

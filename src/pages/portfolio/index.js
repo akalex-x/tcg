@@ -16,7 +16,7 @@ import {getPortArchiveACF} from 'fetch/portfolio';
 
 function PortfolioArhive({latestPort,acf}){
   
-    console.log(acf)
+    // console.log(acf)
 
     return(
         <>

@@ -91,7 +91,7 @@ export function QUERY_FLEXIBLE_CONTENT(type,slug){
         `;
     }
 
-    console.log('the query is', query)
+    // console.log('the query is', query)
 
     return query;
 

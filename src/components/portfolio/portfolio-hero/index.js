@@ -16,7 +16,7 @@ function PortfolioHero({port}){
 
     const contacts = acf.contacts
 
-    const socials = acf.socials
+    const {socials} = acf
 
     return(
         <>
@@ -34,7 +34,7 @@ function PortfolioHero({port}){
                             <div className="content" dangerouslySetInnerHTML={{__html:content}}></div>
                             <table>
                                 <tbody>
-                                    {
+                                    { contacts && 
                                         contacts.map((contact,i) => {
                                             return(
                                                 <td key={i}>
@@ -56,8 +56,12 @@ function PortfolioHero({port}){
                     <div className="desk-only">
                         <Socials socials={socials} />
                     </div>
-                    <a className="main-link" href={acf.website} target="_blank">{acf.website}</a>
+                    { acf.website && 
+                        <a className="main-link" href={acf.website} rel="noreferrer" target="_blank">{acf.website}</a>
+                    }
+                    { acf.cta && 
                     <Button type="text--blank" content={acf.cta.title} href={acf.cta.url} />
+                    }
                 </div>
             </section>
         </>
