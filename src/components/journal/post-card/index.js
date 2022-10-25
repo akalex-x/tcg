@@ -10,7 +10,7 @@ function PostCard({post}){
 
     return(
         <>
-            {console.log(post)}
+            {/* {console.log(post)} */}
             <div className={styles.post_card}>
                 <div className={styles.post_card__image}>
                     <Link href={'/journal/'+post.slug}>

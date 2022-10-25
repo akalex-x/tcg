@@ -37,10 +37,10 @@ function PortfolioHero({port}){
                                     { contacts && 
                                         contacts.map((contact,i) => {
                                             return(
-                                                <td key={i}>
-                                                    <tr>{contact.position}</tr>
-                                                    <tr>{contact.name}</tr>
-                                                </td>
+                                                <tr key={i}>
+                                                    <td>{contact.position}</td>
+                                                    <td>{contact.name}</td>
+                                                </tr>
                                             )
                                         })
                                     }

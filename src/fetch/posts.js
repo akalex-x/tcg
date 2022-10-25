@@ -1,5 +1,5 @@
 import { getApolloClient } from 'lib/apollo-client';
-import { QUERY_LATEST_POSTS } from 'queries/posts';
+import { QUERY_LATEST_POSTS,QUERY_POSTS_PATHS,QUERY_SINGLE_POST } from 'queries/posts';
 
 export async function getLatestPosts($limit){
   
@@ -16,17 +16,32 @@ export async function getLatestPosts($limit){
 
 }
 
-export async function getSinglePost(slug){
+export async function getPostPaths(limit){
+
+  const apolloClient = getApolloClient();
+    
+  let paths = await apolloClient.query({
+    query: QUERY_POSTS_PATHS,
+    variables: {
+      number:limit,
+    },
+  })
+
+  return paths.data.posts.nodes;
+
+}
+
+export async function getPost(slug){
   
     const apolloClient = getApolloClient();
     
-    let singlePort = await apolloClient.query({
-      query: QUERY_SINGLE_PORTFOLIO,
+    let response = await apolloClient.query({
+      query: QUERY_SINGLE_POST,
       variables:{
         slug:slug
       }
     })
 
-    return singlePort.data.portfolioBy;
+    return response.data.post;
 
 }

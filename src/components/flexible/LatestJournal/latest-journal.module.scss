@@ -1,5 +1,5 @@
 .latest_posts{
-    padding: 3rem 0;
+    padding: 3rem 0 0;
     &__intro{
         padding-left: 1rem;
         padding-right: 1rem;
@@ -19,5 +19,23 @@
     }
     &__grid{
         padding: 1.5rem 1rem;
+        :global{
+            .swiper{
+                overflow: visible;
+            }
+        }
+    }
+    @media (min-width:960px){
+        &__grid{
+            :global{
+                .swiper-wrapper{
+                    flex-wrap: wrap!important;
+                }
+                .swiper-slide{
+                    width: 50%!important;
+                    margin: 0!important;
+                }
+            }
+        }
     }
 }
