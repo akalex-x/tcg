@@ -86,6 +86,7 @@ function PortfolioLoop({latestPort,skip,limit}){
                     <PortDetails sPort={sPort} />
                 </div>
             </div>
+
             { portfolios2.length && !showAll && (
                 <div className={styles.feat_port__footer}>
                     <button className='btn' type='button' onClick={() => setShow(true)}>Show All</button>

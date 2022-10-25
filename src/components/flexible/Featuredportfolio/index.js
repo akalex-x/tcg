@@ -8,15 +8,15 @@ function Featuredportfolio({latestPort}){
         <>
         <section className={styles.feat_port}>
 
-            <div className='container'>
-                <div className={styles.feat_port__intro}>
-                    <h2>Portfolio</h2>
-                    <div className="mob-only">
-                        <Button href="/portfolio" type="pill" content="Explore" />
-                    </div>
-                    <div className="desk-only">
-                        <Button href="/portfolio" type="pill" content="Explore All Portfolio" />
-                    </div>
+            <div className={styles.feat_port__intro}>
+                <div className='container'>
+                        <h2>Portfolio</h2>
+                        <div className="mob-only">
+                            <Button href="/portfolio" type="pill" content="Explore" />
+                        </div>
+                        <div className="desk-only">
+                            <Button href="/portfolio" type="pill" content="Explore All Portfolio" />
+                        </div>
                 </div>
             </div>
 

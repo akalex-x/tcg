@@ -5,11 +5,13 @@
     border-top: 1px solid black;
     &__intro{
         padding: 0 1rem;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
         :global{
+            .container{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+            }
             h2,a{
                 margin-bottom: 1.5rem;
             }

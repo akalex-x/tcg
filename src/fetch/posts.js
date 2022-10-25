@@ -1,14 +1,14 @@
 import { getApolloClient } from 'lib/apollo-client';
 import { QUERY_LATEST_POSTS } from 'queries/posts';
 
-export async function getLatestPosts(){
+export async function getLatestPosts($limit){
   
     const apolloClient = getApolloClient();
     
     let latestPosts = await apolloClient.query({
       query: QUERY_LATEST_POSTS,
       variables: {
-        number:4,
+        number:$limit,
       },
     })
 

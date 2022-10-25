@@ -28,7 +28,7 @@ export async function getStaticProps(){
   }
 
   if( loadPosts ){
-    latestPosts = await getLatestPosts();
+    latestPosts = await getLatestPosts(5);
   }
 
   return {

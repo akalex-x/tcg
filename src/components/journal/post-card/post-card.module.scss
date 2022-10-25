@@ -1,0 +1,49 @@
+.post_card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1.5rem 0;
+    :global{
+        a{
+            text-decoration: none;
+        }
+    }
+    &__image{
+        width: 45%;
+        .spacer{
+            width: 100%;
+            height: 0;
+            padding-bottom: 70%;
+            img{
+                position: absolute;
+                top: 0;
+                left: 0;
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                max-width: none;
+            }
+        }
+    }
+    &__content{
+        width: 55%;
+        padding:0 1.5rem;
+        display: flex;
+        align-items: center;
+        :global{
+            @media (max-width:959px){
+                h4{
+                    margin-bottom: 0;
+                }
+            }
+            p{
+                display: none;
+            }
+        }
+    }
+    @media (min-width:960px){
+        &__content{
+            padding:0 3rem;
+        }
+    }
+}

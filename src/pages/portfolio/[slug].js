@@ -34,7 +34,7 @@ export async function getStaticProps(context){
     }
   
     if( loadPosts ){
-      latestPosts = await getLatestPosts();
+      latestPosts = await getLatestPosts(5);
     }
 
     const portfolio = await getPortfolio(params.slug);

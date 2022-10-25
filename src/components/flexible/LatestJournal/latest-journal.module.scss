@@ -1,0 +1,23 @@
+.latest_posts{
+    padding: 3rem 0;
+    &__intro{
+        padding-left: 1rem;
+        padding-right: 1rem;
+        :global{
+            .container{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            h2{
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__loop{
+        margin-top: 3rem;
+    }
+    &__grid{
+        padding: 1.5rem 1rem;
+    }
+}

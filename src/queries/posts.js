@@ -5,6 +5,7 @@ export const QUERY_LATEST_POSTS = gql`
     posts(first: $number, where: {status: PUBLISH}) {
       nodes {
         title
+        slug
         excerpt
         content
         featuredImage {
