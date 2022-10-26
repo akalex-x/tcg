@@ -6,7 +6,7 @@ function MoreArticles({posts}){
 
     return(
         <>
-            {console.log(posts)}
+            {/* {console.log(posts)} */}
             <div className={styles.more_articles}>
                 <h3 className="h4">More Journal</h3>
                 {
