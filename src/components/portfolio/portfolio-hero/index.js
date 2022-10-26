@@ -21,7 +21,7 @@ function PortfolioHero({port}){
     return(
         <>
             {/* {console.log(port)} */}
-            {console.log(acf)}
+            {/* {console.log(acf)} */}
             <section className={styles.port_hero}>
                 <div className={styles.port_hero__wrap}>
                     <div className={styles.port_hero__image}>

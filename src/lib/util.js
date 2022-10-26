@@ -81,7 +81,7 @@ export function checkIfPostsAreNeeded(acf,layout){
 
 export function formatDate(date){
 
-  console.log(date)
+  // console.log(date)
 
   const year = date.getFullYear();
   let month = date.getMonth()+1;

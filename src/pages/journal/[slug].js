@@ -1,5 +1,4 @@
 import {getPostPaths,getPost} from 'fetch/posts'
-import ArticleHero from 'components/journal/article-hero'
 import Article from 'components/journal/article'
 
 

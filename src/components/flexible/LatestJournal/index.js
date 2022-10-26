@@ -38,7 +38,6 @@ function LatestJournal({latestPosts}){
                     swiper = new Swiper(".slider", options);
                 }
             } else if (init) {
-                console.log('destroy')
                 swiper.destroy();
                 init = false;
             }

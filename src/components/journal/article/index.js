@@ -8,12 +8,12 @@ function Article({post}){
 
     return(
         <>
-            {console.log(post)}
+            {/* {console.log(post)} */}
             <article className={styles.article}>
 
                 <div className={styles.article_hero}>
                     <div className={styles.article_hero__meta}>
-                        { post.categories.nodes[0].name != 'Uncategorized' &&
+                        { post.categories.nodes.length >= 1 && post.categories.nodes[0].name != 'Uncategorized' &&
                             <span>{post.categories.nodes[0].name}</span>
                         }
                         <span>{formatDate(date)}</span>
@@ -23,7 +23,9 @@ function Article({post}){
                         <span>by: {post.author.node.name}</span>
                         <button className="reset">Share</button>
                     </div>
-                    <Image src={post.featuredImage.node.sourceUrl} width={post.featuredImage.node.mediaDetails.width} height={post.featuredImage.node.mediaDetails.height} alt={post.title} />
+                    { post.featuredImage &&
+                        <Image src={post.featuredImage.node.sourceUrl} width={post.featuredImage.node.mediaDetails.width} height={post.featuredImage.node.mediaDetails.height} alt={post.title} />
+                    }
                 </div>
 
                 <div className={styles.article_content} dangerouslySetInnerHTML={{__html: post.content}}></div>
