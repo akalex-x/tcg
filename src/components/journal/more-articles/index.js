@@ -7,7 +7,7 @@ function MoreArticles({posts}){
     return(
         <>
             {/* {console.log(posts)} */}
-            <div className={styles.more_articles}>
+            <div className={[styles.more_articles, 'more-articles'].join(' ')}>
                 <h3 className="h4">More Journal</h3>
                 {
                     posts.map((post)=>{
@@ -20,7 +20,9 @@ function MoreArticles({posts}){
                                         </div>
                                     </div>
                                     <div className={styles.post_card__content}>
-                                        <span className='category'>{post.categories.nodes[0].name}</span>
+                                        { post.categories.nodes.length >= 1 &&
+                                            <span className='category'>{post.categories.nodes[0].name}</span>
+                                        }
                                         <h3 className="h5">{post.title.substring(0, 20)}...</h3>
                                     </div>
                                 </a>

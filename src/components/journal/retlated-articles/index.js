@@ -11,7 +11,7 @@ function RelatedArticles({posts}){
     return(
         <>
             {/* {console.log(posts)} */}
-            <div className={styles.related_articles}>
+            <div className={[styles.related_articles, 'related-articles'].join(' ')}>
                 <h3 className="h4">Explore More</h3>
                 {
                     posts.map((post)=>{

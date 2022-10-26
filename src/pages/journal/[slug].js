@@ -33,7 +33,17 @@ export async function getStaticProps(context){
         related = await getRelatedPosts(post.categories.nodes[0].name,post.id,3);
     }
 
-    const morePosts = await getMorePosts(post.id,5);
+    let moreCount = 5
+
+    console.log(related)
+    
+    if( related == null ){
+        moreCount = 8
+    }
+    console.log(related)
+    console.log(moreCount)
+
+    const morePosts = await getMorePosts(post.id,moreCount);
 
     if (!post) {
         return {
