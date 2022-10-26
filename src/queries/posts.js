@@ -22,11 +22,11 @@ export const QUERY_LATEST_POSTS = gql`
   }
 `;
 
-// query getLatestPosts($cat: String, $limit: Int, $postID: [ID]){
-// posts(where: {categoryName: $cat, notIn: $postID, status: PUBLISH}, first: $limit) {
-export const QUERY_RELATED_POSTS = gql`
-query getLatestPosts($limit: Int, $postID: [ID]){
-    posts(where: {notIn: $postID, status: PUBLISH}, first: $limit) {
+// query getLatestPosts($limit: Int, $postID: [ID]){
+  //     posts(where: {notIn: $postID, status: PUBLISH}, first: $limit) {
+  export const QUERY_RELATED_POSTS = gql`
+    query getLatestPosts($cat: String, $limit: Int, $postID: [ID]){
+    posts(where: {categoryName: $cat, notIn: $postID, status: PUBLISH}, first: $limit) {
         nodes {
           title
           slug
