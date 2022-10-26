@@ -1,0 +1,19 @@
+.journal{
+    @media (min-width:960px){
+        :global{
+            .container{
+                display: flex;
+                justify-content: space-between;
+            }
+            article{
+                width: 70%;
+                flex:1;
+            }
+            aside{
+                width: 30%;
+                max-width: 300px;
+                padding: 4.5rem 0rem;
+            }
+        }
+    }
+}

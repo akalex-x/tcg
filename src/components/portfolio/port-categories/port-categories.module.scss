@@ -1,3 +1,5 @@
+@import 'styles/includes/variables';
+
 .port_cats{
     display: flex;
     border-top: 1px solid black;
@@ -22,6 +24,7 @@
             }
             span{
                 font-size: .9rem;
+                font-family: $serif;
             }
             &:last-of-type{
                 border-right: 0;

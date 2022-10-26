@@ -3,6 +3,7 @@
 .custom_video{
     max-width: 1200px;
     margin: 0 auto;
+    font-family: $serif;
     :global{
         video{
             width: 100%;

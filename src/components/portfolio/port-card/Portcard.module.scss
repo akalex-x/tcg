@@ -2,6 +2,11 @@
     transform: translateY(50%);
     opacity: 0;
     cursor: pointer;
+    :global{
+        .h5{
+            margin-top: 1.5rem;
+        }
+    }
     &__thumb{
         :global{
             img{

@@ -222,30 +222,30 @@
     }
 }
 
-.alignright,
-.alignleft,
-.aligncenter,
-.wp-caption {
-    margin: 1.5rem 2rem;
-    width: auto !important;
-}
+// .alignright,
+// .alignleft,
+// .aligncenter,
+// .wp-caption {
+//     margin: 1.5rem 2rem;
+//     width: auto !important;
+// }
 
-.alignright, .alignright img {
-    float: right;
-    margin-right: 0;
-}
+// .alignright, .alignright img {
+//     float: right;
+//     margin-right: 0;
+// }
 
-.alignleft {
-    float: left;
-    margin-left: 0;
-}
+// .alignleft {
+//     float: left;
+//     margin-left: 0;
+// }
 
-.aligncenter,
-.aligncenter img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
+// .aligncenter,
+// .aligncenter img {
+//     display: block;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
 
 .margin-top-desk {
     @media only screen and (min-width:$laptop) {

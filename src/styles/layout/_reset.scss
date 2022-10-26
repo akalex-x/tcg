@@ -211,18 +211,27 @@ main {
     position: relative;
 }
 
-blockquote,
-ul, ol, li, p,
-table, hr {
-    margin: 1rem 0 0;
-
-    &:first-child {
-        margin-top: 0;
+ul, ol, li, p{
+    margin-bottom: 1.5rem;
+    &:last-of-type{
+        margin-bottom: 0;
     }
+    // &:first-child {
+    //     margin-top: 0;
+    // }
+    // @media (min-width: 720px) {
+    //     margin-top: 1.5rem;
+    // }
+}
 
-    @media (min-width: 720px) {
-        margin-top: 1.5rem;
-    }
+table,
+blockquote{
+    margin-bottom: 1.5rem;
+}
+
+hr{
+    margin: 3rem 0;
+    display: block;
 }
 
 ul, ol {

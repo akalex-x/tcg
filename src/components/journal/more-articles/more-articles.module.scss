@@ -1,0 +1,49 @@
+@import 'styles/includes/variables';
+
+.more_articles{
+    padding: 3rem 1rem 1.5rem;
+}
+
+.post_card{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    :global{
+
+    }
+    &__image{
+        width: 40%;
+        :global{
+            .spacer{
+                width: 100%;
+                height: 0;
+                padding-bottom: 75%;
+                position: relative;
+            }
+            img{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    &__content{
+        width: calc(60% - 1rem);
+        :global{
+            .category{
+                font-family: $serif;
+                display: block;
+                margin-bottom: .5rem;
+                font-size: .9rem;
+                color: black;
+            }
+            .h5{
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

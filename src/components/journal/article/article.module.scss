@@ -1,6 +1,5 @@
 .article{
     padding: 1.5rem 1rem;
-    max-width: 1000px;
     @media (min-width:960px){
         padding: 4.5rem;
         border-right: 1px solid black;
@@ -25,5 +24,11 @@
             img{
             }
         }
+    }
+}
+
+.article_content{
+    img{
+        margin-bottom: 1.5rem;
     }
 }

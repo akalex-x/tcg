@@ -9,6 +9,7 @@
         p{
             color: $blue;
             font-size: 1.5rem;
+            line-height: 1.25;
         }
     }
     &__footer{
@@ -21,6 +22,7 @@
                 &.meta{
                     font-size: .9rem;
                     margin-top: 1rem;
+                    font-family: $serif;
                 }
             }
         }

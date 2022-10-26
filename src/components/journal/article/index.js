@@ -6,29 +6,36 @@ function Article({post}){
 
     const date = new Date(post.date);
 
+    const regex = /<p\b[^<>\/]*>\s*(<img\b[^<>]*>)\s*<\/p>/g;
+
     return(
         <>
             {/* {console.log(post)} */}
             <article className={styles.article}>
 
                 <div className={styles.article_hero}>
+
                     <div className={styles.article_hero__meta}>
                         { post.categories.nodes.length >= 1 && post.categories.nodes[0].name != 'Uncategorized' &&
-                            <span>{post.categories.nodes[0].name}</span>
+                            <span className='h4'>{post.categories.nodes[0].name}</span>
                         }
-                        <span>{formatDate(date)}</span>
+                        <span className='h4'>{formatDate(date)}</span>
                     </div>
-                    <h1>{post.title}</h1>
+
+                    <h1 className="h2">{post.title}</h1>
+
                     <div className={styles.article_hero__extra}>
-                        <span>by: {post.author.node.name}</span>
+                        <span className='h4'>by: {post.author.node.name}</span>
                         <button className="reset">Share</button>
                     </div>
+
                     { post.featuredImage &&
                         <Image src={post.featuredImage.node.sourceUrl} width={post.featuredImage.node.mediaDetails.width} height={post.featuredImage.node.mediaDetails.height} alt={post.title} />
                     }
+
                 </div>
 
-                <div className={styles.article_content} dangerouslySetInnerHTML={{__html: post.content}}></div>
+                <div className={styles.article_content} dangerouslySetInnerHTML={{ __html: post.content.replace(regex, '$1') }}></div>
 
             </article>
         </>

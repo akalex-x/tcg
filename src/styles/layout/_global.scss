@@ -233,7 +233,11 @@ h6, .h6 {
     margin-bottom: 2rem;
 
     * + & {
-        margin-top: 1rem;
+        margin-top: 3rem;
+    }
+
+    img + & {
+        margin-top: 4.5rem;
     }
 
     & + &,

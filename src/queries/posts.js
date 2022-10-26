@@ -22,6 +22,54 @@ export const QUERY_LATEST_POSTS = gql`
   }
 `;
 
+// query getLatestPosts($cat: String, $limit: Int, $postID: [ID]){
+// posts(where: {categoryName: $cat, notIn: $postID, status: PUBLISH}, first: $limit) {
+export const QUERY_RELATED_POSTS = gql`
+query getLatestPosts($limit: Int, $postID: [ID]){
+    posts(where: {notIn: $postID, status: PUBLISH}, first: $limit) {
+        nodes {
+          title
+          slug
+          featuredImage {
+            node {
+              sourceUrl
+              mediaDetails {
+                height
+                width
+              }
+            }
+          }
+        }
+    }
+  }
+`;
+
+export const QUERY_MORE_POSTS = gql`
+query getLatestPosts($limit: Int, $postID: [ID]){
+    posts(where: {notIn: $postID, status: PUBLISH}, first: $limit) {
+        nodes {
+          title
+          slug
+          categories {
+            nodes {
+              slug
+              name
+            }
+          }
+          featuredImage {
+            node {
+              sourceUrl
+              mediaDetails {
+                height
+                width
+              }
+            }
+          }
+        }
+    }
+  }
+`;
+
 export const QUERY_POSTS_PATHS = gql`
     query latestPort($number: Int) {
         posts(first: $number, where: {status: PUBLISH}) {
@@ -39,6 +87,7 @@ export const QUERY_SINGLE_POST = gql`
 			slug
 			content
 			date
+      id
 			author {
 				node {
 					name
