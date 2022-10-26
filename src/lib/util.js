@@ -78,3 +78,25 @@ export function checkIfPostsAreNeeded(acf,layout){
   return needed
   
 }
+
+export function formatDate(date){
+
+  console.log(date)
+
+  const year = date.getFullYear();
+  let month = date.getMonth()+1;
+  let day = date.getDate();
+
+  if (day < 10) {
+      day = '0' + day;
+  }
+
+  if (month < 10) {
+      month = '0' + month;
+  }
+
+  const formattedDate = day + '/' + month + '/' + year.toString().slice(-2);
+
+  return formattedDate
+
+}

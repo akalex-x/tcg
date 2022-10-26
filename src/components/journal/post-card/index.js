@@ -23,7 +23,7 @@ function PostCard({post}){
                     <Link href={'/journal/'+post.slug}>
                         <a className="content-wrap">
                             <h4>{ post.title }</h4>
-                            <p>{ post.content.replace(regex, '').substring(0, 100) }...</p>
+                            <p>{ post.content.replace(regex, '').substring(0, 75) }...</p>
                         </a>
                     </Link>
                 </div>

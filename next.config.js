@@ -13,4 +13,7 @@ module.exports = withBundleAnalyzer({
   images: {
     domains: ['tcgcrypto.pdmdev.co'],
   },
+  experimental: {
+    adjustFontFallbacks: true,
+  },
 });

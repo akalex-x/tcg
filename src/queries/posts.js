@@ -35,18 +35,30 @@ export const QUERY_POSTS_PATHS = gql`
 export const QUERY_SINGLE_POST = gql`
     query singleQuery($slug: ID!){
         post(id: $slug, idType: SLUG) {
-            title
-            slug
-            content
-            featuredImage {
-                node {
-                sourceUrl
-                  mediaDetails {
-                    height
-                    width
-                  }
-                }
-            }
+			title
+			slug
+			content
+			date
+			author {
+				node {
+					name
+				}
+			}
+			categories {
+				nodes {
+					slug
+					name
+				}
+			}
+			featuredImage {
+				node {
+					sourceUrl
+					mediaDetails {
+						height
+						width
+					}
+				}
+			}
         }
       }
 `;

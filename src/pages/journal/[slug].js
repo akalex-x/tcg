@@ -1,11 +1,11 @@
 import {getPostPaths,getPost} from 'fetch/posts'
-import Article from 'components/article'
+import ArticleHero from 'components/journal/article-hero'
+import Article from 'components/journal/article'
 
 
 export default function SinglePortfolio({post}) {
   return (
     <>
-        {console.log(post)}
         <Article post={post} />
     </>
   )

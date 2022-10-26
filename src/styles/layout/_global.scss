@@ -227,10 +227,10 @@ h6, .h6 {
     color: $heading_color;
     font-family: $heading_font;
     font-weight: $heading_weight;
-    line-height: 1.2;
+    line-height: 1.3;
     margin: 0;
     display: block;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 
     * + & {
         margin-top: 1rem;
@@ -253,6 +253,7 @@ h1, .h1 {
 
 h2, .h2 {
     font-size: $heading_h2__mobile;
+    font-weight: 300;
 
     @media (min-width: $laptop) {
         font-size: $heading_h2;
@@ -261,7 +262,7 @@ h2, .h2 {
 
 h3, .h3 {
     font-size: $heading_h3__mobile;
-
+    font-family: $heading_font2;
     @media (min-width: $laptop) {
         font-size: $heading_h3;
     }
@@ -269,7 +270,7 @@ h3, .h3 {
 
 h4, .h4 {
     font-size: $heading_h4__mobile;
-
+    font-family: $heading_font2;
     @media (min-width: $laptop) {
         font-size: $heading_h4;
     }
@@ -277,6 +278,7 @@ h4, .h4 {
 
 h5, .h5 {
     font-size: $heading_h5__mobile;
+    font-family: $heading_font2;
 
     @media (min-width: $laptop) {
         font-size: $heading_h5;
@@ -285,6 +287,7 @@ h5, .h5 {
 
 h6, .h6 {
     font-size: $heading_h6__mobile;
+    font-family: $heading_font2;
 }
 
 .subheading {
@@ -313,6 +316,7 @@ a {
         padding: .5rem 1.25rem;
         display: inline-flex;
         align-items: center;
+        font-family: $serif;
         svg{
             width: 1rem;
             margin-left: 1rem;
