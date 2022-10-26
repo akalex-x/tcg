@@ -1,4 +1,4 @@
-import {getPostPaths,getPost,getRelatedPosts,getMorePosts} from 'fetch/posts'
+import {getPostPaths,getPost,getRelatedPosts,getMorePosts,getAdjacentPosts} from 'fetch/posts'
 import Article from 'components/journal/article'
 import RelatedArticles from 'components/journal/retlated-articles'
 import MoreArticles from 'components/journal/more-articles'
@@ -6,12 +6,12 @@ import MoreArticles from 'components/journal/more-articles'
 import styles from './journal.module.scss'
 
 
-export default function SinglePortfolio({post,related,morePosts}) {
+export default function SinglePortfolio({post,related,morePosts,adjacentPosts}) {
   return (
     <>
         <div className={styles.journal}>
             <div className="container">
-                <Article post={post} />
+                <Article post={post} adjacentPosts={adjacentPosts} />
                 <aside>
                     <RelatedArticles posts={related}/>
                     <MoreArticles posts={morePosts}/>
@@ -27,7 +27,13 @@ export async function getStaticProps(context){
     const { params } = context
 
     const post = await getPost(params.slug);
-
+    
+    if (!post) {
+        return {
+            notFound: true
+        };
+    }
+    
     let related = null;
     if( post.categories.nodes.length >= 1 && post.categories.nodes[0].name != 'Uncategorized' ){
         related = await getRelatedPosts(post.categories.nodes[0].name,post.id,3);
@@ -35,27 +41,20 @@ export async function getStaticProps(context){
 
     let moreCount = 5
 
-    console.log(related)
-    
     if( related == null ){
         moreCount = 8
     }
-    console.log(related)
-    console.log(moreCount)
 
     const morePosts = await getMorePosts(post.id,moreCount);
 
-    if (!post) {
-        return {
-            notFound: true
-        };
-    }
+    const adjacentPosts = await getAdjacentPosts(post.slug)
 
     return {
         props:{
             post:post,
             related:related,
             morePosts:morePosts,
+            adjacentPosts:adjacentPosts,
             revalidate: 10,
         }
     };

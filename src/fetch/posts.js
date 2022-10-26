@@ -1,5 +1,5 @@
 import { getApolloClient } from 'lib/apollo-client';
-import { QUERY_LATEST_POSTS,QUERY_POSTS_PATHS,QUERY_SINGLE_POST,QUERY_RELATED_POSTS,QUERY_MORE_POSTS } from 'queries/posts';
+import { QUERY_LATEST_POSTS,QUERY_POSTS_PATHS,QUERY_SINGLE_POST,QUERY_RELATED_POSTS,QUERY_MORE_POSTS,QUERY_ADJACENT_POSTS } from 'queries/posts';
 
 export async function getLatestPosts($limit){
   
@@ -75,5 +75,20 @@ export async function getMorePosts(postID,limit){
   })
 
   return response.data.posts.nodes;
+
+}
+
+export async function getAdjacentPosts(slug){
+  
+  const apolloClient = getApolloClient();
+  
+  let response = await apolloClient.query({
+    query: QUERY_ADJACENT_POSTS,
+    variables:{
+      slug:slug
+    }
+  })
+
+  return response.data.post;
 
 }

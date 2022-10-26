@@ -2,7 +2,9 @@ import styles from './article.module.scss'
 import Image from 'next/future/image'
 import {formatDate} from 'lib/util'
 
-function Article({post}){
+import AdjacentPosts from 'components/journal/adjacent-posts'
+
+function Article({post,adjacentPosts}){
 
     const date = new Date(post.date);
 
@@ -36,6 +38,8 @@ function Article({post}){
                 </div>
 
                 <div className={styles.article_content} dangerouslySetInnerHTML={{ __html: post.content.replace(regex, '$1') }}></div>
+
+                <AdjacentPosts posts={adjacentPosts} />
 
             </article>
         </>

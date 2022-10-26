@@ -111,3 +111,36 @@ export const QUERY_SINGLE_POST = gql`
         }
       }
 `;
+
+export const QUERY_ADJACENT_POSTS = gql`
+  query singleQuery($slug: ID!){
+    post(id: $slug, idType: SLUG) {
+      next {
+        title
+        slug
+        featuredImage {
+          node {
+            sourceUrl
+            mediaDetails {
+              height
+              width
+            }
+          }
+        }
+      }
+      previous{
+        title
+        slug
+        featuredImage {
+          node {
+            sourceUrl
+            mediaDetails {
+              height
+              width
+            }
+          }
+        }
+      }
+    }
+  }
+`;
