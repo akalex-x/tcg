@@ -15,7 +15,9 @@ function PostCard({post}){
                 <div className={styles.post_card__image}>
                     <Link href={'/journal/'+post.slug}>
                         <a className="spacer">
-                            <Image src={post.featuredImage.node.sourceUrl} width={post.featuredImage.node.mediaDetails.width} height={post.featuredImage.node.mediaDetails.height} alt={post.title} />
+                            {post.featuredImage &&
+                                <Image src={post.featuredImage.node.sourceUrl} width={post.featuredImage.node.mediaDetails.width} height={post.featuredImage.node.mediaDetails.height} alt={post.title} />
+                            }                        
                         </a>
                     </Link>
                 </div>

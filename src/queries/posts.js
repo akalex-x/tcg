@@ -8,6 +8,18 @@ export const QUERY_LATEST_POSTS = gql`
         slug
         excerpt
         content
+        date
+        categories {
+          nodes {
+            slug
+            name
+          }
+        }
+        author {
+          node {
+            name
+          }
+        }
         featuredImage {
           node {
             sourceUrl

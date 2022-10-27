@@ -15,7 +15,7 @@ function ArticleBreadcrumbs({post}){
                 </li>
                 { post.categories.nodes.length >= 1 && post.categories.nodes[0].name != 'Uncategorized' &&
                     <li>
-                        <Link href={'/journal/'+post.categories.nodes[0].slug}>
+                        <Link href={'/journal/category/'+post.categories.nodes[0].slug}>
                             <a>{post.categories.nodes[0].name} <Arrow/></a>
                         </Link>
                     </li>

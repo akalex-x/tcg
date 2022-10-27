@@ -8,7 +8,7 @@ function AdjacentPosts({posts}){
 
     return(
         <>
-            {console.log(posts)}
+            {/* {console.log(posts)} */}
             <div className={styles.adjacent_posts}>
                 {
                     posts.map((post,i)=>{
@@ -19,7 +19,9 @@ function AdjacentPosts({posts}){
                                         <a class={styles.post_card}>
                                             <div class={styles.post_card__image}>
                                                 <div className="spacer">
-                                                    <Image src={post.featuredImage.node.sourceUrl} width={post.featuredImage.node.mediaDetails.width} height={post.featuredImage.node.mediaDetails.height} alt={post.title} />
+                                                    { post.featuredImage &&
+                                                        <Image src={post.featuredImage.node.sourceUrl} width={post.featuredImage.node.mediaDetails.width} height={post.featuredImage.node.mediaDetails.height} alt={post.title} />
+                                                    }
                                                 </div>
                                             </div>
                                             <div className={styles.post_card__content}>
