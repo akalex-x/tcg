@@ -2,86 +2,16 @@
 
 .port_loop{
     padding: 0;
-    .peace_sign{
-        border-bottom: 1px solid black;
-        padding: 3rem 1rem;
-        padding-top: 4rem;
+    &__footer{
         text-align: center;
-    }
-    .quote{
+        width: 100%;
         padding: 3rem 1rem;
-        border-bottom: 1px solid black;
-        text-align: center;
-        :global{
-            blockquote{
-                color: $blue;
-                font-size: 1.5rem;
-            }
-            cite{
-                font-family: $serif;
-            }
-        }
     }
     @media (min-width:960px){
         :global{
             .container{
                 display: flex;
                 flex-wrap: wrap;
-            }
-        }
-        .box_1{
-            width: 75%;
-            position: relative;
-            border-right: 1px solid black;
-            border-left: 1px solid black;
-        }
-        .box_2{
-            width: 25%;
-            display: flex;
-            flex-direction: column;
-            border-right: 1px solid black;
-            .peace_sign{
-                flex: 1;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 1rem;
-                padding-top: 1.5rem;
-            }
-        }
-        .box_3{
-            width: 28%;
-            border-left: 1px solid black;
-            border-right: 1px solid black;
-            display: flex;
-            flex-direction: column;
-            .quote{
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                padding: 3rem;
-            }
-        }
-        .box_4{
-            border-right: 1px solid black;
-            width: 72%;
-            display: flex;
-            flex-wrap: wrap;
-            :global{
-                .post-card{
-                    width: 50%;
-                    .spacer{
-                        padding-bottom: 90%;
-                    }
-                    &:first-of-type{
-                        border-right: 1px solid black;
-                    }
-                    &:nth-of-type(3){
-                        width: 100%;
-                    }
-                }
             }
         }
     }
