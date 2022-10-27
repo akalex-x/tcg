@@ -1,7 +1,8 @@
-import {getPostPaths,getPost,getRelatedPosts,getMorePosts,getAdjacentPosts} from 'fetch/posts'
+import {getPostPaths,getPost,getRelatedPosts,getMorePosts} from 'fetch/posts'
 import Article from 'components/journal/article'
 import RelatedArticles from 'components/journal/retlated-articles'
 import MoreArticles from 'components/journal/more-articles'
+import ArticleBreadcrumbs from 'components/journal/breadcrumbs'
 
 import styles from './journal.module.scss'
 
@@ -10,6 +11,7 @@ export default function SinglePortfolio({post,related,morePosts,adjacentPosts}) 
   return (
     <>
         <div className={styles.journal}>
+            <ArticleBreadcrumbs post={post} />
             <div className="container">
                 <Article post={post} adjacentPosts={adjacentPosts} />
                 <aside>
@@ -47,14 +49,14 @@ export async function getStaticProps(context){
 
     const morePosts = await getMorePosts(post.id,moreCount);
 
-    const adjacentPosts = await getAdjacentPosts(post.slug)
+    const adjacent = [post.previous,post.next]
 
     return {
         props:{
             post:post,
             related:related,
             morePosts:morePosts,
-            adjacentPosts:adjacentPosts,
+            adjacentPosts: adjacent,
             revalidate: 10,
         }
     };

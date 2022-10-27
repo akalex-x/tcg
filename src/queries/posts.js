@@ -83,64 +83,90 @@ export const QUERY_POSTS_PATHS = gql`
 export const QUERY_SINGLE_POST = gql`
     query singleQuery($slug: ID!){
         post(id: $slug, idType: SLUG) {
-			title
-			slug
-			content
-			date
-      id
-			author {
-				node {
-					name
-				}
-			}
-			categories {
-				nodes {
-					slug
-					name
-				}
-			}
-			featuredImage {
-				node {
-					sourceUrl
-					mediaDetails {
-						height
-						width
-					}
-				}
-			}
+          title
+          slug
+          content
+          date
+          id
+          author {
+            node {
+              name
+            }
+          }
+          categories {
+            nodes {
+              slug
+              name
+            }
+          }
+          featuredImage {
+            node {
+              sourceUrl
+              mediaDetails {
+                height
+                width
+              }
+            }
+          }
+          next {
+            title
+            slug
+            featuredImage {
+              node {
+                sourceUrl
+                mediaDetails {
+                  height
+                  width
+                }
+              }
+            }
+          }
+          previous{
+            title
+            slug
+            featuredImage {
+              node {
+                sourceUrl
+                mediaDetails {
+                  height
+                  width
+                }
+              }
+            }
+          }
         }
       }
 `;
 
-export const QUERY_ADJACENT_POSTS = gql`
-  query singleQuery($slug: ID!){
-    post(id: $slug, idType: SLUG) {
-      next {
-        title
-        slug
-        featuredImage {
-          node {
-            sourceUrl
-            mediaDetails {
-              height
-              width
-            }
-          }
-        }
-      }
-      previous{
-        title
-        slug
-        featuredImage {
-          node {
-            sourceUrl
-            mediaDetails {
-              height
-              width
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+// export const QUERY_ADJACENT_POSTS = gql`
+//   query singleQuery($slug: ID!){
+//     post(id: $slug, idType: SLUG) {
+//       next {
+//         title
+//         slug
+//         featuredImage {
+//           node {
+//             sourceUrl
+//             mediaDetails {
+//               height
+//               width
+//             }
+//           }
+//         }
+//       }
+//       previous{
+//         title
+//         slug
+//         featuredImage {
+//           node {
+//             sourceUrl
+//             mediaDetails {
+//               height
+//               width
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;

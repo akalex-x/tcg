@@ -78,17 +78,17 @@ export async function getMorePosts(postID,limit){
 
 }
 
-export async function getAdjacentPosts(slug){
+// export async function getAdjacentPosts(slug){
   
-  const apolloClient = getApolloClient();
+//   const apolloClient = getApolloClient();
   
-  let response = await apolloClient.query({
-    query: QUERY_ADJACENT_POSTS,
-    variables:{
-      slug:slug
-    }
-  })
+//   let response = await apolloClient.query({
+//     query: QUERY_ADJACENT_POSTS,
+//     variables:{
+//       slug:slug
+//     }
+//   })
 
-  return response.data.post;
+//   return response.data.post;
 
-}
+// }

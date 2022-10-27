@@ -1,0 +1,37 @@
+@import 'styles/includes/variables';
+
+.breadcrumbs{
+    display: none;
+    @media (min-width:960px){
+        display: flex;
+    }
+    align-items: center;
+    border-bottom: 1px solid black;
+    font-family: $serif;
+    padding: .5rem 1rem;
+    :global{
+        li{
+            padding: 0;
+            margin: 0;
+            font-size: .8rem;
+            list-style: none;
+            margin-right: 1.5rem;
+            &:last-of-type{
+                margin-right: 0;
+            }
+            a{
+                display: flex;
+                align-items: center;
+                color: $black;
+                text-decoration: underline;
+                svg{
+                    width: .75rem;
+                    margin-left: 1rem;
+                    path{
+                        stroke:$black;
+                    }
+                }
+            }
+        }
+    }
+}
