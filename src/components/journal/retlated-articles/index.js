@@ -4,8 +4,10 @@ import Image from "next/future/image"
 
 function RelatedArticles({posts}){
 
-    if(posts == null){
-        return false
+    // console.log('posts',posts)
+
+    if(posts == null || posts.length == 0){
+        return null;
     }
 
     return(
