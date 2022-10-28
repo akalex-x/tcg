@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import styles from './post-filters.module.scss'
 import Arrow from 'components/svgs/arrow'
+import {useState} from 'react'
 
 function PostFilters({cats,currentCat,postsTotal,authors,onFilter}){
 
@@ -21,6 +22,12 @@ function PostFilters({cats,currentCat,postsTotal,authors,onFilter}){
         })
     }else{
         currentAuthors = authors
+    }
+
+    const [showAuth,setShowAuth] = useState(false)
+
+    const toggleShowAuth = () => {
+        showAuth ? setShowAuth(false) : setShowAuth(true)
     }
     
     return(
@@ -49,16 +56,19 @@ function PostFilters({cats,currentCat,postsTotal,authors,onFilter}){
                 </ul>
                 { currentAuthors.length > 1 ?
                     <div className={styles.filter_bar}>
-                        <button type='button' className={[styles.filter_btn,'reset filter-btn'].join(' ')}>Filter <Arrow /></button>
-                        <div className={styles.filter_bar__authors}>
-                            {
-                                currentAuthors.map((author)=>{
-                                    return(
-                                        <button key={author.userId} type='button' onClick={()=>{onFilter(author.userId)}}>{author.name}</button>
-                                    )
-                                })
-                            }
-                        </div>
+                        <button type='button' onClick={()=>toggleShowAuth()} className={[styles.filter_btn,'reset filter-btn',showAuth].join(' ')}>Filter <Arrow /></button>
+                        { showAuth ? 
+                            <div className={styles.filter_bar__authors}>
+                                <span>By Author:</span>
+                                {
+                                    currentAuthors.map((author)=>{
+                                        return(
+                                            <button className='reset' key={author.userId} type='button' onClick={()=>{onFilter(author.userId)}}>{author.name}</button>
+                                        )
+                                    })
+                                }
+                            </div>
+                        : null }
                     </div>
                 : null }
             </div>

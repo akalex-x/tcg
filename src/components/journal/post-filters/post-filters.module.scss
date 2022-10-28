@@ -32,6 +32,13 @@
     }
     .filter_bar{
         position: relative;
+        :global{
+            .true{
+                svg{
+                    transform: rotate(-90deg)!important;
+                }
+            }  
+        }
         .filter_btn{
             text-align: center;
             display: block;
@@ -44,6 +51,27 @@
                 svg{
                     width: 1rem;
                     transform: rotate(90deg);
+                }
+            }
+        }
+        &__authors{
+            background-color: $blue;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            :global{
+                span{
+                    display: block;
+                    color: $white;
+                    font-size: .75rem;
+                    font-family: $serif;
+                }
+                button{
+                    display: block;
+                    color: $white;
+                    font-size: 1.25rem;
+                    padding: 0;
+                    width: 100%;
+                    margin-top: .5rem;
                 }
             }
         }
@@ -72,6 +100,22 @@
         }
         .filter_bar{
             width: 200px;
+            position: relative;
+            &__authors{
+                position: absolute;
+                right: 0;
+                top: 100%;
+                z-index: 3;
+                width: 375px;
+                text-align: left;
+                padding: 6rem 4.5rem;
+                :global{
+                    button{
+                        text-align: left;
+                        font-size: 1.75rem;
+                    }
+                }
+            }
         }
     }
 }
