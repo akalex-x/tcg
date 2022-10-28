@@ -1,7 +1,7 @@
 import { getApolloClient } from 'lib/apollo-client';
-import { QUERY_LATEST_POSTS,QUERY_POSTS_PATHS,QUERY_SINGLE_POST,QUERY_RELATED_POSTS,QUERY_MORE_POSTS,QUERY_POST_ARCHIVE,QUERY_POSTS_TOTAL } from 'queries/posts';
+import { QUERY_AUTHORS, QUERY_LATEST_POSTS,QUERY_POSTS_PATHS,QUERY_SINGLE_POST,QUERY_RELATED_POSTS,QUERY_MORE_POSTS,QUERY_POST_ARCHIVE,QUERY_POSTS_TOTAL } from 'queries/posts';
 
-export async function getLatestPosts($limit,$cat){
+export async function getLatestPosts($limit,$cat,$author){
   
     const apolloClient = getApolloClient();
     
@@ -10,6 +10,7 @@ export async function getLatestPosts($limit,$cat){
       variables: {
         number:$limit,
         cat:$cat,
+        author:$author
       },
     })
 
@@ -100,5 +101,17 @@ export async function getPostsTotal(){
   })
 
   return response.data.posts.pageInfo.total;
+
+}
+
+export async function getPostAuthors(){
+  
+  const apolloClient = getApolloClient();
+  
+  let response = await apolloClient.query({
+    query: QUERY_AUTHORS,
+  })
+
+  return response.data.users.nodes;
 
 }

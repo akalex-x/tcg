@@ -38,15 +38,15 @@ function PostArchive({posts}){
                     
                     <ArchiveLoop posts={startArray} />
 
-                    { showAll &&
+                    { showAll ? 
                         <ArchiveLoop posts={moreArray} />
-                    }
+                    : null }
 
-                    { moreArray.length && !showAll && (
+                    { moreArray.length && !showAll ? (
                         <div className={styles.port_loop__footer}>
                             <button className='btn' type='button' onClick={() => setShow(true)}>Show All</button>
                         </div>
-                    )}
+                    ) : null }
 
                 </div>
             </section>

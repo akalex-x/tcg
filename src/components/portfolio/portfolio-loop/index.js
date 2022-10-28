@@ -87,11 +87,11 @@ function PortfolioLoop({latestPort,skip,limit}){
                 </div>
             </div>
 
-            { portfolios2.length && !showAll && (
+            { portfolios2.length && !showAll ? (
                 <div className={styles.feat_port__footer}>
                     <button className='btn' type='button' onClick={() => setShow(true)}>Show All</button>
                 </div>
-            )}
+            ) : null }
         </>
     )
 }

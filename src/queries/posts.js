@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_LATEST_POSTS = gql`
-    query getLatestPosts($number: Int, $cat: String){
-    posts(first: $number, where: {status: PUBLISH, categoryName: $cat}) {
+    query getLatestPosts($number: Int, $cat: String, $author: Int){
+    posts(first: $number, where: {status: PUBLISH, categoryName: $cat, author: $author}) {
       nodes {
         title
         slug
@@ -178,6 +178,26 @@ export const QUERY_POSTS_TOTAL = gql`
     posts(where: {status: PUBLISH}) {
       pageInfo {
         total
+      }
+    }
+  }
+`;
+
+export const QUERY_AUTHORS = gql`
+  query getLayouts {
+    users(where: {hasPublishedPosts: POST}) {
+      nodes {
+        name
+        userId
+        posts {
+          nodes {
+            categories {
+              nodes {
+                slug
+              }
+            }
+          }
+        }
       }
     }
   }
