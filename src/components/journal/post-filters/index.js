@@ -1,4 +1,4 @@
-import Link from 'next/Link'
+import Link from 'next/link'
 import styles from './post-filters.module.scss'
 
 function PostFilters({cats,currentCat,postsTotal}){
