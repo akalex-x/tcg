@@ -1,7 +1,7 @@
 import { getApolloClient } from 'lib/apollo-client';
-import { QUERY_LATEST_POSTS,QUERY_POSTS_PATHS,QUERY_SINGLE_POST,QUERY_RELATED_POSTS,QUERY_MORE_POSTS,QUERY_ADJACENT_POSTS } from 'queries/posts';
+import { QUERY_LATEST_POSTS,QUERY_POSTS_PATHS,QUERY_SINGLE_POST,QUERY_RELATED_POSTS,QUERY_MORE_POSTS,QUERY_POST_ARCHIVE,QUERY_POSTS_TOTAL } from 'queries/posts';
 
-export async function getLatestPosts($limit){
+export async function getLatestPosts($limit,$cat){
   
     const apolloClient = getApolloClient();
     
@@ -9,6 +9,7 @@ export async function getLatestPosts($limit){
       query: QUERY_LATEST_POSTS,
       variables: {
         number:$limit,
+        cat:$cat,
       },
     })
 
@@ -78,17 +79,26 @@ export async function getMorePosts(postID,limit){
 
 }
 
-// export async function getAdjacentPosts(slug){
+export async function getPostArchive(){
   
-//   const apolloClient = getApolloClient();
+  const apolloClient = getApolloClient();
   
-//   let response = await apolloClient.query({
-//     query: QUERY_ADJACENT_POSTS,
-//     variables:{
-//       slug:slug
-//     }
-//   })
+  let response = await apolloClient.query({
+    query: QUERY_POST_ARCHIVE,
+  })
 
-//   return response.data.post;
+  return response.data.page.blogArchive;
 
-// }
+}
+
+export async function getPostsTotal(){
+  
+  const apolloClient = getApolloClient();
+  
+  let response = await apolloClient.query({
+    query: QUERY_POSTS_TOTAL,
+  })
+
+  return response.data.posts.pageInfo.total;
+
+}

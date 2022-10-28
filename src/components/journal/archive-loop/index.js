@@ -4,16 +4,18 @@ import Image from 'next/future/image'
 
 function ArchiveLoop({posts}){
 
-    let first = false
-    let second = false
-    let third = false
+    let first = true
+    let second = true
+    let third = true
 
     return(
         <>
+            {/* {console.log(posts)} */}
             {
                 posts.map( (array,i) => {
                     return(
-                        <div key={i} className={ first == false ? styles.box_1 : second == false ? styles.box_2 : third == false ? styles.box_3 : styles.box_4  }>
+                        <div key={i} className={ first == true ? styles.box_1 : second == true ? styles.box_2 : third == true ? styles.box_3 : styles.box_4  }>
+
                             {
                                 array.map( (post) => {
                                     return(
@@ -23,17 +25,12 @@ function ArchiveLoop({posts}){
                             }
 
                             {
-                                (first == false) ?
-                                    (
-                                        <>
-                                            {first = true}
-                                        </>
-                                    ) 
+                                (first == true) ? first = false
                                 :
-                                    (second == false) ?
+                                (second == true) ?
                                     (
                                         <>
-                                            {second = true}
+                                            {second = false}
                                             { array.length == 2 && 
                                                 <div className={styles.peace_sign}>
                                                     <Image src="/journal/peace.png" width={601} height={121} alt="Peace Sign Emoji" />
@@ -42,10 +39,10 @@ function ArchiveLoop({posts}){
                                         </>
                                     ) 
                                 :
-                                    (third == false) ?
+                                (third == true) ?
                                     (
                                         <>
-                                            {third = true}
+                                            {third = false}
                                             { array.length == 3 && 
                                                 <div className={styles.quote}>
                                                     <blockquote>
@@ -59,9 +56,9 @@ function ArchiveLoop({posts}){
                                 :
                                 (
                                     <>
-                                        {first = false}
-                                        {second = false}
-                                        {third = false}
+                                        {first = true}
+                                        {second = true}
+                                        {third = true}
                                     </>
                                 ) 
                             }

@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_LATEST_POSTS = gql`
-    query getLatestPosts($number: Int){
-    posts(first: $number, where: {status: PUBLISH}) {
+    query getLatestPosts($number: Int, $cat: String){
+    posts(first: $number, where: {status: PUBLISH, categoryName: $cat}) {
       nodes {
         title
         slug
@@ -34,8 +34,7 @@ export const QUERY_LATEST_POSTS = gql`
   }
 `;
 
-// query getLatestPosts($limit: Int, $postID: [ID]){
-  //     posts(where: {notIn: $postID, status: PUBLISH}, first: $limit) {
+
   export const QUERY_RELATED_POSTS = gql`
     query getLatestPosts($cat: String, $limit: Int, $postID: [ID]){
     posts(where: {categoryName: $cat, notIn: $postID, status: PUBLISH}, first: $limit) {
@@ -150,35 +149,36 @@ export const QUERY_SINGLE_POST = gql`
       }
 `;
 
-// export const QUERY_ADJACENT_POSTS = gql`
-//   query singleQuery($slug: ID!){
-//     post(id: $slug, idType: SLUG) {
-//       next {
-//         title
-//         slug
-//         featuredImage {
-//           node {
-//             sourceUrl
-//             mediaDetails {
-//               height
-//               width
-//             }
-//           }
-//         }
-//       }
-//       previous{
-//         title
-//         slug
-//         featuredImage {
-//           node {
-//             sourceUrl
-//             mediaDetails {
-//               height
-//               width
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+export const QUERY_POST_ARCHIVE = gql`
+  query getLayouts {
+    page(idType: DATABASE_ID, id: "10") {
+      blogArchive {
+        blogArchive {
+          featuredQuote {
+            quote
+            cite
+          }
+          featuredCategories {
+            slug
+            name
+            posts {
+              pageInfo {
+                total
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const QUERY_POSTS_TOTAL = gql`
+  query getLayouts {
+    posts(where: {status: PUBLISH}) {
+      pageInfo {
+        total
+      }
+    }
+  }
+`;

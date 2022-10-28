@@ -6,7 +6,7 @@ function ArticleBreadcrumbs({post}){
 
     return(
         <>
-            {console.log(post)}
+            {/* {console.log(post)} */}
             <ul className={styles.breadcrumbs}>
                 <li>
                     <Link href="/journal">
