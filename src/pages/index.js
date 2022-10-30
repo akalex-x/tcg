@@ -2,7 +2,7 @@ import FlexibleContent from 'components/flexible';
 import {getFlexibleContent} from 'fetch/flexible';
 import {getLatestPort} from 'fetch/portfolio'
 import {getLatestPosts} from 'fetch/posts'
-import {checkIfPortsAreNeeded,checkIfPostsAreNeeded} from 'lib/util';
+import {checkIfPostsAreNeeded} from 'lib/util';
 
 export default function Home({flexibleContent,latestPort,latestPosts}) {
   return (

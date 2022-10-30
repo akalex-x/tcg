@@ -1,3 +1,5 @@
+@import 'styles/includes/variables';
+
 .article{
     padding: 1.5rem 1rem 0;
     @media (min-width:960px){
@@ -21,6 +23,49 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+    }
+    .share_box{
+        position: relative;
+        .share_btn{
+            display: flex;
+            align-items: flex-end;
+            font-family: $serif;
+            :global{
+                svg{
+                    width: 1rem;
+                    margin-top: -.1rem;
+                    margin-right: .5rem;
+                }
+            }
+        }
+        .share_links{
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0 .75rem;
+            position: absolute;
+            right: 0;
+            top: 2rem;
+            background: white;
+            border: 1px solid black;
+            border-radius: 1.5rem;
+            :global{
+                li{
+                    margin: 0;
+                    padding: 0;
+                }
+                a{
+                    display: flex;
+                    align-items: center;
+                    padding: .75rem .75rem;
+                }
+                svg{
+                    display: block;
+                    width: 1rem;
+                    height: 1rem;
+                }
+            }
+        }
     }
     @media (min-width:960px){
         :global{

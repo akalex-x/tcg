@@ -1,6 +1,12 @@
 import styles from './article.module.scss'
 import Image from 'next/future/image'
 import {formatDate} from 'lib/util'
+import ShareSVG from 'components/svgs/share'
+import Twitter from 'components/svgs/socials/twitter'
+import Facebook from 'components/svgs/socials/facebook'
+import Email from 'components/svgs/socials/email'
+
+import { useState } from 'react'
 
 import AdjacentPosts from 'components/journal/adjacent-posts'
 
@@ -8,7 +14,13 @@ function Article({post,adjacentPosts}){
 
     const date = new Date(post.date);
 
+    const [share,setShare] = useState(false)
+
     const regex = /<p\b[^<>\/]*>\s*(<img\b[^<>]*>)\s*<\/p>/g;
+
+    const toggleShare = () => {
+        share ? setShare(false) : setShare(true)
+    }
 
     return(
         <>
@@ -28,7 +40,16 @@ function Article({post,adjacentPosts}){
 
                     <div className={styles.article_hero__extra}>
                         <span className='h4'>by: {post.author.node.name}</span>
-                        <button className="reset">Share</button>
+                        <div className={styles.share_box}>
+                            <button className={[styles.share_btn, "reset h4"].join(' ')} onClick={()=>toggleShare()}><ShareSVG /> Share</button>
+                            { share &&
+                                <ul className={styles.share_links}>
+                                    <li><a href={'https://www.facebook.com/sharer/sharer.php?u=' + process.env.VERCEL_URL + '/journal/' + post.slug} target="_blank"><Facebook /></a></li>
+                                    <li><a href={'https://twitter.com/intent/tweet?text='+process.env.VERCEL_URL + '/journal/' + post.slug} target="_blank"><Twitter /></a></li>
+                                    <li><a href={'mailto:?subject=Check%20Out%20This%20Article&body='+process.env.VERCEL_URL + '/journal/' + post.slug} target="_blank"><Email /></a></li>
+                                </ul>
+                            }
+                        </div>
                     </div>
 
                     { post.featuredImage &&
