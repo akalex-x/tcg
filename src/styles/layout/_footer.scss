@@ -12,6 +12,31 @@
             color: $blue;
         }
     }
+    &__subscribe{
+        padding: 1.5rem 1rem;
+        h2{
+            margin-bottom: 1rem;
+            span{
+                display: block;
+            }
+        }
+        input{
+            width: 100%;
+            display: block;
+            border: 0;
+            border-bottom: 1px solid $black;
+            font-size: 2rem;
+            font-family: $heading_font;
+            font-weight: 300;
+            &::placeholder{
+                color: $gray;
+            }
+        }
+        button{
+            color: $blue;
+            font-size: 1rem;
+        }
+    }
     &__copy{
         padding: 1.5rem 1rem;
         border-top: 1px solid $black;
@@ -26,6 +51,30 @@
         }
     }
     @media (min-width:960px){
+        &__subscribe{
+            padding: 3rem 1rem;
+            display: flex;
+            align-items: center;
+            h2{
+                margin: 0;
+                font-size: 2.5rem;
+                span{
+                    display: inline;
+                }
+            }
+            input{
+                margin: 0 1.5rem;
+                flex: 1;
+                padding: 0;
+                // border: 0;
+                font-size: 2.5rem;
+                max-width: 600px;
+            }
+            button{
+                margin: 0;
+                padding: 0;
+            }
+        }
         &__copy{
             padding: .75rem 1rem;
             display: flex;

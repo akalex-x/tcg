@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Arrow from 'components/svgs/arrow'
 
 function Footer(){
 
@@ -13,6 +14,11 @@ function Footer(){
                         <p><a href="" target="_blank">Available Positions</a> &nbsp;|&nbsp; <a href="">Portfolio Positions</a></p>
                     </div>
                 </div>
+                <form className='gfooter__subscribe' action="">
+                    <h2>Sign up for <span>our mailing list.</span></h2>
+                    <input type="text" placeholder='Enter email address' />
+                    <button type='submit' className='reset text-btn'>Submit <Arrow /></button>
+                </form>
                 <div className="gfooter__copy"> 
                     <p>&copy; TCG crypto, {year}</p>
                     <ul>
