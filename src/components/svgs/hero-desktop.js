@@ -1,32 +1,6 @@
 import style from './hero-desktop.module.scss'
-// import React, { useRef, useEffect, useState } from 'react'
-// import { gsap } from "../../lib/gsap";
 
 function heroDesktop() {
-
-  // useEffect(() => {
-  
-  //   gsap.to('path',{
-  //     opacity:1,
-  //     ease: "power2.inOut",
-  //     duration: .5,
-  //   },1);
-  
-  //   // gsap.to('.slide-up',{
-  //   //   y:0,
-  //   //   'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
-  //   //   ease: "power2.inOut",
-  //   //   opacity:1,
-  //   //   duration: .5,
-  //   //   stagger:.05,
-  //   // },1);
-  
-  //   // gsap.to('.rotate',{
-  //   //   opacity:1,
-  //   //   duration: .5,
-  //   // },2);
-  
-  // },[]);
 
   return (
     <svg

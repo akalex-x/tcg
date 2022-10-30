@@ -1,2 +1,36 @@
-.gfooter {
+.gfooter{
+    border-top: 1px solid $black;
+    &__cta{
+        padding: 1.5rem 1rem;
+        border-bottom: 1px solid $black;
+        background-color: $xlgray;
+        text-align: center;
+        p{
+            margin-bottom: .5rem;
+        }
+        a{
+            color: $blue;
+        }
+    }
+    &__copy{
+        padding: 1.5rem 1rem;
+        border-top: 1px solid $black;
+        font-family: $serif;
+        font-size: .9rem;
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            a{
+                padding: 0 .5rem;
+            }
+        }
+    }
+    @media (min-width:960px){
+        &__copy{
+            padding: .75rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
 }
