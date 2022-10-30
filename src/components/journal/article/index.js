@@ -44,9 +44,9 @@ function Article({post,adjacentPosts}){
                             <button className={[styles.share_btn, "reset h4"].join(' ')} onClick={()=>toggleShare()}><ShareSVG /> Share</button>
                             { share &&
                                 <ul className={styles.share_links}>
-                                    <li><a href={'https://www.facebook.com/sharer/sharer.php?u=' + process.env.VERCEL_URL + '/journal/' + post.slug} target="_blank"><Facebook /></a></li>
-                                    <li><a href={'https://twitter.com/intent/tweet?text='+process.env.VERCEL_URL + '/journal/' + post.slug} target="_blank"><Twitter /></a></li>
-                                    <li><a href={'mailto:?subject=Check%20Out%20This%20Article&body='+process.env.VERCEL_URL + '/journal/' + post.slug} target="_blank"><Email /></a></li>
+                                    <li><a rel="noreferrer" href={'https://www.facebook.com/sharer/sharer.php?u=' + process.env.VERCEL_URL + '/journal/' + post.slug} target="_blank"><Facebook /></a></li>
+                                    <li><a rel="noreferrer" href={'https://twitter.com/intent/tweet?text='+process.env.VERCEL_URL + '/journal/' + post.slug} target="_blank"><Twitter /></a></li>
+                                    <li><a rel="noreferrer" href={'mailto:?subject=Check%20Out%20This%20Article&body='+process.env.VERCEL_URL + '/journal/' + post.slug} target="_blank"><Email /></a></li>
                                 </ul>
                             }
                         </div>
