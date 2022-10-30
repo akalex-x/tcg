@@ -6,20 +6,24 @@ import ArticleBreadcrumbs from 'components/journal/breadcrumbs'
 
 import styles from './journal.module.scss'
 
+import Layout from 'components/layout'
+
 
 export default function SinglePortfolio({post,related,morePosts,adjacentPosts}) {
   return (
     <>
-        <div className={styles.journal}>
-            <ArticleBreadcrumbs post={post} />
-            <div className="container">
-                <Article post={post} adjacentPosts={adjacentPosts} />
-                <aside>
-                    <RelatedArticles posts={related}/>
-                    <MoreArticles posts={morePosts}/>
-                </aside>
+        <Layout>
+            <div className={styles.journal}>
+                <ArticleBreadcrumbs post={post} />
+                <div className="container">
+                    <Article post={post} adjacentPosts={adjacentPosts} />
+                    <aside>
+                        <RelatedArticles posts={related}/>
+                        <MoreArticles posts={morePosts}/>
+                    </aside>
+                </div>
             </div>
-        </div>
+        </Layout>
     </>
   )
 }

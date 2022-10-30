@@ -7,11 +7,15 @@ import {getLatestPort} from 'fetch/portfolio'
 import {getLatestPosts} from 'fetch/posts'
 import {checkIfPostsAreNeeded} from 'lib/util';
 
+import Layout from 'components/layout'
+
 export default function SinglePortfolio({portfolio,flexibleContent,latestPort,latestPosts}) {
   return (
     <>
-        <PortfolioHero port={portfolio} />
-        <FlexibleContent flexibleContent={flexibleContent} latestPort={latestPort} latestPosts={latestPosts} />
+        <Layout>
+            <PortfolioHero port={portfolio} />
+            <FlexibleContent flexibleContent={flexibleContent} latestPort={latestPort} latestPosts={latestPosts} />
+        </Layout>
     </>
   )
 }

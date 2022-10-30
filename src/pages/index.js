@@ -3,11 +3,14 @@ import {getFlexibleContent} from 'fetch/flexible';
 import {getLatestPort} from 'fetch/portfolio'
 import {getLatestPosts} from 'fetch/posts'
 import {checkIfPostsAreNeeded} from 'lib/util';
+import Layout from 'components/layout'
 
 export default function Home({flexibleContent,latestPort,latestPosts}) {
   return (
     <>
-      <FlexibleContent flexibleContent={flexibleContent} latestPort={latestPort} latestPosts={latestPosts} />
+      <Layout>
+        <FlexibleContent flexibleContent={flexibleContent} latestPort={latestPort} latestPosts={latestPosts} />
+      </Layout>
     </>
   )
 }

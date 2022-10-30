@@ -13,6 +13,8 @@ import {checkIfPostsAreNeeded} from 'lib/util';
 
 import {getPortArchiveACF} from 'fetch/portfolio';
 
+import Layout from 'components/layout'
+
 
 function PortfolioArhive({latestPort,acf}){
   
@@ -20,10 +22,12 @@ function PortfolioArhive({latestPort,acf}){
 
     return(
         <>
-            <TitleBar title="Portfolio" />
-            <FeaturedPortfolio port={latestPort[0]} />
-            <LargeCenteredContent content={acf.introContent} />
-            <PortfolioArchive latestPort={latestPort} />
+            <Layout>
+                <TitleBar title="Portfolio" />
+                <FeaturedPortfolio port={latestPort[0]} />
+                <LargeCenteredContent content={acf.introContent} />
+                <PortfolioArchive latestPort={latestPort} />
+            </Layout>
         </>
     )
 

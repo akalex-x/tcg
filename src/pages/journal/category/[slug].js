@@ -4,6 +4,7 @@ import PostArchive from 'components/journal/post-archive'
 import PostFilters from 'components/journal/post-filters'
 import {useState,useEffect} from 'react'
 import {useRouter} from 'next/router'
+import Layout from 'components/layout'
 
 export default function Journal({latestPosts,cats,currentCat,postsTotal,authors}){
 
@@ -21,9 +22,11 @@ export default function Journal({latestPosts,cats,currentCat,postsTotal,authors}
 
     return(
         <>
-            <TitleBar title="Journal" />
-            <PostFilters cats={cats} currentCat={currentCat} postsTotal={postsTotal} authors={authors} onFilter={ (authorId) => filterByAuthor(authorId) } />
-            <PostArchive posts={posts} />
+            <Layout>
+                <TitleBar title="Journal" />
+                <PostFilters cats={cats} currentCat={currentCat} postsTotal={postsTotal} authors={authors} onFilter={ (authorId) => filterByAuthor(authorId) } />
+                <PostArchive posts={posts} />
+            </Layout>
         </>
     )
 
