@@ -5,6 +5,8 @@ import LatestJournal from './LatestJournal'
 
 import Quote from './Quote'
 import Video from './Video'
+import TwitterMarquee from './TwitterMarquee'
+import GalleryWithContent from './GalleryWithContent'
 
 import dynamic from 'next/dynamic'
 
@@ -39,6 +41,10 @@ function FlexibleContent({flexibleContent,latestPort,latestPosts}){
                         return <Video key={i} data={layout} />
                     case 'Quote': 
                         return <Quote key={i} data={layout} />
+                    case 'TwitterMarquee': 
+                        return <TwitterMarquee key={i} data={layout} />
+                    case 'GalleryWithContent':
+                        return <GalleryWithContent key={i} data={layout} />
                 }
             })}
         </>

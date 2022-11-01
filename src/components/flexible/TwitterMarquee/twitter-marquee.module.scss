@@ -1,0 +1,46 @@
+@import 'styles/includes/variables';
+
+.twitter_marquee{
+    overflow: hidden;
+    background-color: $blue;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 0;
+    flex-wrap: nowrap;
+    &__content{
+        color: $white;
+        font-size: 1.75rem;
+        font-family: $heading_font;
+        font-weight: 300;
+        white-space: nowrap;
+        padding: 0 .75rem;
+    }
+    &__cta{
+        padding: 0 .75rem;
+        :global{
+            a{
+                display: inline-flex;
+                align-items: center;
+                border: 1px solid $white;
+                color: $white;
+                padding: .5rem 1.5rem;
+                border-radius: 1.5rem;
+                font-size: .8rem;
+                svg{
+                    width: 1rem;
+                    height: 1rem;
+                    margin-right: .75rem;
+                    path{
+                        fill:$white;
+                    }
+                }
+            }
+        }
+    }
+    @media (min-width:960px){
+        padding: 3rem 0;
+        &__content{
+            font-size: 2.25rem;
+        }
+    }
+}

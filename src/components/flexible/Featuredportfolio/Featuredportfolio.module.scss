@@ -1,29 +1,18 @@
+.border_top{
+    border-top: 1px solid black;
+}
+
 .feat_port{
     padding-left: 0;
     padding-right: 0;
     padding-top: 1.5rem;
     border-top: 1px solid black;
-    &__intro{
-        padding: 0 1rem;
-        :global{
-            .container{
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                align-items: center;
-            }
-            h2,a{
-                margin-bottom: 1.5rem;
-            }
-        }
-    }
     &__footer{
         margin-top: 1.5rem;
         padding: 0 1rem;
         text-align: center;
     }
     &__loop{
-        border-top: 1px solid black;
         padding-left: 1rem;
         padding-right: 1rem;
         :global{
@@ -49,12 +38,5 @@
     }
     @media (min-width:960px){
         padding-top: 3rem;
-        &__intro{
-            :global{
-                h2,a{
-                    margin-bottom: 3rem;
-                }
-            }
-        }
     }
 }

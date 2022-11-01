@@ -10,15 +10,19 @@ function ResImage({image,size,alt}){
         width: resImages.width,
     };
 
-    const sizes = resImages.sizes
-
-    // console.log(sizes)
-    
     let sImage =  null
 
-    sizes.map((cimage) => {
-        cimage.name == size ? sImage = cimage : null
-    })
+    if( resImages.sizes != null ){
+
+        const sizes = resImages.sizes
+    
+        // console.log(sizes)
+        
+        sizes.map((cimage) => {
+            cimage.name == size ? sImage = cimage : null
+        })
+
+    }
 
     sImage == null ? sImage = defaultImage : null
 

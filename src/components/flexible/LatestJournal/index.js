@@ -1,5 +1,5 @@
 import styles from './latest-journal.module.scss'
-import Button from 'components/btn'
+import SectionIntro from 'components/section-intro'
 import PostCard from 'components/journal/post-card'
 import FeaturedPost from 'components/journal/featured-post'
 
@@ -56,17 +56,7 @@ function LatestJournal({latestPosts}){
             {/* {console.log(latestPosts)} */}
             <section className={styles.latest_posts}>
                     
-                <div className={styles.latest_posts__intro}>
-                    <div className='container'>
-                            <h2>Journal</h2>
-                            <div className="mob-only">
-                                <Button href="/journal" type="pill" content="Explore" />
-                            </div>
-                            <div className="desk-only">
-                                <Button href="/journal" type="pill" content="Explore All Journal" />
-                            </div>
-                    </div>
-                </div>
+                <SectionIntro title="Journal" link="/journal" mobCta="Explore" cta="Explore All Journal" />
 
                 <div className={styles.latest_posts__loop}>
 

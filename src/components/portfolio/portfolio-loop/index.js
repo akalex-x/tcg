@@ -66,7 +66,7 @@ function PortfolioLoop({latestPort,skip,limit}){
 
     return(
         <>
-            <div className={styles.feat_port__loop}>
+            <div className={[styles.feat_port__loop, skip ? styles.border_top : null].join(' ')}>
                 <div ref={$portLoop} className='container'>
                     {
                         portfolios.map((port,i)=>{
