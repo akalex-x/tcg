@@ -1,5 +1,5 @@
 import styles from './featured-portfolio.module.scss'
-import Image from 'next/future/image'
+import ResImage from 'components/get-image'
 import Button from 'components/btn'
 import PortCategories from 'components/portfolio/port-categories'
 import React, { useState, useRef } from 'react'
@@ -36,10 +36,10 @@ function FeaturedPortfolio({port}){
                         controller={{ control: secondSwiper }}
                         >
                             <SwiperSlide>
-                                <Image src={port.featuredImage.node.sourceUrl} height={port.featuredImage.node.mediaDetails.height} width={port.featuredImage.node.mediaDetails.width} alt={port.title} />
+                                <ResImage image={port.featuredImage.node} alt={port.title} />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <Image src={port.featuredImage.node.sourceUrl} height={port.featuredImage.node.mediaDetails.height} width={port.featuredImage.node.mediaDetails.width} alt={port.title} />
+                                <ResImage image={port.featuredImage.node} alt={port.title} />
                             </SwiperSlide>
                         </Swiper>
                     </div>

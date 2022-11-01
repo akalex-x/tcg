@@ -1,5 +1,5 @@
 import styles from './post-card.module.scss'
-import Image from 'next/future/image'
+import ResImage from 'components/get-image'
 import Link from "next/link"
 
 
@@ -16,7 +16,7 @@ function PostCard({post}){
                     <Link href={'/journal/'+post.slug}>
                         <a className="spacer">
                             {post.featuredImage &&
-                                <Image src={post.featuredImage.node.sourceUrl} width={post.featuredImage.node.mediaDetails.width} height={post.featuredImage.node.mediaDetails.height} alt={post.title} />
+                                <ResImage alt={post.title} image={post.featuredImage.node} size="sm" />
                             }                        
                         </a>
                     </Link>

@@ -1,15 +1,22 @@
 import styles from './archive-card.module.scss'
 import Link from 'next/link'
-import Image from 'next/future/image'
+import ResImage from 'components/get-image'
 import {formatDate} from 'lib/util'
 
-function ArchiveCard({post}){
+function ArchiveCard({post,box}){
 
     const date = new Date(post.date);
+
+    let size = 'sm'
+
+    box == 'box_1' ? size = 'xl' : null
+
+    box == 'box_4' ? size = 'lg' : null
 
     return(
         <>
             {/* {console.log(post)} */}
+            {console.log(box)}
             <Link href={'/journal/'+post.slug}>
                 <a className={[styles.post_card, 'post-card'].join(' ')}>
 
@@ -23,7 +30,7 @@ function ArchiveCard({post}){
                     <div className={styles.post_card__image}>
                         <div className="spacer">
                             {post.featuredImage &&
-                                <Image src={post.featuredImage.node.sourceUrl} width={post.featuredImage.node.mediaDetails.width} height={post.featuredImage.node.mediaDetails.height} alt={post.title} />
+                                <ResImage image={post.featuredImage.node} alt={post.title} size={size} />
                             }
                         </div>
                     </div>

@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 function QUERY_FLEXIBLE_LAYOUTS(type){
     const typeQuery = `
-    flexible_content {
+        flexible_content {
             flexiblecontent {
                 ... on ${type}_FlexibleContent_Flexiblecontent_HeroImages {
                     fieldGroupName
@@ -31,11 +31,6 @@ function QUERY_FLEXIBLE_LAYOUTS(type){
                     content
                     ctaLink
                 }
-                ... on ${type}_FlexibleContent_Flexiblecontent_CtaMarquee {
-                    cta
-                    ctaLink
-                    text
-                }
                 ... on ${type}_FlexibleContent_Flexiblecontent_CenteredContent {
                     content
                 }
@@ -43,17 +38,40 @@ function QUERY_FLEXIBLE_LAYOUTS(type){
                     blurb
                     cite
                     quote
-                  }
-                  ... on ${type}_FlexibleContent_Flexiblecontent_VideoWithContent {
-                      title
-                        video {
-                            mediaItemUrl
-                      }
-                      content
-                      meta {
+                }
+                ... on ${type}_FlexibleContent_Flexiblecontent_VideoWithContent {
+                    title
+                    content
+                    video {
+                        mediaItemUrl
+                    }
+                    meta {
                         label
+                    }
+                }
+                ... on ${type}_FlexibleContent_Flexiblecontent_GalleryWithContent {
+                    slides {
+                      content
+                      image {
+                        sourceUrl
+                        mediaDetails {
+                          width
+                          height
+                          sizes {
+                            width
+                            height
+                            name
+                            sourceUrl
+                          }
+                        }
                       }
-                  }
+                    }
+                }
+                ... on ${type}_FlexibleContent_Flexiblecontent_TwitterMarquee {
+                    content
+                    twitterCta
+                    twitterLink
+                }
             }
         }
     `;

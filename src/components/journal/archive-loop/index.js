@@ -19,7 +19,7 @@ function ArchiveLoop({posts}){
                             {
                                 array.map( (post) => {
                                     return(
-                                        <ArchiveCard key={post.slug} post={post}/>
+                                        <ArchiveCard key={post.slug} post={post} box={ first == true ? 'box_1' : second == true ? 'box_2' : third == true ? 'box_3' : 'box_4' }/>
                                     )
                                 })
                             }

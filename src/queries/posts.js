@@ -24,8 +24,14 @@ export const QUERY_LATEST_POSTS = gql`
           node {
             sourceUrl
             mediaDetails {
-              height
               width
+              height
+              sizes {
+                width
+                height
+                name
+                sourceUrl
+              }
             }
           }
         }
@@ -45,8 +51,14 @@ export const QUERY_LATEST_POSTS = gql`
             node {
               sourceUrl
               mediaDetails {
-                height
-                width
+                  width
+                  height
+                  sizes {
+                    width
+                    height
+                    name
+                    sourceUrl
+                  }
               }
             }
           }
@@ -71,8 +83,14 @@ query getLatestPosts($limit: Int, $postID: [ID]){
             node {
               sourceUrl
               mediaDetails {
-                height
-                width
+                  width
+                  height
+                  sizes {
+                    width
+                    height
+                    name
+                    sourceUrl
+                  }
               }
             }
           }
@@ -114,8 +132,14 @@ export const QUERY_SINGLE_POST = gql`
             node {
               sourceUrl
               mediaDetails {
-                height
                 width
+                height
+                sizes {
+                  width
+                  height
+                  name
+                  sourceUrl
+                }
               }
             }
           }
@@ -126,8 +150,14 @@ export const QUERY_SINGLE_POST = gql`
               node {
                 sourceUrl
                 mediaDetails {
-                  height
                   width
+                  height
+                  sizes {
+                    width
+                    height
+                    name
+                    sourceUrl
+                  }
                 }
               }
             }
@@ -139,8 +169,14 @@ export const QUERY_SINGLE_POST = gql`
               node {
                 sourceUrl
                 mediaDetails {
-                  height
                   width
+                  height
+                  sizes {
+                    width
+                    height
+                    name
+                    sourceUrl
+                  }
                 }
               }
             }

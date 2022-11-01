@@ -155,15 +155,15 @@
             position: relative;
             box-sizing: border-box;
 
-            &:before {
-                content: "";
-                display: block;
-                box-sizing: border-box;
-                position: absolute;
-                right: 100%;
-                color: $info;
-                white-space: nowrap;
-            }
+            // &:before {
+            //     content: "";
+            //     display: block;
+            //     box-sizing: border-box;
+            //     position: absolute;
+            //     right: 100%;
+            //     color: $info;
+            //     white-space: nowrap;
+            // }
         }
 
         @media (min-width: $tablet) {
@@ -188,15 +188,15 @@
 
     ul {
         li {
-            &:before {
-                top: .5rem;
-                bottom: 0px;
-                margin-right: 0.5rem;
-                height: 0;
-                width: 0;
-                border-radius: 50%;
-                border: 3px solid;
-            }
+            // &:before {
+            //     top: .5rem;
+            //     bottom: 0px;
+            //     margin-right: 0.5rem;
+            //     height: 0;
+            //     width: 0;
+            //     border-radius: 50%;
+            //     border: 3px solid;
+            // }
         }
     }
 

@@ -1,6 +1,6 @@
 import styles from './related-articles.module.scss'
 import Link from "next/link"
-import Image from "next/future/image"
+import ResImage from "components/get-image"
 
 function RelatedArticles({posts}){
 
@@ -22,7 +22,7 @@ function RelatedArticles({posts}){
                                 <a class={styles.post_card}>
                                     <div class={styles.post_card__image}>
                                         <div className="spacer">
-                                            <Image src={post.featuredImage.node.sourceUrl} width={post.featuredImage.node.mediaDetails.width} height={post.featuredImage.node.mediaDetails.height} alt={post.title} />
+                                            <ResImage image={post.featuredImage.node} alt={post.title} size='sm' />
                                         </div>
                                     </div>
                                     <div className={styles.post_card__content}>

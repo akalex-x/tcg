@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/future/image'
+import ResImage from 'components/get-image'
 import styles from './adjacent-posts.module.scss'
 
 import Arrow from "components/svgs/arrow"
@@ -20,7 +20,7 @@ function AdjacentPosts({posts}){
                                             <div class={styles.post_card__image}>
                                                 <div className="spacer">
                                                     { post.featuredImage &&
-                                                        <Image src={post.featuredImage.node.sourceUrl} width={post.featuredImage.node.mediaDetails.width} height={post.featuredImage.node.mediaDetails.height} alt={post.title} />
+                                                        <ResImage image={post.featuredImage.node} alt={post.title} size='sm' />
                                                     }
                                                 </div>
                                             </div>

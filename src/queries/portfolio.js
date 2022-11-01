@@ -17,8 +17,14 @@ export const QUERY_LATEST_PORTFOLIO = gql`
                     node {
                         sourceUrl
                         mediaDetails {
-                            height
+                          width
+                          height
+                          sizes {
                             width
+                            height
+                            name
+                            sourceUrl
+                          }
                         }
                     }
                 }
@@ -51,10 +57,16 @@ export const QUERY_SINGLE_PORTFOLIO = gql`
             }
             featuredImage {
                 node {
-                sourceUrl
+                    sourceUrl
                     mediaDetails {
-                        height
                         width
+                        height
+                        sizes {
+                        width
+                        height
+                        name
+                        sourceUrl
+                        }
                     }
                 }
             }

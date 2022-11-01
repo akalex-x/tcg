@@ -1,5 +1,5 @@
 import styles from './Portcard.module.scss'
-import Image from 'next/future/image'
+import ResImage from 'components/get-image'
 
 import React, { useRef, useEffect } from 'react'
 import { gsap } from "lib/gsap";
@@ -23,7 +23,7 @@ function Portcard({onClick,port,index}){
     return(
         <div ref={el => $card = el} onClick={(event) => onClick(index)} className={[styles.port_card, 'port_card'].join(' ')}>
             <div className={styles.port_card__thumb}>
-                <Image src={port.featuredImage.node.sourceUrl} height={port.featuredImage.node.mediaDetails.height} width={port.featuredImage.node.mediaDetails.width} alt={port.title} />
+                <ResImage alt={port.title} image={port.featuredImage.node} size="sm" />
             </div>
             <h3 className='h5'>{port.title}</h3>
         </div>

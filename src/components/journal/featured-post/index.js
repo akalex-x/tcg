@@ -1,5 +1,5 @@
 import styles from './featured-post.module.scss'
-import Image from 'next/future/image'
+import ResImage from 'components/get-image'
 import Button from 'components/btn'
 
 function FeaturedPost({post}){
@@ -11,7 +11,7 @@ function FeaturedPost({post}){
             <div className={styles.featured_post}>
                 <div className='container'>
                     <div className={styles.featured_post__image}>
-                        <Image src={post.featuredImage.node.sourceUrl} width={post.featuredImage.node.mediaDetails.width} height={post.featuredImage.node.mediaDetails.height} alt={post.title} />
+                        <ResImage alt={post.title} image={post.featuredImage.node} size="lg" />
                     </div>
                     <div className={styles.featured_post__content}>
                         <div className="content-wrap">

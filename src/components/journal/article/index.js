@@ -1,5 +1,5 @@
 import styles from './article.module.scss'
-import Image from 'next/future/image'
+import ResImage from 'components/get-image'
 import {formatDate} from 'lib/util'
 import ShareSVG from 'components/svgs/share'
 import Twitter from 'components/svgs/socials/twitter'
@@ -53,7 +53,7 @@ function Article({post,adjacentPosts}){
                     </div>
 
                     { post.featuredImage &&
-                        <Image src={post.featuredImage.node.sourceUrl} width={post.featuredImage.node.mediaDetails.width} height={post.featuredImage.node.mediaDetails.height} alt={post.title} />
+                        <ResImage image={post.featuredImage.node} alt={post.title} size={'lg'} />
                     }
 
                 </div>
