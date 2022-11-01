@@ -56,7 +56,7 @@ function TwitterMarquee({data}){
                     <p>{data.content}</p>
                 </div>
                 <div className={styles.twitter_marquee__cta}>
-                    <a href={data.twitterLink} target='_blank'><Twitter />{data.twitterCta}</a>
+                    <a href={data.twitterLink} target='_blank' rel="noreferrer"><Twitter />{data.twitterCta}</a>
                 </div>
             </div>
         </>
