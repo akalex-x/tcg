@@ -16,7 +16,7 @@ function ContentWithList({data}){
                             {
                                 data.list.map((item,i)=>{
                                     return(
-                                        <li>{item.text}</li>
+                                        <li key={i}>{item.text}</li>
                                     )
                                 })
                             }
