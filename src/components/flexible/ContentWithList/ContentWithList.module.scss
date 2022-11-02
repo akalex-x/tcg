@@ -1,0 +1,54 @@
+@import 'styles/includes/variables';
+
+.content_list{
+    padding: 3rem 1rem;
+    &__list{
+        margin-top: 1.5rem;
+        :global{
+            ol {
+                counter-reset: items;
+                margin: 0;
+                font-family: $serif;
+                column-count: 2;
+                font-size: .9rem;
+              }
+              li {
+                display: block;
+                counter-increment: items;
+                padding: 0;
+                margin-bottom: .5rem;
+              }
+              li:before {
+                content: "0" counter(items)"  ";
+                font-weight: normal;
+              }
+              li:nth-child(n+10):before {
+                content: "0" counter(items)"  ";
+              }
+              li:nth-child(n+100):before {
+                content: counter(items)"  ";
+              }
+        }
+    }
+    @media (min-width:960px){
+        :global{
+            .container{
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+            }
+        }
+        &__content{
+            flex: 1;
+            padding-right: 3rem;
+            :global{
+                .content-wrap{
+                    max-width: 700px;
+                }
+            }
+        }
+        &__list{
+            width: 450px;
+        }
+    }
+}

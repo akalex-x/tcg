@@ -14,6 +14,7 @@ import CenteredContent from './CenteredContent'
 import LargeContentBoxes from './LargeContentBoxes'
 import PeopleInfo from './PeopleInfo'
 import SplitContent from './SplitContent'
+import ContentWithList from './ContentWithList'
 
 import dynamic from 'next/dynamic'
 
@@ -64,6 +65,8 @@ function FlexibleContent({flexibleContent,latestPort,latestPosts}){
                         return <PeopleInfo key={i} data={layout} />
                     case 'SplitContent':
                         return <SplitContent key={i} data={layout} />
+                    case 'ContentWithList':
+                        return <ContentWithList key={i} data={layout} />
                 }
             })}
         </>

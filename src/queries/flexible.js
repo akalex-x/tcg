@@ -139,6 +139,12 @@ function QUERY_FLEXIBLE_LAYOUTS(type){
                         }
                     }
                 }
+                ... on ${type}_FlexibleContent_Flexiblecontent_ContentWithList {
+                    content
+                    list {
+                        text
+                    }
+                }
             }
         }
     `;
