@@ -5,7 +5,7 @@ import {getLatestPosts} from 'fetch/posts'
 import {checkIfPostsAreNeeded} from 'lib/util';
 import Layout from 'components/layout'
 
-export default function Contact({flexibleContent,latestPort,latestPosts}) {
+export default function About({flexibleContent,latestPort,latestPosts}) {
   return (
     <>
       <Layout>
@@ -17,7 +17,7 @@ export default function Contact({flexibleContent,latestPort,latestPosts}) {
 
 export async function getStaticProps(){
 
-  const getFlexible = await getFlexibleContent('Page','/contact');
+  const getFlexible = await getFlexibleContent('Page','/about');
 
   const {flexible_content} = getFlexible.data[Object.keys(getFlexible.data)[0]]
 

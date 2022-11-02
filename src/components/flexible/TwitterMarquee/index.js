@@ -10,14 +10,6 @@ function TwitterMarquee({data}){
 
     useEffect(() => {
 
-        // function pauseTimeline(tl){
-        //     if ( tl.paused() ) {
-        //         tl.play();
-        //     } else {
-        //         tl.pause();
-        //     }
-        // }
-
         document.fonts.ready.then(function () {
                 
             const clones =  Array.from($marquee.children);
@@ -32,17 +24,19 @@ function TwitterMarquee({data}){
                 $marquee.appendChild(cln);
             });
 
+            clones.forEach(function(item){
+                const cln = item.cloneNode(true);
+                $marquee.appendChild(cln);
+            });
+
+            clones.forEach(function(item){
+                const cln = item.cloneNode(true);
+                $marquee.appendChild(cln);
+            });
+
             const $words = Array.from($marquee.children)
     
             let loop = horizontalLoop($words, {paused: false,repeat:-1, speed:.5,reversed: false });
-
-            // $marquee.addEventListener('mouseenter', (e) => {
-            //     pauseTimeline(loop)
-            // });
-
-            // $marquee.addEventListener('mouseleave', (e) => {
-            //     pauseTimeline(loop)
-            // });
         
         });
 
@@ -55,9 +49,11 @@ function TwitterMarquee({data}){
                 <div className={styles.twitter_marquee__content}>
                     <p>{data.content}</p>
                 </div>
-                <div className={styles.twitter_marquee__cta}>
-                    <a href={data.twitterLink} target='_blank' rel="noreferrer"><Twitter />{data.twitterCta}</a>
-                </div>
+                { data.twitterCta ? 
+                    <div className={styles.twitter_marquee__cta}>
+                        <a href={data.twitterLink} target='_blank' rel="noreferrer"><Twitter />{data.twitterCta}</a>
+                    </div>
+                : null }
             </div>
         </>
     )

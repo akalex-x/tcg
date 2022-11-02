@@ -9,7 +9,7 @@ import styles from './journal.module.scss'
 import Layout from 'components/layout'
 
 
-export default function SinglePortfolio({post,related,morePosts,adjacentPosts}) {
+export default function SingleJournal({post,related,morePosts,adjacentPosts}) {
   return (
     <>
         <Layout>

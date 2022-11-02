@@ -6,7 +6,7 @@ import {useState,useEffect} from 'react'
 import {useRouter} from 'next/router'
 import Layout from 'components/layout'
 
-export default function Journal({latestPosts,cats,currentCat,postsTotal,authors}){
+export default function JournalCategory({latestPosts,cats,currentCat,postsTotal,authors}){
 
     const [posts,setPosts] = useState(latestPosts)
 
