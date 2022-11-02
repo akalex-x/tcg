@@ -4,11 +4,13 @@ import {getLatestPort} from 'fetch/portfolio'
 import {getLatestPosts} from 'fetch/posts'
 import {checkIfPostsAreNeeded} from 'lib/util';
 import Layout from 'components/layout'
+import TitleBar from 'components/title-bar'
 
 export default function About({flexibleContent,latestPort,latestPosts}) {
   return (
     <>
       <Layout>
+        <TitleBar title="About" />
         <FlexibleContent flexibleContent={flexibleContent} latestPort={latestPort} latestPosts={latestPosts} />
       </Layout>
     </>

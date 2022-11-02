@@ -1,5 +1,6 @@
 import Imagehero from './Imagehero'
 import Featuredportfolio from './Featuredportfolio'
+import FiftyFifty from './FiftyFifty'
 import FiftyFiftyParallax from './FiftyFiftyParallax'
 import LatestJournal from './LatestJournal'
 
@@ -11,6 +12,8 @@ import GalleryWithContent from './GalleryWithContent'
 import PeopleSection from './PeopleSection'
 import CenteredContent from './CenteredContent'
 import LargeContentBoxes from './LargeContentBoxes'
+import PeopleInfo from './PeopleInfo'
+import SplitContent from './SplitContent'
 
 import dynamic from 'next/dynamic'
 
@@ -37,6 +40,8 @@ function FlexibleContent({flexibleContent,latestPort,latestPosts}){
                         return <Featuredportfolio key={i} latestPort={latestPort} />
                     case 'FiftyFiftyParallax':
                         return <FiftyFiftyParallax key={i} data={layout} />
+                    case 'FiftyFifty':
+                        return <FiftyFifty key={i} data={layout} />
                     case 'LatestJournal': 
                         return <LatestJournal key={i} latestPosts={latestPosts} />
                     case 'Spotify': 
@@ -55,6 +60,10 @@ function FlexibleContent({flexibleContent,latestPort,latestPosts}){
                         return <CenteredContent key={i} data={layout} />
                     case 'LargeContentBoxes':
                         return <LargeContentBoxes key={i} data={layout} />
+                    case 'PeopleInfo':
+                        return <PeopleInfo key={i} data={layout} />
+                    case 'SplitContent':
+                        return <SplitContent key={i} data={layout} />
                 }
             })}
         </>

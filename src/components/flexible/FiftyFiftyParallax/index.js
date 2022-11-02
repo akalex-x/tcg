@@ -24,6 +24,7 @@ function FiftyFiftyParallax({data}){
 
     return(
         <>
+            {/* {console.log(data)} */}
             <section className={styles.fifty_fifty}>
                 <div className="container">
                     <div className={styles.fifty_fifty__wrap}>
@@ -42,7 +43,9 @@ function FiftyFiftyParallax({data}){
                         <div className={styles.fifty_fifty__content}>
                             <div className="content-wrap">
                                 <div className="content" dangerouslySetInnerHTML={{__html: data.content}}></div>
-                                <Button type="text" href={data.ctaLink} content='Learn More' />
+                                { data.cta ? 
+                                    <Button type="text" href={data.ctaLink} content={data.cta} />
+                                : null }
                             </div>
                         </div>
 

@@ -1,0 +1,48 @@
+.split_content{
+    padding: 1.5rem 1rem;
+    padding-bottom: 0;
+    border-bottom: 1px solid black;
+    &__emoji{
+        width: 100px;
+        margin-top: 1.5rem;
+    }
+    @media (min-width:960px){
+        padding: 0;
+        &__heading{
+            padding: 1rem;
+            border-bottom: 1px solid black;
+            padding-bottom: 3rem;
+            :global{
+                h2{
+                    max-width: 900px;
+                }
+            }
+        }
+        &__wrap{
+            display: flex;
+        }
+        &__content{
+            padding: 1rem;
+            flex: 1;
+            padding-bottom: 4.5rem;
+            border-right: 1px solid black;
+            :global{
+                .content-wrap{
+                    max-width: 700px;
+                }
+            }
+        }
+        &__emoji{
+            padding: 1rem;
+            width: 300px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            :global{
+                img{
+                    max-width: 125px;
+                }
+            }
+        }
+    }
+}

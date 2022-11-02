@@ -7,12 +7,16 @@ function SectionIntro({title,link,cta,mobCta}){
             <div className={styles.section_intro}>
                 <div className='container'>
                         <h2>{title}</h2>
-                        <div className="mob-only">
-                            <Button href={link} type="pill" content={mobCta} />
-                        </div>
-                        <div className="desk-only">
-                            <Button href={link} type="pill" content={cta} />
-                        </div>
+                        { link &&
+                            <>
+                                <div className="mob-only">
+                                    <Button href={link} type="pill" content={mobCta} />
+                                </div>
+                                <div className="desk-only">
+                                    <Button href={link} type="pill" content={cta} />
+                                </div>
+                            </>
+                        }
                 </div>
             </div>
         </>

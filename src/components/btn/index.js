@@ -3,6 +3,10 @@ import Arrow from "components/svgs/arrow"
 
 function Button({href,content,type}){
 
+    if( href == '' || href == null ){
+        return false;
+    }
+
     switch (type) {
         case 'text':
             return(

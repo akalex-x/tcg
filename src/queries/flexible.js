@@ -9,16 +9,28 @@ function QUERY_FLEXIBLE_LAYOUTS(type){
                     mobileImage {
                         sourceUrl
                         mediaDetails {
-                            height
                             width
+                            height
+                            sizes {
+                              width
+                              height
+                              name
+                              sourceUrl
+                            }
                         }
                     }
                     desktopImage {
                         sourceUrl
                         mediaDetails {
-                            height
                             width
-                        }
+                            height
+                            sizes {
+                              width
+                              height
+                              name
+                              sourceUrl
+                            }
+                          }
                     }
                 }
                 ... on ${type}_FlexibleContent_Flexiblecontent_LatestPortfolios {
@@ -29,6 +41,7 @@ function QUERY_FLEXIBLE_LAYOUTS(type){
                 }
                 ... on ${type}_FlexibleContent_Flexiblecontent_FiftyFiftyParallax {
                     content
+                    cta
                     ctaLink
                 }
                 ... on ${type}_FlexibleContent_Flexiblecontent_CenteredContent {
@@ -100,6 +113,30 @@ function QUERY_FLEXIBLE_LAYOUTS(type){
                 ... on ${type}_FlexibleContent_Flexiblecontent_LargeContentBoxes {
                     boxes {
                         content
+                    }
+                }
+                ... on ${type}_FlexibleContent_Flexiblecontent_SplitContent {
+                    content
+                    heading
+                }
+                ... on ${type}_FlexibleContent_Flexiblecontent_PeopleInfo {
+                    fieldGroupName
+                }
+                ... on ${type}_FlexibleContent_Flexiblecontent_FiftyFifty {
+                    content
+                    ctaLink
+                    image {
+                        sourceUrl
+                        mediaDetails {
+                            width
+                            height
+                            sizes {
+                                width
+                                sourceUrl
+                                name
+                                height
+                            }
+                        }
                     }
                 }
             }
