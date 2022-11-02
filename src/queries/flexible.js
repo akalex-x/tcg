@@ -50,6 +50,10 @@ function QUERY_FLEXIBLE_LAYOUTS(type){
                     }
                 }
                 ... on ${type}_FlexibleContent_Flexiblecontent_GalleryWithContent {
+                    heading
+                    link
+                    mobileCta
+                    cta
                     slides {
                       content
                       image {
@@ -71,6 +75,32 @@ function QUERY_FLEXIBLE_LAYOUTS(type){
                     content
                     twitterCta
                     twitterLink
+                }
+                ... on ${type}_FlexibleContent_Flexiblecontent_PeopleSection {
+                    content
+                    cta
+                    ctaLink
+                    people {
+                        name
+                        image {
+                            sourceUrl
+                            mediaDetails {
+                                width
+                                height
+                                sizes {
+                                    width
+                                    sourceUrl
+                                    name
+                                    height
+                                }
+                            }
+                        }
+                    }
+                }
+                ... on ${type}_FlexibleContent_Flexiblecontent_LargeContentBoxes {
+                    boxes {
+                        content
+                    }
                 }
             }
         }

@@ -5,7 +5,7 @@ import PortfolioArchive from 'components/portfolio/portfolio-archive'
 import FeaturedPortfolio from 'components/portfolio/featured-portfolio'
 import TitleBar from 'components/title-bar'
 
-import LargeCenteredContent from 'components/flexible/LargeCenteredContent';
+import CenteredContent from 'components/flexible/CenteredContent';
 
 import FlexibleContent from 'components/flexible';
 import {getFlexibleContent} from 'fetch/flexible';
@@ -19,13 +19,18 @@ import Layout from 'components/layout'
 function PortfolioArhive({latestPort,acf}){
   
     // console.log(acf)
+    const centertedIntro = {
+        content: acf.introContent,
+        largeContent: true,
+        largePadding: true,
+    }
 
     return(
         <>
             <Layout>
                 <TitleBar title="Portfolio" />
                 <FeaturedPortfolio port={latestPort[0]} />
-                <LargeCenteredContent content={acf.introContent} />
+                <CenteredContent data={centertedIntro} />
                 <PortfolioArchive latestPort={latestPort} />
             </Layout>
         </>

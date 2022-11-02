@@ -4,13 +4,11 @@ import {getLatestPort} from 'fetch/portfolio'
 import {getLatestPosts} from 'fetch/posts'
 import {checkIfPostsAreNeeded} from 'lib/util';
 import Layout from 'components/layout'
-import HomeHero from 'components/home-hero'
 
 export default function Home({flexibleContent,latestPort,latestPosts}) {
   return (
     <>
       <Layout>
-        <HomeHero />
         <FlexibleContent flexibleContent={flexibleContent} latestPort={latestPort} latestPosts={latestPosts} />
       </Layout>
     </>
@@ -19,7 +17,7 @@ export default function Home({flexibleContent,latestPort,latestPosts}) {
 
 export async function getStaticProps(){
 
-  const getFlexible = await getFlexibleContent('Page','/');
+  const getFlexible = await getFlexibleContent('Page','/contact');
 
   const {flexible_content} = getFlexible.data[Object.keys(getFlexible.data)[0]]
 

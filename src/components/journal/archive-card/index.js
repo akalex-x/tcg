@@ -16,7 +16,7 @@ function ArchiveCard({post,box}){
     return(
         <>
             {/* {console.log(post)} */}
-            {console.log(box)}
+            {/* {console.log(box)} */}
             <Link href={'/journal/'+post.slug}>
                 <a className={[styles.post_card, 'post-card'].join(' ')}>
 

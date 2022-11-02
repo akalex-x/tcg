@@ -5,7 +5,7 @@
 .feat_port{
     padding-left: 0;
     padding-right: 0;
-    padding-top: 1.5rem;
+    padding-top: 0;
     border-top: 1px solid black;
     &__footer{
         margin-top: 1.5rem;
@@ -37,6 +37,5 @@
         }
     }
     @media (min-width:960px){
-        padding-top: 3rem;
     }
 }

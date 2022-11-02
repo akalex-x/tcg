@@ -1,0 +1,48 @@
+.people_section{
+    border-top: 1px solid black;
+    &__people{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+        :global{
+            .staff_card{
+                width: calc(25% - 1rem);
+            }
+        }
+    }
+    @media (min-width:960px){
+        :global{
+            .container{
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row-reverse;
+            }
+        }
+        &__content{
+            width: 50%;
+            max-width: 450px;
+        }
+        &__people{
+            width: 50%;
+            margin-bottom: 0;
+            :global{
+                h5{
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.staff_card{
+    :global{
+        img{
+            width: 100%;
+            height: auto;
+        }
+        h5{
+            margin-top: 1rem;
+        }
+    }
+}

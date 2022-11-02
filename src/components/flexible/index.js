@@ -8,6 +8,10 @@ import Video from './Video'
 import TwitterMarquee from './TwitterMarquee'
 import GalleryWithContent from './GalleryWithContent'
 
+import PeopleSection from './PeopleSection'
+import CenteredContent from './CenteredContent'
+import LargeContentBoxes from './LargeContentBoxes'
+
 import dynamic from 'next/dynamic'
 
 const Spotify = dynamic(import('components/flexible/Spotify'), {
@@ -45,6 +49,12 @@ function FlexibleContent({flexibleContent,latestPort,latestPosts}){
                         return <TwitterMarquee key={i} data={layout} />
                     case 'GalleryWithContent':
                         return <GalleryWithContent key={i} data={layout} />
+                    case 'PeopleSection':
+                        return <PeopleSection key={i} data={layout} />
+                    case 'CenteredContent':
+                        return <CenteredContent key={i} data={layout} />
+                    case 'LargeContentBoxes':
+                        return <LargeContentBoxes key={i} data={layout} />
                 }
             })}
         </>

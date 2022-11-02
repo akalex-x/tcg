@@ -9,7 +9,6 @@ function Header(){
     const [showMenu, setShowMenu] = useState(false)
 
     const toggleMenu = () => {
-        console.log('clicked')
         showMenu ? setShowMenu(false) : setShowMenu(true)
     }
 

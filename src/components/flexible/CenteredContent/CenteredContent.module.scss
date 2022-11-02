@@ -1,0 +1,35 @@
+.centerd_content{
+    text-align: center;
+    padding: 1.5rem 1rem;
+    @media (min-width:960px){
+        padding: 3rem 1rem;
+        :global{
+            .content-wrap{
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+.centerd_content__large{
+    :global{
+        p{
+            font-size: 1.25rem;
+        }
+    }
+    @media (min-width:960px){
+        :global{
+            p{
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+.centered_content__padding{
+    padding: 3rem 1rem;
+    @media (min-width:960px){
+        padding: 4.5rem 1rem;
+    }
+}

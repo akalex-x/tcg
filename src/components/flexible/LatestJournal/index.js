@@ -28,14 +28,14 @@ function LatestJournal({latestPosts}){
 
     useEffect(() => {
 
-        var swiper = new Swiper(".slider", options);
+        var swiper = new Swiper(".jslider", options);
         var init = true;
 
         function swiperCard() {
             if (window.innerWidth <= 960) {
                 if (!init) {
                     init = true;
-                    swiper = new Swiper(".slider", options);
+                    swiper = new Swiper(".jslider", options);
                 }
             } else if (init) {
                 swiper.destroy();
@@ -64,7 +64,7 @@ function LatestJournal({latestPosts}){
 
                     <div className={styles.latest_posts__grid}>
                         <div className="container">
-                            <div className="slider">
+                            <div className="jslider">
                                 { 
                                     posts.map((post)=>{
                                         return(
