@@ -1,6 +1,7 @@
 import styles from './socials.module.scss'
 import Twitter from 'components/svgs/socials/twitter'
 import Facebook from 'components/svgs/socials/facebook'
+import LinkedIn from 'components/svgs/socials/linkedin'
 
 function Socials({socials}){
 
@@ -15,7 +16,7 @@ function Socials({socials}){
                         <li><a href={socials.twitter} target="_blank" rel="noreferrer" ><Twitter /></a></li>
                     }
                     {socials.linkedin &&
-                        <li><a href={socials.linkedin} target="_blank" rel="noreferrer" ><Twitter /></a></li>
+                        <li><a href={socials.linkedin} target="_blank" rel="noreferrer" ><LinkedIn /></a></li>
                     }
                 </ul>
             }

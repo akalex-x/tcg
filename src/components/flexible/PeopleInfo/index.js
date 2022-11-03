@@ -25,14 +25,12 @@ function PeopleInfo({data}){
                             {
                                 data.map((people)=>{
                                     return(
-                                        <>
                                         <li key={people.slug}>
                                             <button 
                                                 className={ [people.slug == person.slug ? 'active' : null,'reset'].join(' ') }
                                                 onClick={()=>setPerson(people)}
                                                 type="button"><Arrow />{people.title}</button>
                                         </li>
-                                        </>
                                     )
                                 })
                             }
