@@ -1,8 +1,8 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-// import { TextPlugin } from "gsap/TextPlugin";
+import { MorphSVGPlugin } from "gsap/dist/MorphSVGPlugin";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger,MorphSVGPlugin);
 
 gsap.defaults({
   duration: .5

@@ -15,6 +15,7 @@ import LargeContentBoxes from './LargeContentBoxes'
 import PeopleInfo from './PeopleInfo'
 import SplitContent from './SplitContent'
 import ContentWithList from './ContentWithList'
+import ParallaxBubble from './ParallaxBubble'
 
 import dynamic from 'next/dynamic'
 
@@ -22,7 +23,7 @@ const Spotify = dynamic(import('components/flexible/Spotify'), {
     ssr: false
 })
 
-function FlexibleContent({flexibleContent,latestPort,latestPosts}){
+function FlexibleContent({flexibleContent,latestPort,latestPosts,latestPeople}){
 
     const type = flexibleContent.__typename
     const layouts = flexibleContent.flexiblecontent
@@ -62,11 +63,13 @@ function FlexibleContent({flexibleContent,latestPort,latestPosts}){
                     case 'LargeContentBoxes':
                         return <LargeContentBoxes key={i} data={layout} />
                     case 'PeopleInfo':
-                        return <PeopleInfo key={i} data={layout} />
+                        return <PeopleInfo key={i} data={latestPeople} />
                     case 'SplitContent':
                         return <SplitContent key={i} data={layout} />
                     case 'ContentWithList':
                         return <ContentWithList key={i} data={layout} />
+                    case 'ParallaxBubble':
+                        return <ParallaxBubble key={i}/>
                 }
             })}
         </>

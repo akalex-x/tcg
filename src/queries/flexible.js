@@ -145,6 +145,9 @@ function QUERY_FLEXIBLE_LAYOUTS(type){
                         text
                     }
                 }
+                ... on ${type}_FlexibleContent_Flexiblecontent_ParallaxBubble {
+                    fieldGroupName
+                }
             }
         }
     `;
