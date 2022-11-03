@@ -46,6 +46,7 @@ function PeopleInfo({data}){
                                 </div>
                                 <div className={styles.person_profile__position}>
                                     <span>{acf.position}</span>
+                                    <span className="emoji">🙂🎵🎵🎵</span>
                                 </div>
                             </div>
 
