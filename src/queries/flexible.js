@@ -148,6 +148,32 @@ function QUERY_FLEXIBLE_LAYOUTS(type){
                 ... on ${type}_FlexibleContent_Flexiblecontent_ParallaxBubble {
                     fieldGroupName
                 }
+                ... on ${type}_FlexibleContent_Flexiblecontent_ContentSpotify {
+                    fieldGroupName
+                    graphic {
+                        fieldGroupName
+                        preheading
+                        image {
+                            sourceUrl
+                            mediaDetails {
+                                height
+                                width
+                                sizes {
+                                    width
+                                    sourceUrl
+                                    name
+                                    height
+                                }
+                            }
+                        }
+                    }
+                    contentGroup {
+                        preheading
+                        text
+                        ctaLink
+                        cta
+                    }
+                }
             }
         }
     `;

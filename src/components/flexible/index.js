@@ -16,6 +16,7 @@ import PeopleInfo from './PeopleInfo'
 import SplitContent from './SplitContent'
 import ContentWithList from './ContentWithList'
 import ParallaxBubble from './ParallaxBubble'
+import ContentSpotify from './ContentSpotify'
 
 import dynamic from 'next/dynamic'
 
@@ -68,6 +69,8 @@ function FlexibleContent({flexibleContent,latestPort,latestPosts,latestPeople}){
                         return <SplitContent key={i} data={layout} />
                     case 'ContentWithList':
                         return <ContentWithList key={i} data={layout} />
+                    case 'ContentSpotify':
+                        return <ContentSpotify key={i} data={layout} />
                     case 'ParallaxBubble':
                         return <ParallaxBubble key={i}/>
                 }
