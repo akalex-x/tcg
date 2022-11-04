@@ -16,7 +16,9 @@ function MoreArticles({posts}){
                                 <a class={styles.post_card}>
                                     <div class={styles.post_card__image}>
                                         <div className="spacer">
-                                            <ResImage image={post.featuredImage.node} alt={post.title} size="xs" />
+                                            { post.featuredImage &&
+                                                <ResImage image={post.featuredImage.node} alt={post.title} size="xs" />
+                                            }
                                         </div>
                                     </div>
                                     <div className={styles.post_card__content}>
