@@ -11,7 +11,9 @@ function FeaturedPost({post}){
             <div className={styles.featured_post}>
                 <div className='container'>
                     <div className={styles.featured_post__image}>
-                        <ResImage alt={post.title} image={post.featuredImage.node} size="lg" />
+                        { post.featuredImage &&
+                            <ResImage alt={post.title} image={post.featuredImage.node} size="lg" />
+                        }
                     </div>
                     <div className={styles.featured_post__content}>
                         <div className="content-wrap">
