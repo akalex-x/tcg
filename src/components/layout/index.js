@@ -12,7 +12,6 @@ function Layout({ children }) {
     },30000)
 
     const checkDVD = () => {
-        console.log(showDVD)
         if( showDVD ){
             setDVD(false)
         }

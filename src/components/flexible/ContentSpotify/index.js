@@ -10,7 +10,7 @@ function ContentSpotify({data}){
 
     return(
         <>
-            {console.log(data)}
+            {/* {console.log(data)} */}
             <section className={styles.content_spotify}>
                 <div className='container'>
                     <div className={styles.content_spotify__content}>

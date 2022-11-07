@@ -32,6 +32,11 @@ function DVD(){
             update();
         })();
 
+        function updateCanvas(){
+            canvas.width  = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
         function update() {
             setTimeout(() => {
                 //Draw the canvas background
@@ -75,6 +80,10 @@ function DVD(){
             // logoColor = 'rgb('+r+','+g+', '+b+')';
             logoColor = '#10069f';
         }
+
+        window.addEventListener('resize',updateCanvas)
+
+        return () => { window.removeEventListener('resize',updateCanvas) }
 
     },[]);
 

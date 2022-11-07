@@ -148,6 +148,9 @@ function QUERY_FLEXIBLE_LAYOUTS(type){
                 ... on ${type}_FlexibleContent_Flexiblecontent_ParallaxBubble {
                     fieldGroupName
                 }
+                ... on ${type}_FlexibleContent_Flexiblecontent_ParallaxBubble2 {
+                    fieldGroupName
+                }
                 ... on ${type}_FlexibleContent_Flexiblecontent_ContentSpotify {
                     fieldGroupName
                     graphic {
