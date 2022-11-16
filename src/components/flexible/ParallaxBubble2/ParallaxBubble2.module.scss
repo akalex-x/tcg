@@ -1,50 +1,44 @@
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
+// @keyframes gradient {
+// 	0% {
+// 		background-position: 0% 50%;
+// 	}
+// 	50% {
+// 		background-position: 100% 50%;
+// 	}
+// 	100% {
+// 		background-position: 0% 50%;
+// 	}
+// }
 
-.parallax_bubble{
-    overflow: hidden;
-    text-align: center;
-    max-height: 400px;
-    background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-    clip-path: url(#my-clip-path);
+// .parallax_bubble{
+//     overflow: hidden;
+//     text-align: center;
+//     max-height: 400px;
+//     background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+// 	background-size: 400% 400%;
+// 	animation: gradient 15s ease infinite;
+//     clip-path: url(#my-clip-path);
 
-    :global{
-        .spacer{
-            width: 100%;
-            height: 0;
-            padding-bottom: 35%;
-            position: relative;
-            svg{
-                width: 500px;
-                height: 500px;
-                position: absolute;
-                // width: 1000px;
-                height: auto;
-                left: 0;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                margin: auto auto;
-                will-change: transform;
-                path{
-                    will-change: d;
-                }
-            }
-        }
-    }
-}
+//     :global{
+//         .spacer{
+//             .clipping-path{
+//             }
+//             svg{
+//                 path{
+//                     will-change: d;
+//                 }
+//             }
+//         }
+//     }
+// }
 
-.s2,.s3,.s4{
-    display: none;
+// .s2,.s3,.s4{
+//     display: none;
+// }
+
+.blob{
+    background: black;
+    height: 500px;
+    width: 500px;
+    clip-path: url(#shape);
 }

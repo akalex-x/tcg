@@ -9,7 +9,7 @@ function Layout({ children }) {
 
     let showCounter = setTimeout(function(){
         !showDVD ? setDVD(true) : null 
-    },30000)
+    },20000)
 
     const checkDVD = () => {
         if( showDVD ){
@@ -18,7 +18,7 @@ function Layout({ children }) {
         clearTimeout(showCounter)
         showCounter = setTimeout(function(){
             !showDVD ? setDVD(true) : null 
-        },30000)
+        },20000)
     }
 
     useEffect(()=>{
