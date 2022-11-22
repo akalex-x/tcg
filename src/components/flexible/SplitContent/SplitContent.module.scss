@@ -5,6 +5,7 @@
     &__emoji{
         width: 100px;
         margin-top: 1.5rem;
+        padding-bottom: 1.5rem;
     }
     @media (min-width:960px){
         padding: 0;
@@ -19,7 +20,11 @@
             }
         }
         &__wrap{
-            display: flex;
+            :global{
+                .container{
+                    display: flex;
+                }
+            }
         }
         &__content{
             padding: 1rem;

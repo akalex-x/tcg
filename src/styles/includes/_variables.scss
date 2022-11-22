@@ -49,8 +49,8 @@ $input_background: $white;
 //---------------------------------------------
 $container_sm: 625px;
 $container_md: 960px;
-$container: 1400px;
-$container_lg: 1400px;
+$container: 1750px;
+$container_lg: 1900px;
 
 $mobile: 450px;
 $tablet: 720px;
@@ -98,3 +98,6 @@ $heading_h3__mobile: 1.5rem;
 $heading_h4__mobile: 1.1rem;
 $heading_h5__mobile: 1rem;
 $heading_h6__mobile: .9rem;
+
+$mobHeight: calc(100vh - 90px);
+$deskHeight: calc(100vh - 110px);
