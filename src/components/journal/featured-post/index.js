@@ -10,10 +10,12 @@ function FeaturedPost({post}){
         <>
             <div className={styles.featured_post}>
                 <div className='container'>
-                    <div className={ [styles.featured_post__image,!post.featuredImage?'no-image':null].join(' ') }>
-                        { post.featuredImage &&
-                            <ResImage alt={post.title} image={post.featuredImage.node} size="lg" />
-                        }
+                    <div className={ [styles.featured_post__image,!post.featuredImage?'placeholder-fill':null].join(' ') }>
+                        <div className="spacer">
+                            { post.featuredImage &&
+                                <ResImage alt={post.title} image={post.featuredImage.node} size="lg" />
+                            }
+                        </div>
                     </div>
                     <div className={styles.featured_post__content}>
                         <div className="content-wrap">

@@ -12,7 +12,7 @@ function PostCard({post}){
         <>
             {/* {console.log(post)} */}
             <div className={styles.post_card}>
-                <div className={styles.post_card__image}>
+                <div className={ [styles.post_card__image, !post.featuredImage ? 'placeholder-fill' : null].join(' ')}>
                     <Link href={'/journal/'+post.slug}>
                         <a className="spacer">
                             {post.featuredImage &&

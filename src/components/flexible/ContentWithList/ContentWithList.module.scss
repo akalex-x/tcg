@@ -2,6 +2,15 @@
 
 .content_list{
     padding: 3rem 1rem;
+    &__content{
+        :global{
+            h3,
+            h2{
+                font-family: $heading_font2;
+                font-weight: 500;
+            }
+        }
+    }
     &__list{
         margin-top: 1.5rem;
         :global{
@@ -10,7 +19,7 @@
                 margin: 0;
                 font-family: $serif;
                 column-count: 2;
-                font-size: .9rem;
+                font-size: .8rem;
               }
               li {
                 display: block;
@@ -21,6 +30,8 @@
               li:before {
                 content: "0" counter(items)"  ";
                 font-weight: normal;
+                display: inline-block;
+                margin-right: 2rem;
               }
               li:nth-child(n+10):before {
                 content: "0" counter(items)"  ";

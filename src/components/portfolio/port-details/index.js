@@ -11,7 +11,9 @@ function PortDetails({ sPort }){
             { sPort != null &&
                 <div className={styles.port_details__wrap}>
                     <div className={styles.port_details__image}>
-                        <ResImage alt={sPort.title} image={sPort.featuredImage.node} size="lg" />
+                        <div className="spacer">
+                            <ResImage alt={sPort.title} image={sPort.featuredImage.node} size="lg" />
+                        </div>
                     </div>
                     <div className={styles.port_details__content}>
                         <div className='content-wrap'>
