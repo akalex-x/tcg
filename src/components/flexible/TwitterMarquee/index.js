@@ -34,6 +34,16 @@ function TwitterMarquee({data}){
                 $marquee.appendChild(cln);
             });
 
+            clones.forEach(function(item){
+                const cln = item.cloneNode(true);
+                $marquee.appendChild(cln);
+            });
+            
+            clones.forEach(function(item){
+                const cln = item.cloneNode(true);
+                $marquee.appendChild(cln);
+            });
+
             const $words = Array.from($marquee.children)
     
             let loop = horizontalLoop($words, {paused: false,repeat:-1, speed:.5,reversed: false });
