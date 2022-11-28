@@ -78,8 +78,10 @@
     }
     @media (min-width:960px){
         display: flex;
+        border-bottom: 1px solid black;
         .journal_cats{
             flex: 1;
+            border-bottom: 0;
             :global{
                 a{
                     color: $black;
@@ -92,7 +94,8 @@
                         position: absolute;
                         top: .25rem;
                         right: 0;
-                        font-size: .9rem;
+                        font-size: .8rem;
+                        font-family: $serif;
                     }
                 }
             }
@@ -103,6 +106,7 @@
             .filter_btn{
                 padding: 1rem;
                 height: 100%;
+                border-bottom: 0;
             }
             &__authors{
                 position: absolute;

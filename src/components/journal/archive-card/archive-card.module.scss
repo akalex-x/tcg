@@ -13,6 +13,7 @@
         align-items: center;
         :global{
             .h5{
+                font-size: 0.8rem;
                 font-family: $serif;
                 margin-bottom: 1rem;
             }
@@ -23,9 +24,9 @@
             .spacer{
                 width: 100%;
                 height: 0;
-                padding-bottom: 70%;
+                padding-bottom: 90%;
                 position: relative;
-                background-color: $gray;
+                // background-color: $gray;
             }
             img{
                 position: absolute;
@@ -43,8 +44,11 @@
         :global{
             h4{
                 margin-bottom: 0;
+                font-family: $sans;
+                font-size: 1rem;
             }
             .h5{
+                font-size: 0.8rem;
                 margin-top: .5rem;
                 margin-bottom: 0;
                 font-family: $serif;
@@ -63,7 +67,7 @@
         &__image{
             :global{
                 .spacer{
-                    padding-bottom: 75%;
+                    // padding-bottom: 75%;
                 }
             }
         }

@@ -27,7 +27,7 @@ function ArchiveCard({post,box}){
                         <span className='h5'>{formatDate(date)}</span>
                     </div>
 
-                    <div className={styles.post_card__image}>
+                    <div className={ [styles.post_card__image,!post.featuredImage?'placeholder-fill':null].join(' ') }>
                         <div className="spacer">
                             {post.featuredImage &&
                                 <ResImage image={post.featuredImage.node} alt={post.title} size={size} />

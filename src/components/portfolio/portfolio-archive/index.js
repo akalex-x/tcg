@@ -6,7 +6,7 @@ function PortfolioArchive({latestPort}){
     return(
         <>
         <section className={styles.port_archive}>
-            <PortfolioLoop latestPort={latestPort} skip={1} limit={12} />
+            <PortfolioLoop latestPort={latestPort} skip={1} limit={100} />
         </section>
         </>
     )
