@@ -6,10 +6,12 @@
     blockquote{
         margin: 3rem auto;
         max-width: 1200px;
+        font-family: $heading_font;
+        font-weight: 300;
         p{
             color: $blue;
             font-size: 1.5rem;
-            line-height: 1.25;
+            line-height: 1.5;
         }
     }
     &__footer{
@@ -17,7 +19,8 @@
             span{
                 display: block;
                 &.author{
-                    font-weight: bold;
+                    // font-weight: bold;
+                    font-family: $heading_font2;
                 }
                 &.meta{
                     font-size: .9rem;
@@ -28,8 +31,19 @@
         }
     }
     @media (min-width:960px){
+        min-height: $deskHeight;
+        display: flex;
+        flex-direction: column;
+        :global{
+            .container{
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+        }
         blockquote{
-            margin: 9rem auto;
+            padding: 3rem 0;
+            margin: auto;
             p{
                 font-size: 2.5rem;
             }
