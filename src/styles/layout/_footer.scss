@@ -20,6 +20,7 @@
                 display: block;
             }
         }
+        .thanks,
         input{
             width: 100%;
             display: block;
@@ -31,6 +32,10 @@
             &::placeholder{
                 color: $gray;
             }
+        }
+        .thanks{
+            border-bottom: 0;
+            color: rgba(0,0,0,.5);
         }
         button{
             color: $blue;
@@ -62,6 +67,7 @@
                     display: inline;
                 }
             }
+            .thanks,
             input{
                 margin: 0 1.5rem;
                 flex: 1;

@@ -1,12 +1,44 @@
 import Link from 'next/link'
 import Arrow from 'components/svgs/arrow'
+import { useRef,useState } from 'react'
 
 function Footer(){
 
     const year = new Date().getFullYear()
 
-    const klaviyoSubmit = () => {
-        
+    let $email = useRef(null);
+
+    const [showSubcribe, setshowSubcribe] = useState(true)
+
+
+    function klaviyoSubmit(e){
+
+        e.preventDefault();
+
+        const source = 'website footer'
+        const email = $email.value
+        var url = "https://manage.kmail-lists.com/ajax/subscriptions/subscribe";
+                
+        var xhr = new XMLHttpRequest();
+        // assemble the form data for the request
+        var data = `g=WbCvZa&email=${encodeURIComponent(email)}&$fields=$source&$source=${source}`;
+        // open the request
+        xhr.open("POST", url, true);
+        // add the headers to the request
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.setRequestHeader("cache-control", "no-cache");
+        // log response when request completes
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                const res = JSON.parse(xhr.response);
+                if( res.success){
+                    setshowSubcribe(false)
+                }
+            }
+        };
+        // send request with form data
+        xhr.send(data);
+
     }
 
     return(
@@ -18,10 +50,16 @@ function Footer(){
                         <p><a href="" target="_blank">Available Positions</a> &nbsp;|&nbsp; <a href="">Portfolio Positions</a></p>
                     </div>
                 </div>
-                <form className='gfooter__subscribe' action="">
+                <form className='gfooter__subscribe' action="" onSubmit={ e => klaviyoSubmit(e) }>
                     <h2>Sign up for <span>our mailing list.</span></h2>
-                    <input type="text" placeholder='Enter email address' />
-                    <button type='submit' className='reset text-btn'>Submit <Arrow /></button>
+                    { showSubcribe ?
+                            <>
+                            <input type="email" placeholder='Enter email address' ref={el=>$email=el}/>
+                            <button type='submit' className='reset text-btn'>Submit <Arrow /></button>
+                            </>
+                        :
+                            <span className='thanks'>Thank you for subscribing!</span>    
+                    }
                 </form>
                 <div className="gfooter__copy"> 
                     <p>&copy; TCG crypto, {year}</p>
