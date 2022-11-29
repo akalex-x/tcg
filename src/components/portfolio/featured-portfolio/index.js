@@ -6,12 +6,13 @@ import React, { useState, useRef } from 'react'
 
 import Arrow from 'components/svgs/arrow'
 
-import { Controller, Pagination, Navigation } from 'swiper';
+import { EffectFade, Controller, Pagination, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
 function FeaturedPortfolio({port}){
 
@@ -29,7 +30,8 @@ function FeaturedPortfolio({port}){
 
                     <div className={styles.feat_port__images}>
                         <Swiper
-                        modules={[Controller,Pagination]}
+                        modules={[Controller,Pagination,EffectFade]}
+                        effect="fade"
                         slidesPerView={1}
                         pagination={{ clickable: true }}
                         onSwiper={setFirstSwiper} 
@@ -47,7 +49,8 @@ function FeaturedPortfolio({port}){
                     <div className={styles.feat_port__contents}>
                         
                         <Swiper
-                        modules={[Controller,Pagination,Navigation]}
+                        modules={[Controller,Pagination,Navigation,EffectFade]}
+                        effect="fade"
                         slidesPerView={1}
                         navigation={{
                             prevEl: '.feat_port__prev',
@@ -72,7 +75,7 @@ function FeaturedPortfolio({port}){
                             <SwiperSlide>
                                 <div className="content-wrap">
                                     <div className="container">
-                                        <h1>{port.title}</h1>
+                                        <h1>{port.title} 2</h1>
                                         <div className="content" dangerouslySetInnerHTML={{__html:port.content}}></div>
                                         <Button type="text" href={'/portfolio/'+port.slug} content="Learn More" />
                                     </div>

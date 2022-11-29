@@ -25,7 +25,9 @@ function PortfolioHero({port}){
             <section className={styles.port_hero}>
                 <div className={styles.port_hero__wrap}>
                     <div className={styles.port_hero__image}>
-                        <Image src={port.featuredImage.node.sourceUrl} height={port.featuredImage.node.mediaDetails.height} width={port.featuredImage.node.mediaDetails.width} alt={port.title} />
+                        <div className="spacer">
+                            <Image src={port.featuredImage.node.sourceUrl} height={port.featuredImage.node.mediaDetails.height} width={port.featuredImage.node.mediaDetails.width} alt={port.title} />
+                        </div>
                     </div>
                     <div className={styles.port_hero__content}>
                         <PortCategories cats={port.categories.nodes} />

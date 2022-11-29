@@ -82,13 +82,23 @@
                     position: relative;
                     padding-left: 2rem;
                     opacity: 1;
+                    font-weight: 300;
                     svg{
                         width: 1rem;
                         position: absolute;
                         left: 0;
+                        display: block;
+                        opacity: 0;
                     }
-                    &.active{
+                    &.active,
+                    &:hover{
+                        color: $blue;
                         transform: translateX(2rem);
+                        transition-duration: .25s;
+                        svg{
+                            opacity: 1;
+                            transition-duration: .25s;
+                        }
                     }
                 }
             }
@@ -164,7 +174,7 @@
             width: calc(75% + 1px);
             margin-left: auto;
             border-left: 1px solid black;
-            padding: 3rem 1rem 6rem;
+            padding: 4.5rem 1rem 7.5rem;
             :global{
                 .socials-list{
                     margin-top: 3rem;

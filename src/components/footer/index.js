@@ -5,6 +5,10 @@ function Footer(){
 
     const year = new Date().getFullYear()
 
+    const klaviyoSubmit = () => {
+        
+    }
+
     return(
         <>
             <footer className="gfooter">

@@ -13,7 +13,7 @@ function FiftyFifty({data}){
                 <div className="container">
                     <div className={styles.fifty_fifty__wrap}>
 
-                        <div className={styles.fifty_fifty__image}>
+                        <div className={[styles.fifty_fifty__image, styles.fifty_fifty__single_image].join()}>
                             <ResImage image={data.image} size="lg" alt="Image" />
                         </div>
 
