@@ -1,86 +1,52 @@
 import styles from './ParallaxBubble2.module.scss'
-import { useEffect,useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 import { gsap } from 'lib/gsap'
 
 function ParallaxBubble2(){
-
-    let $section = useRef(null)
-    let $spacer = useRef(null)
-    // let $svg = useRef(null)
-    // let $s1 = useRef(null)
-    // let $s2 = useRef(null)
-    // let $s3 = useRef(null)
-    // let $s4 = useRef(null)
+    
+    let $cursor = useRef(null);
+    let $section = useRef(null);
 
     useEffect(() => {
 
-        // const tl = gsap.timeline({repeat:'-1',});
-    
-        // tl.to($s1,{
-        //     morphSVG: $s2,
-        //     duration:4,
-        // });
-    
-        // tl.to($s1,{
-        //     morphSVG: $s3,
-        //     duration:4,
-        // });
-    
-        // tl.to($s1,{
-        //     morphSVG: $s4,
-        //     duration:4,
-        // });
-        
-        // tl.to($s1,{
-        //     morphSVG: $s1,
-        //     duration:4,
-        // });
-        
-        // var request = null;
-        // var mouse = { x: 0, y: 0 };
-        // var cx = window.innerWidth / 2;
-        // var cy = window.innerHeight / 2;
-        
-        // function gparallax1(){
-        //     mouse.x = event.pageX;
-        //     mouse.y = event.pageY;
-        //     cancelAnimationFrame(request);
-        //     request = requestAnimationFrame(update);	
-        // }
+        // if( $(window).width() < 960 ){ return; }
+		
+		gsap.set($cursor, {
+			top: '-150px',
+			left: '-150px',
+            // position:'fixed'
+		});
 
-        // function update() {
-        //     let dx = mouse.x - cx;
-        //     let dy = mouse.y - cy;
-        //     let tiltx = (dy / cy);
-        //     let tilty = - (dx / cx);
-        //     let radius = Math.sqrt(Math.pow(tiltx,2) + Math.pow(tilty,2));
-        //     let degree = (radius * 20);
-        //     gsap.to($svg, 1, {
-        //         transform:'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)'}
-        //     );
-        // }
+		function moveCursor(e) {
 
-        // function gparallax2(event) {
-        //     const position = 5
-        //     const x = (window.innerWidth - event.pageX * position) / 100;
-        //     const y = (window.innerHeight - event.pageY * position) / 300;
-        //     $spacer.style.transform = 'translateX('+x+'px) translateY('+y+'px)';
-        // }
-        
-        // window.addEventListener("mousemove", gparallax1);
-        // document.addEventListener("mousemove", gparallax2);
-    
-        // return () => { window.removeEventListener("mousemove", gparallax1); document.removeEventListener("mousemove", gparallax2); }
+            console.log($section)
+
+            let x = e.clientX- ($section.clientWidth/2);  
+            let y = e.clientY - ($section.clientHeight/2);  
+
+			gsap.to($cursor, {
+				overwrite: "auto",
+                x: x,
+                y: y,
+                ease: "none",
+				duration: .2,
+			});
+			
+		};
+
+        window.addEventListener("mousemove", moveCursor);
+	
+        return () => { window.removeEventListener("mousemove", moveCursor); }
+
 
     },[]);
 
     return(
         <>
-            {/* <div className={styles.parallax_bubble} ref={el => $section = el}> */}
-                {/* <div className="spacer" ref={el => $spacer = el}> */}
+            <div className={styles.parallax_bubble} ref={el=>$section=el}>
 
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" id="blobSvg" opacity="1" filter="blur(18.4px)" transform="rotate(0)">
+                    <svg ref={el=>$cursor=el} version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" id="blobSvg" opacity="1" filter="blur(18.4px)" transform="rotate(0)">
                         <defs>
                             <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
                                 <stop offset="0%" stopColor="rgb(16, 6, 159)"></stop>
@@ -92,8 +58,7 @@ function ParallaxBubble2(){
                         </path>
                     </svg>
 
-                {/* </div> */}
-            {/* // </div> */}
+            </div>
         </>
     )
 }

@@ -2,6 +2,7 @@ import styles from './PortDetails.module.scss'
 import Button from 'components/btn'
 import ResImage from 'components/get-image'
 import PortCategories from 'components/portfolio/port-categories'
+import XIcon from 'components/svgs/xIcon.js'
 
 
 function PortDetails({ sPort }){
@@ -17,6 +18,7 @@ function PortDetails({ sPort }){
                     </div>
                     <div className={styles.port_details__content}>
                         <div className='content-wrap'>
+                            <button type='button' className={['reset',styles.close_icon].join(' ')}><XIcon/></button>
                             <PortCategories cats={sPort.categories.nodes} />
                             <h3>{sPort.title}</h3>
                             <div className="content" dangerouslySetInnerHTML={{ __html:sPort.content}}></div>
