@@ -42,7 +42,9 @@ function PeopleInfo({data}){
 
                             <div className={styles.person_profile__top}>
                                 <div className={styles.person_profile__image}>
-                                    <ResImage image={person.featuredImage.node} size="sm" alt={person.title} />
+                                    { person.featuredImage && 
+                                        <ResImage image={person.featuredImage.node} size="sm" alt={person.title} />
+                                    }
                                 </div>
                                 <div className={styles.person_profile__position}>
                                     <span>{acf.position}</span>
