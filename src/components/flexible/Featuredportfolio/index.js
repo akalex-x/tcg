@@ -9,12 +9,12 @@ function Featuredportfolio({latestPort}){
         <>
         <section className={styles.feat_port}>
 
-            <SectionIntro title="Portfolio" link="/portfolio" mobCta="Explore" cta="Explore All Portfolio" />
+            <SectionIntro title="Portfolio" link="/portfolio" mobCta="See All" cta="See Full Portfolio" />
 
             <PortfolioLoop latestPort={latestPort} skip={0} limit={18} />
 
             <div className={[styles.feat_port__footer, 'container'].join(' ')}>
-                <Button href="/portfolio" content="Explore All" />
+                <Button href="/portfolio" content="See All" />
             </div>
 
         </section>

@@ -56,7 +56,7 @@ function LatestJournal({latestPosts}){
             {/* {console.log(latestPosts)} */}
             <section className={styles.latest_posts}>
                     
-                <SectionIntro title="Journal" link="/journal" mobCta="Explore" cta="Explore All Journal" />
+                <SectionIntro title="Journal" link="/journal" mobCta="Explore" cta="Explore Journal" />
 
                 <div className={styles.latest_posts__loop}>
 

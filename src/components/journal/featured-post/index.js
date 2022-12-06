@@ -21,7 +21,7 @@ function FeaturedPost({post}){
                         <div className="content-wrap">
                             <h3>{ post.title }</h3>
                             <p>{ post.content.replace(regex, '').substring(0, 360) }...</p>
-                            <Button href={'/journal/'+post.slug} type="text" content="Learn More" />
+                            <Button href={'/journal/'+post.slug} type="text" content="Keep Reading" />
                         </div>
                     </div>
                 </div>
