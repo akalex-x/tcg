@@ -177,6 +177,13 @@ function QUERY_FLEXIBLE_LAYOUTS(type){
                         cta
                     }
                 }
+                ... on ${type}_FlexibleContent_Flexiblecontent_ContentBlocksHeading {
+                    heading
+                    blocks {
+                      heading
+                      content
+                    }
+                }
             }
         }
     `;

@@ -1,0 +1,26 @@
+.contentBlocks{
+    border-bottom: 1px solid black;
+    &__heading{
+        margin: 0;
+        text-align: center;
+    }
+    &__block{
+        margin-top: 4.5rem;
+        :global{
+            .content{
+                padding-top: 1.5rem;
+                border-top: 1px solid black;
+            }
+        }
+    }
+    @media (min-width:960px){
+        &__loop{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        &__block{
+            width: calc(50% - 3rem);
+        }
+    }
+}

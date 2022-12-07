@@ -7,11 +7,11 @@ function ArchiveCard({post,box}){
 
     const date = new Date(post.date);
 
-    let size = 'sm'
+    let size = 'lg'
 
-    box == 'box_1' ? size = 'xl' : null
+    box == 'box_1' ? size = 'xxl' : null
 
-    box == 'box_4' ? size = 'lg' : null
+    box == 'box_4' ? size = 'xl' : null
 
     return(
         <>

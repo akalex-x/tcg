@@ -53,7 +53,7 @@ function Article({post,adjacentPosts}){
                     </div>
 
                     { post.featuredImage &&
-                        <ResImage image={post.featuredImage.node} alt={post.title} size={'lg'} />
+                        <ResImage image={post.featuredImage.node} alt={post.title} size={'xxl'} />
                     }
 
                 </div>

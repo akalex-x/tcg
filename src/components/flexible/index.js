@@ -19,6 +19,8 @@ import ParallaxBubble from './ParallaxBubble'
 import ParallaxBubble2 from './ParallaxBubble2'
 import ContentSpotify from './ContentSpotify'
 
+import ContentBlocksHeading from './ContentBlocksHeading'
+
 import dynamic from 'next/dynamic'
 
 const Spotify = dynamic(import('components/flexible/Spotify'), {
@@ -72,6 +74,8 @@ function FlexibleContent({flexibleContent,latestPort,latestPosts,latestPeople}){
                         return <ContentWithList key={i} data={layout} />
                     case 'ContentSpotify':
                         return <ContentSpotify key={i} data={layout} />
+                    case 'ContentBlocksHeading':
+                        return <ContentBlocksHeading key={i} data={layout} />
                     case 'ParallaxBubble':
                         return <ParallaxBubble key={i}/>
                     case 'ParallaxBubble2':
