@@ -9,6 +9,7 @@
     border-bottom: 1px solid black;
     overflow: hidden;
     background-color: transparent;
+    // background-color: #ebefee;
     svg{
         z-index: -1;
         max-width: 50%;
@@ -16,7 +17,7 @@
     @media (min-width:960px){
         min-height: $deskHeight;
         svg{
-            width: 300px;
+            width: 500px;
         }
     }
 }

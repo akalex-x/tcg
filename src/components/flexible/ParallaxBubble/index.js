@@ -13,8 +13,8 @@ function ParallaxBubble(){
         // if( $(window).width() < 960 ){ return; }
 		
 		gsap.set($cursor, {
-			top: '-150px',
-			left: '-150px',
+			top: '-250px',
+			left: '-250px',
             position:'fixed'
 		});
 
@@ -32,7 +32,7 @@ function ParallaxBubble(){
                 x: x,
                 y: y,
                 ease: "none",
-				duration: .2,
+				duration: .5,
 			});
 			
 		};

@@ -22,7 +22,7 @@ function PortfolioHero({port}){
         <>
             {/* {console.log(port)} */}
             {/* {console.log(acf)} */}
-            <section className={styles.port_hero}>z
+            <section className={styles.port_hero}>
                 <div className={styles.port_hero__wrap}>
                     <div className={styles.port_hero__image}>
                         <div className="spacer">
