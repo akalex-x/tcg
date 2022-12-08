@@ -100,3 +100,11 @@ export function formatDate(date){
   return formattedDate
 
 }
+
+export function replaceCharacters(content){
+
+  let replace = content.replace('&#038;', '&').replace('&amp;', '&')
+
+  return replace
+
+}

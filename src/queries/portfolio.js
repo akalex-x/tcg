@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_LATEST_PORTFOLIO = gql`
+export const QUERY_PORTFOLIO = gql`
     query latestPort($number: Int) {
         allPortfolio(first: $number, where:  {orderby: {field: TITLE, order: ASC},status: PUBLISH }) {
             nodes {

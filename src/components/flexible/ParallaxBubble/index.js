@@ -48,7 +48,7 @@ function ParallaxBubble(){
         <>
             <div className={styles.parallax_bubble} ref={el=>$section=el}>
 
-                    <svg ref={el=>$cursor=el} version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" id="blobSvg" opacity="1" filter="blur(16px)" transform="rotate(0)">
+                    <svg ref={el=>$cursor=el} version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" id="blobSvg" opacity="1" filter="blur(0px)" transform="rotate(0)">
                         <defs>
                             <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
                                 <stop offset="0%" stopColor="rgb(16, 6, 159)"></stop>

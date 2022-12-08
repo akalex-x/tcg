@@ -13,7 +13,7 @@ function PeopleInfo({data}){
 
     return(
         <>
-            {/* {console.log(data)} */}
+            {console.log(data)}
             <section className={styles.people_section} id="people">
 
                 <SectionIntro title="People" />

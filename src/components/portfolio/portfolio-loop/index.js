@@ -4,7 +4,7 @@ import PortDetails from 'components/portfolio/port-details'
 import React, { useRef, useState } from 'react'
 import gsap from 'gsap'
 
-function PortfolioLoop({latestPort,skip,limit}){
+function PortfolioLoop({latestPort,limit}){
 
     let $portLoop = useRef(null);
     const [sPort,setPort] = useState(null)
@@ -12,9 +12,9 @@ function PortfolioLoop({latestPort,skip,limit}){
 
     const portfolios = [...latestPort];
     
-    if( skip ){
-        portfolios.splice(0, skip)    
-    }
+    // if( skip ){
+    //     portfolios.splice(0, skip)    
+    // }
     
     const portfolios2 = portfolios.splice(limit,portfolios.length)
     
@@ -22,15 +22,14 @@ function PortfolioLoop({latestPort,skip,limit}){
     
     const updatePort = (index) => {
 
-        const sIndex = index + skip;
 
-        if( sPort != latestPort[sIndex] ){
+        if( sPort != latestPort[index] ){
 
             tl.to('.post_details',{
                 height: 0,
                 'margin-bottom': 0,
                 onComplete: () => {
-                    setPort(latestPort[sIndex])
+                    setPort(latestPort[index])
                 }
             });
 
@@ -66,7 +65,7 @@ function PortfolioLoop({latestPort,skip,limit}){
 
     return(
         <>
-            <div className={[styles.feat_port__loop, skip ? styles.border_top : null].join(' ')}>
+            <div className={[styles.feat_port__loop, 'port-loop'].join(' ')}>
                 <div ref={$portLoop} className='container'>
                     {
                         portfolios.map((port,i)=>{

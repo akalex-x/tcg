@@ -40,9 +40,6 @@ function FeaturedPortfolio({port}){
                             <SwiperSlide>
                                 <ResImage image={port.featuredImage.node} alt={port.title} />
                             </SwiperSlide>
-                            <SwiperSlide>
-                                <ResImage image={port.featuredImage.node} alt={port.title} />
-                            </SwiperSlide>
                         </Swiper>
                     </div>
 
@@ -72,24 +69,15 @@ function FeaturedPortfolio({port}){
                                     </div>
                                 </div>
                             </SwiperSlide>
-                            <SwiperSlide>
-                                <div className="content-wrap">
-                                    <div className="container">
-                                        <h1>{port.title} 2</h1>
-                                        <div className="content" dangerouslySetInnerHTML={{__html:port.content}}></div>
-                                        <Button type="text" href={'/portfolio/'+port.slug} content="Learn More" />
-                                    </div>
-                                </div>
-                            </SwiperSlide>
                         </Swiper>
 
-                        <div className={styles.feat_port__controls}>
+                        {/* <div className={styles.feat_port__controls}>
                             <div className="feat_port__pag"></div>
                             <div className="feat_port__nav">
                                 <button className="feat_port__navigation feat_port__prev reset"><Arrow /></button>
                                 <button className='feat_port__navigation feat_port__next reset'><Arrow /></button>
                             </div> 
-                        </div>
+                        </div> */}
 
                         <PortCategories cats={port.categories.nodes} />
 

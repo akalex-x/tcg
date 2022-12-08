@@ -547,6 +547,12 @@ iframe{
     background-repeat: no-repeat;
 }
 
+.port-archive{
+    .port-loop{
+        border-top: 1px solid $black;
+    }
+}
+
 // .no-image{
 //     position: relative;
 //     overflow: hidden;

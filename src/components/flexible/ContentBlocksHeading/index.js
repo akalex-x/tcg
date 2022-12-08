@@ -4,7 +4,7 @@ function ContentBlocksHeading({data}){
 
     return(
         <>
-            {console.log(data)}
+            {/* {console.log(data)} */}
             <section className={styles.contentBlocks}>
                 <div className="container">
                     <h2 className={styles.contentBlocks__heading}>{data.heading}</h2>

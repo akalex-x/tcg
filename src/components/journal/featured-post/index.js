@@ -1,6 +1,7 @@
 import styles from './featured-post.module.scss'
 import ResImage from 'components/get-image'
 import Button from 'components/btn'
+import { replaceCharacters } from 'lib/util'
 
 function FeaturedPost({post}){
 
@@ -20,7 +21,7 @@ function FeaturedPost({post}){
                     <div className={styles.featured_post__content}>
                         <div className="content-wrap">
                             <h3>{ post.title }</h3>
-                            <p>{ post.content.replace(regex, '').replace('&amp;', '&').substring(0, 360) }...</p>
+                            <p>{ replaceCharacters(post.content.replace(regex, '')).substring(0, 360) }...</p>
                             <Button href={'/journal/'+post.slug} type="text" content="Keep Reading" />
                         </div>
                     </div>

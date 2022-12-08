@@ -1,12 +1,12 @@
 import { getApolloClient } from 'lib/apollo-client';
-import { QUERY_LATEST_PORTFOLIO, QUERY_PORTFOLIO_PATHS, QUERY_SINGLE_PORTFOLIO,QUERY_PORT_ARCHIVE_ACF } from 'queries/portfolio';
+import { QUERY_PORTFOLIO, QUERY_PORTFOLIO_PATHS, QUERY_SINGLE_PORTFOLIO,QUERY_PORT_ARCHIVE_ACF } from 'queries/portfolio';
 
-export async function getLatestPort(limit){
+export async function getPort(limit){
   
     const apolloClient = getApolloClient();
     
     let latestPort = await apolloClient.query({
-      query: QUERY_LATEST_PORTFOLIO,
+      query: QUERY_PORTFOLIO,
       variables: {
         number:limit,
       },

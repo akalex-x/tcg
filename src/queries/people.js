@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export const QUERY_LATEST_PEOPLE = gql`
     query people($number: Int)  {
-        allPeople(first: $number, where: {status: PUBLISH}) {
+        allPeople(first: $number, where: {status: PUBLISH,orderby: {field: MENU_ORDER, order: ASC} } ) {
             nodes {
                 title
                 slug
