@@ -1,3 +1,9 @@
+.blog-archive{
+    .gfooter{
+        border-top: 0;
+    }
+}
+
 .gfooter{
     border-top: 1px solid $black;
     &__cta{
@@ -22,6 +28,7 @@
         }
         .thanks,
         input{
+            background-color: transparent;
             width: 100%;
             display: block;
             border: 0;

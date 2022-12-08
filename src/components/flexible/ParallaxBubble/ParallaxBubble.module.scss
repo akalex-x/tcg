@@ -1,34 +1,22 @@
+@import 'styles/includes/variables';
 
 .parallax_bubble{
-    background-color: #ebefee;
+    min-height: $mobHeight;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    border-bottom: 1px solid black;
     overflow: hidden;
-    text-align: center;
-    max-height: 400px;
-    :global{
-        .spacer{
-            // width: 100%;
-            // height: 0;
-            // padding-bottom: 35%;
-            // position: relative;
-            svg{
-                width: 500px;
-                // position: absolute;
-                // width: 1000px;
-                // height: auto;
-                // left: 0;
-                // top: 0;
-                // right: 0;
-                // bottom: 0;
-                // margin: auto auto;
-                will-change: transform;
-                path{
-                    will-change: d;
-                }
-            }
+    background-color: transparent;
+    svg{
+        z-index: -1;
+        max-width: 50%;
+    }
+    @media (min-width:960px){
+        min-height: $deskHeight;
+        svg{
+            width: 300px;
         }
     }
-}
-
-.s2,.s3,.s4{
-    display: none;
 }

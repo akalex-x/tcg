@@ -69,6 +69,7 @@ export async function getStaticProps(context){
           postsTotal:postsTotal,
           authors:authors,
           revalidate: 10,
+          bodyClass: 'blog-archive'
         }
     };
   

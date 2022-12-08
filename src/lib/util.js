@@ -95,7 +95,7 @@ export function formatDate(date){
       month = '0' + month;
   }
 
-  const formattedDate = day + '/' + month + '/' + year.toString().slice(-2);
+  const formattedDate = month + '/' + day + '/' + year.toString().slice(-2);
 
   return formattedDate
 
