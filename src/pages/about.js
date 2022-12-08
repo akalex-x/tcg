@@ -1,6 +1,6 @@
 import FlexibleContent from 'components/flexible';
 import {getFlexibleContent} from 'fetch/flexible';
-import {getLatestPort} from 'fetch/portfolio'
+import {getPort} from 'fetch/portfolio'
 import {getLatestPosts} from 'fetch/posts'
 import {getLatestPeople} from 'fetch/people'
 import {checkIfPostsAreNeeded} from 'lib/util';
@@ -32,7 +32,7 @@ export async function getStaticProps(){
   const latestPeople = await getLatestPeople(100);
 
   if( loadPort ){
-    latestPort = await getLatestPort(18);
+    latestPort = await getPort(18);
   }
 
   if( loadPosts ){
