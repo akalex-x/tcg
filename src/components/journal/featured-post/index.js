@@ -14,7 +14,7 @@ function FeaturedPost({post}){
                     <div className={ [styles.featured_post__image,!post.featuredImage?'placeholder-fill':null].join(' ') }>
                         <div className="spacer">
                             { post.featuredImage &&
-                                <ResImage alt={post.title} image={post.featuredImage.node} size="lg" />
+                                <ResImage alt={post.title} image={post.featuredImage.node} size="xl" />
                             }
                         </div>
                     </div>

@@ -16,7 +16,7 @@ function PostCard({post}){
                     <Link href={'/journal/'+post.slug}>
                         <a className="spacer">
                             {post.featuredImage &&
-                                <ResImage alt={post.title} image={post.featuredImage.node} size="sm" />
+                                <ResImage alt={post.title} image={post.featuredImage.node} size="md" />
                             }                        
                         </a>
                     </Link>

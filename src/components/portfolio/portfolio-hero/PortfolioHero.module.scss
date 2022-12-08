@@ -4,6 +4,11 @@
     // border-top: 1px solid $black;
     border-bottom: 1px solid $black;
     padding:0;
+    :global{
+        .container{
+            // max-width: 900px!important;
+        }
+    }
     &__image{
         border-bottom: 1px solid $black;
         :global{

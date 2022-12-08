@@ -24,7 +24,7 @@ function PortfolioArhive({latestPort,acf}){
         <>
             <Layout>
                 <TitleBar title="Portfolio" />
-                <FeaturedPortfolio port={latestPort[0]} />
+                <FeaturedPortfolio data={acf.featuredPortfolo} />
                 <CenteredContent data={centertedIntro} />
                 <PortfolioArchive latestPort={latestPort} />
             </Layout>

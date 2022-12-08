@@ -95,6 +95,34 @@ export const QUERY_PORT_ARCHIVE_ACF = gql`
             portfolio_acf {
                 arhiveOptions {
                     introContent
+                    featuredPortfolo {
+                        ... on Portfolio {
+                            title
+                            slug
+                            content
+                            categories {
+                                nodes {
+                                    slug
+                                    name
+                                }
+                            }
+                            featuredImage {
+                                node {
+                                    sourceUrl
+                                    mediaDetails {
+                                      width
+                                      height
+                                      sizes {
+                                        width
+                                        height
+                                        name
+                                        sourceUrl
+                                      }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
