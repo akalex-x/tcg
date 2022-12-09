@@ -48,10 +48,10 @@ function ParallaxBubble(){
         <>
             <div className={styles.parallax_bubble} ref={el=>$section=el}>
 
-                    <svg ref={el=>$cursor=el} version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" id="blobSvg" opacity="1" filter="blur(0px)" transform="rotate(0)">
+                    <svg ref={el=>$cursor=el} version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" id="blobSvg" opacity="1" filter="blur(1px)" transform="rotate(0)">
                         <defs>
-                            <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" stopColor="rgb(16, 6, 159)"></stop>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="90%" gradientTransform="rotate(20)">
+                                <stop offset="00%" stopColor="rgb(16, 6, 159)"></stop>
                                 <stop offset="100%" stopColor="rgb(98, 100, 224)"></stop>
                             </linearGradient>
                         </defs>

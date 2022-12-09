@@ -13,6 +13,14 @@
     svg{
         z-index: -1;
         max-width: 50%;
+        path{
+            // filter: contrast(170%) brightness(1000%);  
+            // filter: url(#noiseFilter);
+            // mix-blend-mode: darken;
+            // mix-blend-mode: difference;
+            // mix-blend-mode: exclusion;
+            // mix-blend-mode: multiply;
+        }
     }
     @media (min-width:960px){
         min-height: $deskHeight;
