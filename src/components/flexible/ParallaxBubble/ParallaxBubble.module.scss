@@ -12,14 +12,14 @@
     // background-color: #ebefee;
     :global{
         .blob{
-            background-color: $blue;
+            // background-color: $blue;
             border-radius: 50%;
             width: 50%;
             z-index: -1;
             will-change: transform;
             // background: linear-gradient(246deg, rgb(98, 100, 224) 0%, rgb(16, 6, 159) 75%); 
             // filter: blur(5px);
-            opacity: .5;
+            opacity: .25;
             &:first-of-type{
                 // filter: blur(0);
                 opacity: 1;
