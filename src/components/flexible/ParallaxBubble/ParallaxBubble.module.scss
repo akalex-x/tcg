@@ -10,9 +10,30 @@
     overflow: hidden;
     background-color: transparent;
     // background-color: #ebefee;
+    :global{
+        .blob{
+            background-color: $blue;
+            border-radius: 50%;
+            width: 50%;
+            z-index: -1;
+            will-change: transform;
+            &:last-of-type{
+                &.blur{
+                    // filter: blur(20px);
+                }
+            }
+            .spacer{
+                width: 100%;
+                height: 0;
+                padding-bottom: 100%;
+            }
+        }
+    }
     svg{
         z-index: -1;
         max-width: 50%;
+        border-radius: 50%;
+        background-color: black;
         path{
             // filter: contrast(170%) brightness(1000%);  
             // filter: url(#noiseFilter);
@@ -24,8 +45,10 @@
     }
     @media (min-width:960px){
         min-height: $deskHeight;
-        svg{
-            width: 500px;
+        :global{
+            .blob{
+                width: 500px;
+            }
         }
     }
 }
