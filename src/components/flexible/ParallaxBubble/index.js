@@ -14,7 +14,7 @@ function ParallaxBubble(){
     // Function for Mouse Move Scale Change
     function getScale(diffX, diffY) {
         const distance = Math.sqrt(Math.pow(diffX, 2) + Math.pow(diffY, 2));
-        return Math.min(distance / 650, 0.5);
+        return Math.min(distance / 650, 0.25);
     }
 
     // Function For Mouse Movement Angle in Degrees
@@ -74,12 +74,6 @@ function ParallaxBubble(){
             scaleX: 1 + scale,
             scaleY: 1 - scale,
             stagger: .01,
-            // onStart: function() {
-            //     gsap.set('.blob', {className :"blob blur"}) 
-            // },
-            // onComplete: function() {
-            //     gsap.set('.blob', {className :"blob s"}) 
-            // }
         });
 
         // gsap.to(text, {
