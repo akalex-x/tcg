@@ -17,11 +17,10 @@
             width: 50%;
             z-index: -1;
             will-change: transform;
-            background: linear-gradient(246deg, rgb(98, 100, 224) 0%, rgb(16, 6, 159) 75%); 
-            filter: blur(5px);
-            &:last-of-type{
-                &.blur{
-                }
+            // background: linear-gradient(246deg, rgb(98, 100, 224) 0%, rgb(16, 6, 159) 75%); 
+            // filter: blur(5px);
+            &:first-of-type{
+                // filter: blur(0);
             }
             .spacer{
                 width: 100%;

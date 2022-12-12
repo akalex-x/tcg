@@ -73,7 +73,7 @@ function ParallaxBubble(){
             rotation: rotation + "_short",
             scaleX: 1 + scale,
             scaleY: 1 - scale,
-            stagger: .01,
+            stagger: .02,
         });
 
         // gsap.to(text, {
@@ -92,14 +92,14 @@ function ParallaxBubble(){
             top: '-50px',
             left: '-50px',
             position:'fixed',
-            autoAlpha: 1,
-            delay:0,
+            // autoAlpha: 1,
+            // delay:0,
         });
 
-        window.addEventListener("mousemove", setFromEvent);
+        $section.addEventListener("mousemove", setFromEvent);
 
         return () => {
-            window.removeEventListener("mousemove", setFromEvent);
+            $section.removeEventListener("mousemove", setFromEvent);
         };
 
     },[]);
