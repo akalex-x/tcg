@@ -15,7 +15,12 @@ function FeaturedPortfolio({data}){
 
                         <div className={styles.feat_port__image}>
                             <div className="spacer">
-                                <ResImage image={data.featuredImage.node} alt={data.title} />
+                                { data.portfolioSingle.squareImage ?
+                                    <ResImage alt={data.title} image={data.portfolioSingle.squareImage} size="lg" />
+                                : data.featuredImage ?
+                                    <ResImage alt={data.title} image={data.featuredImage.node} size="lg" />
+                                : null
+                                }
                             </div>
                         </div>
 

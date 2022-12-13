@@ -28,6 +28,21 @@ export const QUERY_PORTFOLIO = gql`
                         }
                     }
                 }
+                portfolioSingle {
+                    squareImage {
+                        sourceUrl
+                        mediaDetails {
+                            height
+                            width
+                            sizes {
+                                width
+                                sourceUrl
+                                height
+                                name
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -84,7 +99,20 @@ export const QUERY_SINGLE_PORTFOLIO = gql`
                   name
                   position
                 }
-              }
+                squareImage {
+                    sourceUrl
+                    mediaDetails {
+                        height
+                        width
+                        sizes {
+                            width
+                            sourceUrl
+                            height
+                            name
+                        }
+                    }
+                }
+            }
         }
     }
 `;
@@ -118,6 +146,21 @@ export const QUERY_PORT_ARCHIVE_ACF = gql`
                                         name
                                         sourceUrl
                                       }
+                                    }
+                                }
+                            }
+                            portfolioSingle {
+                                squareImage {
+                                    sourceUrl
+                                    mediaDetails {
+                                        height
+                                        width
+                                        sizes {
+                                            width
+                                            sourceUrl
+                                            height
+                                            name
+                                        }
                                     }
                                 }
                             }

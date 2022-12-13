@@ -1,5 +1,5 @@
 import styles from './PortfolioHero.module.scss'
-import Image from 'next/future/image'
+import ResImage from 'components/get-image'
 import Socials from 'components/socials'
 import Button from 'components/btn'
 import PortCategories from 'components/portfolio/port-categories'
@@ -26,7 +26,12 @@ function PortfolioHero({port}){
                 <div className={styles.port_hero__wrap}>
                     <div className={styles.port_hero__image}>
                         <div className="spacer">
-                            <Image src={port.featuredImage.node.sourceUrl} height={port.featuredImage.node.mediaDetails.height} width={port.featuredImage.node.mediaDetails.width} alt={port.title} />
+                            { port.portfolioSingle.squareImage ?
+                                <ResImage alt={port.title} image={port.portfolioSingle.squareImage} size="lg" />
+                            : port.featuredImage ?
+                                <ResImage alt={port.title} image={port.featuredImage.node} size="lg" />
+                            : null
+                            }
                         </div>
                     </div>
                     <div className={styles.port_hero__content}>
