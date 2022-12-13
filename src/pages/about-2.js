@@ -20,7 +20,7 @@ export default function About({flexibleContent,latestPort,latestPosts,latestPeop
 
 export async function getStaticProps(){
 
-  const getFlexible = await getFlexibleContent('Page','/about');
+  const getFlexible = await getFlexibleContent('Page','/about-2');
 
   const {flexible_content} = getFlexible.data[Object.keys(getFlexible.data)[0]]
 

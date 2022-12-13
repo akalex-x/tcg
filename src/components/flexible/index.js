@@ -39,7 +39,7 @@ function FlexibleContent({flexibleContent,latestPort,latestPosts,latestPeople}){
 
     return(
         <>
-            {/* {console.log(layouts)} */}
+            {console.log(layouts)}
             {layouts.map( (layout, i) => {
                 const layoutName = layout['__typename'].replace(replace, '');
                 switch (layoutName) {
