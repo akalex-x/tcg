@@ -51,7 +51,7 @@ function Footer(){
                     </div>
                 </div>
                 <form className='gfooter__subscribe' action="" onSubmit={ e => klaviyoSubmit(e) }>
-                    <h2>Sign up for <span>our mailing list.</span></h2>
+                    <h2>For the latest on TCG Crypto:</h2>
                     { showSubcribe ?
                             <>
                             <input type="email" placeholder='Enter email address' ref={el=>$email=el}/>
@@ -62,11 +62,11 @@ function Footer(){
                     }
                 </form>
                 <div className="gfooter__copy"> 
-                    <p>&copy; TCG crypto, {year}</p>
+                    <p><a href="https://twitter.com/tcg_crypto" target="_blank"  rel="noreferrer">&copy; TCG crypto, {year}</a></p>
                     <ul>
-                        <li><a href="https://twitter.com/tcg_crypto" target="_blank"  rel="noreferrer" >Twitter</a>/</li>
+                        <li><a href="https://twitter.com/tcg_crypto" target="_blank"  rel="noreferrer">Twitter</a>/</li>
                         <li><Link href="/contact"><a>Contact Us</a></Link>/</li>
-                        <li><a href="https://tcg.co/" target="_blank"  rel="noreferrer" >tcg.co</a></li>
+                        <li><a href="https://tcg.co/" target="_blank"  rel="noreferrer">tcg.co</a></li>
                     </ul>
                 </div>
             </footer>

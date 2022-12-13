@@ -2,7 +2,9 @@ import Link from 'next/link'
 import SiteLogo from 'components/svgs/site-logo'
 import SiteLogoDark from 'components/svgs/site-logo-dark'
 import styles from './header.module.scss'
-import { useState } from 'react'
+
+import { useState, useRef, useEffect  } from 'react'
+import horizontalLoop from 'lib/horizontalLoop'
 
 function Header(){
 
@@ -12,9 +14,29 @@ function Header(){
         showMenu ? setShowMenu(false) : setShowMenu(true)
     }
 
+    let $marquee = useRef(null);
+
+    useEffect(() => {
+
+        document.fonts.ready.then(function () {
+                
+            const $words = Array.from($marquee.children)
+    
+            let loop = horizontalLoop($words, {paused: false,repeat:-1, speed:.5,reversed: false });
+        
+        });
+
+    },[]);
+
     return(
         <>
             <header className={styles.site_header}>
+
+                <div className={styles.marquee} ref={el => $marquee = el}>
+                    <div className={styles.marquee__text}>08-01-2022   —   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    <div className={styles.marquee__text}>08-01-2022   —   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    <div className={styles.marquee__text}>08-01-2022   —   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                </div>
 
                 <Link href="/">
                     <a className={styles.site_logo}>

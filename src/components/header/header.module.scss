@@ -1,6 +1,32 @@
 @import 'styles/includes/variables';
 
+.marquee{
+    background-color: $blue;
+    color: $white;
+    width: 100%;
+    padding: .5rem 0;
+    display: flex;
+    flex-wrap: nowrap;
+    &__text{
+        font-size: .8rem;
+        font-family: $serif;
+        margin: 0 1rem;
+        white-space: nowrap;
+        @media (min-width:960px){
+            margin: 0 auto;
+            padding: 0 1rem;
+            white-space: normal;
+            display: none;
+            transform: none!important;
+            &:first-of-type{
+                display: block;
+            }
+        }
+    }
+}
+
 .site_header{
+    flex-wrap: wrap;
     border-bottom: 1px solid $black;
     display: flex;
     align-items: center;

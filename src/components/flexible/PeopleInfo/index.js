@@ -18,7 +18,7 @@ function PeopleInfo({data}){
 
                 <SectionIntro title="People" />
 
-                <div className="container">
+                <div className="container people-wrap">
 
                     <div className={styles.people_section__names}>
                         <ul>

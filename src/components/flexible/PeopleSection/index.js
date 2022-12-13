@@ -11,16 +11,18 @@ function PeopleSection({data}){
                 <div className='container'>
 
                     <div className={styles.people_section__people}>
-                        {
-                            data.people.map((staff,i) => {
-                                return(
-                                    <div key={i} className={[styles.staff_card, 'staff_card'].join(' ')}>
-                                        <ResImage image={staff.image} alt={staff.name} size='sm' />
-                                        <h5>{staff.name}</h5>
-                                    </div>
-                                )
-                            })
-                        }
+                        <div className="wrap">
+                            {
+                                data.people.map((staff,i) => {
+                                    return(
+                                        <div key={i} className={[styles.staff_card, 'staff_card'].join(' ')}>
+                                            <ResImage image={staff.image} alt={staff.name} size='sm' />
+                                            <h5>{staff.name}</h5>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
                     </div>
 
                     <div className={styles.people_section__content}>

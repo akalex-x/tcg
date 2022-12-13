@@ -1,3 +1,5 @@
+@import 'styles/includes/variables';
+
 .centerd_content{
     text-align: center;
     padding: 1.5rem 1rem;
@@ -16,6 +18,7 @@
     :global{
         p{
             font-size: 1.25rem;
+            font-family: $heading_font2;
         }
     }
     @media (min-width:960px){

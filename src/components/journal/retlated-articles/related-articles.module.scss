@@ -1,6 +1,19 @@
 .related_articles{
     border-bottom: 1px solid black;
     padding: 0 1rem;
+    @media (min-width:960px){
+        border-bottom: 1px solid transparent;
+        position: relative;
+        &:before{
+            width: 100vw;
+            left: 0;
+            bottom: 0;
+            height: 1px;
+            background-color: black;
+            position: absolute;
+            content: '';
+        }
+    }
 }
 
 .post_card{
