@@ -36,41 +36,43 @@ function PostFilters({cats,currentCat,postsTotal,authors,onFilter}){
             {/* {console.log(authors)} */}
             {/* {console.log(currentAuthors)} */}
             <div className={styles.journal_nav}>
-                <ul className={styles.journal_cats}>
-                    <li>
-                        <Link href='/journal'>
-                            <a className={ currentCat == null ? 'active' : null }>All <span className='count'>{postsTotal}</span></a>
-                        </Link>
-                    </li>
-                    {
-                        cats.map((cat)=>{
-                            return(
-                                <li key={cat.slug}>
-                                    <Link href={'/journal/category/'+cat.slug}>
-                                        <a className={ currentCat == cat.slug ? 'active' : null }>{cat.name} <span className="count">{cat.posts.pageInfo.total}</span></a>
-                                    </Link>
-                                </li>
-                            )
-                        })
-                    }
-                </ul>
-                { currentAuthors.length > 1 ?
-                    <div className={styles.filter_bar}>
-                        <button type='button' onClick={()=>toggleShowAuth()} className={[styles.filter_btn,'reset filter-btn',showAuth].join(' ')}>Filter <Arrow /></button>
-                        { showAuth ? 
-                            <div className={styles.filter_bar__authors}>
-                                <span>By Author:</span>
-                                {
-                                    currentAuthors.map((author)=>{
-                                        return(
-                                            <button className='reset' key={author.userId} type='button' onClick={()=>{onFilter(author.userId)}}>{author.name}</button>
-                                        )
-                                    })
-                                }
-                            </div>
-                        : null }
-                    </div>
-                : null }
+                <div className="container">
+                    <ul className={styles.journal_cats}>
+                        <li>
+                            <Link href='/journal'>
+                                <a className={ currentCat == null ? 'active' : null }>All <span className='count'>{postsTotal}</span></a>
+                            </Link>
+                        </li>
+                        {
+                            cats.map((cat)=>{
+                                return(
+                                    <li key={cat.slug}>
+                                        <Link href={'/journal/category/'+cat.slug}>
+                                            <a className={ currentCat == cat.slug ? 'active' : null }>{cat.name} <span className="count">{cat.posts.pageInfo.total}</span></a>
+                                        </Link>
+                                    </li>
+                                )
+                            })
+                        }
+                    </ul>
+                    { currentAuthors.length > 1 ?
+                        <div className={styles.filter_bar}>
+                            <button type='button' onClick={()=>toggleShowAuth()} className={[styles.filter_btn,'reset filter-btn',showAuth].join(' ')}>Filter <Arrow /></button>
+                            { showAuth ? 
+                                <div className={styles.filter_bar__authors}>
+                                    <span>By Author:</span>
+                                    {
+                                        currentAuthors.map((author)=>{
+                                            return(
+                                                <button className='reset' key={author.userId} type='button' onClick={()=>{onFilter(author.userId)}}>{author.name}</button>
+                                                )
+                                            })
+                                    }
+                                </div>
+                            : null }
+                        </div>
+                    : null }
+                </div>
             </div>
         </>
     )

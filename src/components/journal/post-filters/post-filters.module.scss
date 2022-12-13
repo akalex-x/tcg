@@ -79,8 +79,12 @@
         }
     }
     @media (min-width:960px){
-        display: flex;
         border-bottom: 1px solid black;
+        :global{
+            .container{
+                display: flex;
+            }
+        }
         .journal_cats{
             flex: 1;
             border-bottom: 0;

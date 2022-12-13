@@ -65,6 +65,7 @@ function Footer(){
                     <p><a href="https://twitter.com/tcg_crypto" target="_blank"  rel="noreferrer">&copy; TCG crypto, {year}</a></p>
                     <ul>
                         <li><a href="https://twitter.com/tcg_crypto" target="_blank"  rel="noreferrer">Twitter</a>/</li>
+                        <li><a href="https://www.linkedin.com/company/the-chernin-group/" target="_blank"  rel="noreferrer">LinkedIn</a>/</li>
                         <li><Link href="/contact"><a>Contact Us</a></Link>/</li>
                         <li><a href="https://tcg.co/" target="_blank"  rel="noreferrer">tcg.co</a></li>
                     </ul>

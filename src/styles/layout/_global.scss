@@ -186,7 +186,7 @@ section,
 
 .container {
     width: 100%;
-    max-width: $container_sm;
+    // max-width: $container_sm;
     margin: 0 auto;
 
     @media (min-width:$laptop) {
