@@ -26,11 +26,11 @@
             z-index: -1;
             will-change: transform;
             // background: linear-gradient(246deg, rgb(98, 100, 224) 0%, rgb(16, 6, 159) 75%); 
-            // filter: blur(5px);
+            filter: blur(10px);
             opacity: .25;
             position: relative;
             &:first-of-type{
-                // filter: blur(0);
+                filter: blur(0);
                 opacity: 1;
             }
             .spacer{
@@ -65,7 +65,7 @@
         min-height: $deskHeight;
         :global{
             .blob{
-                width: 500px;
+                width: 600px;
             }
         }
     }
