@@ -8,19 +8,7 @@ function FiftyFiftyParallax({data}){
 
     let $gradient = useRef(null);
     
-    useEffect(() => {
-
-        function parallax(event) {
-            const position = 10
-            const x = (window.innerWidth - event.pageX * position) / 90;
-            const y = (window.innerHeight - event.pageY * position) / 90;
-            $gradient.style.transform = 'translateX('+x+'px) translateY('+y+'px)';
-        }
-        document.addEventListener("mousemove", parallax);
-
-        return () => document.removeEventListener("mousemove", parallax);
-    
-    },[]);
+ 
 
     return(
         <>
@@ -29,14 +17,8 @@ function FiftyFiftyParallax({data}){
                 <div className="container">
                     <div className={styles.fifty_fifty__wrap}>
 
-                        <div className={styles.fifty_fifty__image}>
+                        <div className={styles.fifty_fifty__image} style={ {backgroundImage:"url(/temp/fifty-bg.jpg)"} }>
                             <div className="spacer">
-                                <div className="positioner" ref={el => $gradient = el}>
-                                    <div className="gradient"></div>
-                                </div>
-                                <div className="logo">
-                                    <Logo />
-                                </div>
                             </div>
                         </div>
 

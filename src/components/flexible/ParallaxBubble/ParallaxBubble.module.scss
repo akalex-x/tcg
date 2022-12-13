@@ -9,6 +9,9 @@
     border-bottom: 1px solid black;
     overflow: hidden;
     background-color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
     // background-color: #ebefee;
     // position: relative;
     :global{
@@ -63,6 +66,7 @@
     // }
     @media (min-width:960px){
         min-height: $deskHeight;
+        background-size: auto 100%;
         :global{
             .blob{
                 width: 700px;

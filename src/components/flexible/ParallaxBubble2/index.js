@@ -20,7 +20,7 @@ function ParallaxBubble2(){
 
 		function moveCursor(e) {
 
-            console.log($section)
+            // console.log($section)
 
             let x = e.clientX- ($section.clientWidth/2);  
             let y = e.clientY - ($section.clientHeight/2);  

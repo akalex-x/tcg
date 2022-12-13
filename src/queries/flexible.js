@@ -44,6 +44,11 @@ function QUERY_FLEXIBLE_LAYOUTS(type){
                     cta
                     ctaLink
                 }
+                ... on ${type}_FlexibleContent_Flexiblecontent_FiftyFiftyParallax2 {
+                    content
+                    cta
+                    ctaLink
+                }
                 ... on ${type}_FlexibleContent_Flexiblecontent_CenteredContent {
                     content
                 }
