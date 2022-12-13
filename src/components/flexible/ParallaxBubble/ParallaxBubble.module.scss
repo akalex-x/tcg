@@ -30,7 +30,7 @@
             opacity: .25;
             position: relative;
             &:first-of-type{
-                filter: blur(0);
+                // filter: blur(0);
                 opacity: 1;
             }
             .spacer{
