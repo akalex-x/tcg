@@ -29,7 +29,7 @@
             z-index: -1;
             will-change: transform;
             // background: linear-gradient(246deg, rgb(98, 100, 224) 0%, rgb(16, 6, 159) 75%); 
-            filter: blur(5px);
+            filter: blur(0px);
             opacity: .25;
             position: relative;
             &:first-of-type{
