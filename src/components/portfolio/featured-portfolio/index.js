@@ -32,7 +32,6 @@ function FeaturedPortfolio({data}){
                         <div className={styles.feat_port__images}>
                             <Swiper
                             modules={[Controller,Pagination,EffectFade]}
-                            effect="fade"
                             slidesPerView={1}
                             pagination={{ clickable: true }}
                             onSwiper={setFirstSwiper} 

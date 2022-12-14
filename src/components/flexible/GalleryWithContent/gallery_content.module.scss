@@ -22,6 +22,9 @@
     &__content{
         overflow: hidden;
         :global{
+            .swiper-slide{
+                background-color: white;
+            }
             .content-wrap{
                 padding: 3rem 1rem;
             }
@@ -70,22 +73,34 @@
             width: 50%;
             display: flex;
             position: relative;
+            align-items: center;
             :global{
                 .gallery_content__thumbs{
-                    padding: 3rem 1rem 3rem 0rem;
-                    width: 25%;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    height: 100%;
-                    background-color: white;
-                    z-index: 3;
+                    // padding: 5% 1rem;
+                    // width: 25%;
+                    // position: absolute;
+                    // top: 0;
+                    // left: 0;
+                    // height: 100%;
+                    // background-color: white;
+                    // z-index: 3;
+                    width: calc(20% - 2rem);
+                    margin: 0 1rem;
                     .tslider{
                         width: 100%;
                         height: 100%;
                         overflow: hidden;
                     }
+                    .spacer{
+                        width: 100%;
+                        height: 0;
+                        padding-bottom: 100%;
+                        position: relative;
+                    }
                     img{
+                        position: absolute;
+                        top: 0;
+                        kerning: 0;
                         width: 100%;
                         object-fit: cover;
                         height: 100%;
@@ -93,6 +108,8 @@
                     }
                     .swiper-slide{
                         padding: .5rem;
+                        // height: 50px!important;
+                        // margin: .5rem 0;
                         border: 1px solid transparent;
                     }
                     .swiper-slide-thumb-active{
@@ -100,8 +117,8 @@
                     }
                 }
                 .gallery_content__gallery{
-                    width: 75%;
-                    margin-left: auto;
+                    width: 80%;
+                    // margin-left: auto;
                 }
             }
         }

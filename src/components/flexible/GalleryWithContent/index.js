@@ -4,9 +4,11 @@ import ResImage from 'components/get-image'
 
 import {useEffect} from 'react'
 
-import { Swiper,Controller,Pagination, Thumbs } from 'swiper';
+import { EffectFade,Swiper,Controller,Pagination, Thumbs } from 'swiper';
 
 import 'swiper/css';
+import 'swiper/css/effect-fade';
+
 
 function GalleryWithContent({data}){
 
@@ -15,17 +17,19 @@ function GalleryWithContent({data}){
     useEffect(() => {
         
         let thumbsSwiper = new Swiper(".gallery_content__thumbs .tslider", {
-            loop:true,
-            // modules:[Controller],
+            // loop:true,
+            // modules:[EffectFade],
+            // effect:"fade",
             slidesPerView: "3",
-            spaceBetween: 16,
+            // spaceBetween: 16,
             createElements: true,
             slideToClickedSlide: true,
             direction: 'vertical',
         });
 
         let mainSwiper = new Swiper(".gallery_content__gallery", {
-            modules:[Controller, Thumbs],
+            modules:[Controller, Thumbs,EffectFade],
+            effect:"fade",
             slidesPerView: "1",
             spaceBetween: 32,
             loop:true,
@@ -42,7 +46,8 @@ function GalleryWithContent({data}){
         
         let contentSwiper = new Swiper(".gallery_content__content", {
             loop:true,
-            modules:[Controller,Pagination],
+            modules:[Controller,Pagination,EffectFade],
+            effect:"fade",
             slidesPerView: "1",
             spaceBetween: 32,
             // createElements: true,
@@ -77,7 +82,9 @@ function GalleryWithContent({data}){
                                         slides.map((slide, i) => {
                                             return(
                                                 <div className="swiper-slide" key={i}>
-                                                    <ResImage image={slide.image} alt='About Us' size='md'/>
+                                                    <div className="spacer">
+                                                        <ResImage image={slide.image} alt='About Us' size='md'/>
+                                                    </div>
                                                 </div>
                                             )
                                         })
