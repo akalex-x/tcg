@@ -39,27 +39,21 @@ function FeaturedPortfolio({data}){
                             controller={{ control: secondSwiper }}
                             >
 
-                                <SwiperSlide>
-                                    <div className="spacer">
-                                        { data.portfolioSingle.squareImage ?
-                                            <ResImage alt={data.title} image={data.portfolioSingle.squareImage} size="lg" />
-                                        : data.featuredImage ?
-                                            <ResImage alt={data.title} image={data.featuredImage.node} size="lg" />
-                                        : null
-                                        }
-                                    </div>
-                                </SwiperSlide>
-
-                                <SwiperSlide>
-                                    <div className="spacer">
-                                        { data.portfolioSingle.squareImage ?
-                                            <ResImage alt={data.title} image={data.portfolioSingle.squareImage} size="lg" />
-                                        : data.featuredImage ?
-                                            <ResImage alt={data.title} image={data.featuredImage.node} size="lg" />
-                                        : null
-                                        }
-                                    </div>
-                                </SwiperSlide>
+                                { data.map((port,i)=>{
+                                    return(
+                                        <SwiperSlide>
+                                            <div className="spacer">
+                                                { port.portfolioSingle.squareImage ?
+                                                    <ResImage alt={port.title} image={port.portfolioSingle.squareImage} size="lg" />
+                                                    : port.featuredImage ?
+                                                    <ResImage alt={port.title} image={port.featuredImage.node} size="lg" />
+                                                    : null
+                                                }
+                                            </div>
+                                            <PortCategories cats={port.categories.nodes} />
+                                        </SwiperSlide>
+                                    )
+                                })}
 
                             </Swiper>
                         </div>
@@ -82,25 +76,20 @@ function FeaturedPortfolio({data}){
                             controller={{ control: firstSwiper }} 
                             >
                                 
-                                <SwiperSlide>
-                                    <div className="content-wrap">
-                                        <div className="container">
-                                            <h1>{data.title}</h1>
-                                            <div className="content" dangerouslySetInnerHTML={{__html:data.content}}></div>
-                                            <Button type="text" href={'/portfolio/'+data.slug} content="Learn More" />
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-
-                                <SwiperSlide>
-                                    <div className="content-wrap">
-                                        <div className="container">
-                                            <h1>{data.title}</h1>
-                                            <div className="content" dangerouslySetInnerHTML={{__html:data.content}}></div>
-                                            <Button type="text" href={'/portfolio/'+data.slug} content="Learn More 2" />
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
+                                { data.map((port,i)=>{
+                                    return(
+                                        <SwiperSlide>
+                                            <div className="content-wrap">
+                                                <div className="container">
+                                                    <h1>{port.title}</h1>
+                                                    <div className="content" dangerouslySetInnerHTML={{__html:port.content}}></div>
+                                                    <Button type="text" href={'/portfolio/'+port.slug} content="Learn More" />
+                                                </div>
+                                            </div>
+                                            <PortCategories cats={port.categories.nodes} />
+                                        </SwiperSlide>
+                                    )
+                                })}
 
                             </Swiper>
 
@@ -112,7 +101,6 @@ function FeaturedPortfolio({data}){
                                 </div> 
                             </div>
 
-                            <PortCategories cats={data.categories.nodes} />
 
                         </div>
 
