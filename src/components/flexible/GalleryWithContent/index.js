@@ -48,6 +48,9 @@ function GalleryWithContent({data}){
             loop:true,
             modules:[Controller,Pagination,EffectFade],
             effect:"fade",
+            fadeEffect: {
+                crossFade: true
+            },
             slidesPerView: "1",
             spaceBetween: 32,
             // createElements: true,
