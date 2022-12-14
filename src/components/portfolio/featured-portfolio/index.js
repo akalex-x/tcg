@@ -41,7 +41,7 @@ function FeaturedPortfolio({data}){
 
                                 { data.map((port,i)=>{
                                     return(
-                                        <SwiperSlide>
+                                        <SwiperSlide key={'image'+i}>
                                             <div className="spacer">
                                                 { port.portfolioSingle.squareImage ?
                                                     <ResImage alt={port.title} image={port.portfolioSingle.squareImage} size="lg" />
@@ -78,7 +78,7 @@ function FeaturedPortfolio({data}){
                                 
                                 { data.map((port,i)=>{
                                     return(
-                                        <SwiperSlide>
+                                        <SwiperSlide key={'content'+i}>
                                             <div className="content-wrap">
                                                 <div className="container">
                                                     <h1>{port.title}</h1>
