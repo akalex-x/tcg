@@ -570,3 +570,7 @@ iframe{
 //         transform: rotate(45deg);
 //     }
 // }
+
+.content-blocks + #people{
+    border-top: 0;
+}

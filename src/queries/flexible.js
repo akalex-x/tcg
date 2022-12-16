@@ -183,7 +183,6 @@ function QUERY_FLEXIBLE_LAYOUTS(type){
                     }
                 }
                 ... on ${type}_FlexibleContent_Flexiblecontent_ContentBlocksHeading {
-                    heading
                     blocks {
                       heading
                       content

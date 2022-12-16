@@ -25,8 +25,12 @@
             .swiper-slide{
                 background-color: white;
             }
-            .content-wrap{
+            .content{
                 padding: 3rem 1rem;
+                .wrap{
+                    max-width: 575px;
+                    margin: 0 auto;
+                }
             }
             .swiper-pagination{
                 padding: 0 1rem;
@@ -40,6 +44,12 @@
                     width: 1rem;
                     height: 1rem;
                     border-radius: 50%;
+                }
+            }
+            ul{
+                li{
+                    list-style:outside;
+                    padding: 0;
                 }
             }
         }
@@ -126,7 +136,7 @@
             width: 50%;
             padding: 0;
             :global{
-                .content-wrap{
+                .content{
                     padding: 6rem 4.5rem;
                 }
                 .swiper-pagination{

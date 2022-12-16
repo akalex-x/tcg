@@ -1,25 +1,57 @@
 .contentBlocks{
-    &__heading{
-        margin: 0;
-        text-align: center;
-    }
+    padding: 0 1rem;
     &__block{
-        margin-top: 4.5rem;
+        padding: 4.5rem 0;
+        position: relative;
+        &:after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -1rem;
+            width: 100vw;
+            height: 1px;
+            background-color: black;
+        }
+        &:last-of-type{
+            &:after{
+                content: none;
+            }
+        }
         :global{
-            .content{
-                padding-top: 1.5rem;
-                border-top: 1px solid black;
+            .content-wrap{
+                max-width: 450px;
+                margin: 0 auto;
             }
         }
     }
     @media (min-width:960px){
+        padding: 0;
+        position: relative;
+        &:after{
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            height: 100%;
+            width: 1px;
+            background-color: black;
+        }
         &__loop{
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
         }
         &__block{
-            width: calc(50% - 3rem);
+            width: 50%;
+            padding: 4.5rem 3rem;
+            &:after{
+                left: calc(100% - 50vw);
+            }
+            &:nth-child(even){
+                &:after{
+                    content: none;
+                }
+            }
         }
     }
 }

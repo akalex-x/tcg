@@ -115,7 +115,8 @@ function GalleryWithContent({data}){
                                         slides.map((slide, i) => {
                                             return(
                                                 <div className="swiper-slide" key={i}>
-                                                    <div className="content-wrap" dangerouslySetInnerHTML={{__html: slide.content}}>
+                                                    <div className="content">
+                                                        <div className="wrap" dangerouslySetInnerHTML={{__html: slide.content}}></div>
                                                     </div>
                                                 </div>
                                             )
