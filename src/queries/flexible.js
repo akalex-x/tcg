@@ -57,6 +57,10 @@ function QUERY_FLEXIBLE_LAYOUTS(type){
                     cite
                     quote
                 }
+                ... on ${type}_FlexibleContent_Flexiblecontent_BlueQuote {
+                    quote
+                    cite
+                }
                 ... on ${type}_FlexibleContent_Flexiblecontent_VideoWithContent {
                     title
                     content

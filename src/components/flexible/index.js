@@ -20,6 +20,8 @@ import FiftyFiftyParallax2 from './FiftyFiftyParallax2'
 import ParallaxBubble from './ParallaxBubble'
 import ParallaxBubble2 from './ParallaxBubble2'
 
+import BlueQuote from './BlueQuote'
+
 import ContentSpotify from './ContentSpotify'
 
 import ContentBlocksHeading from './ContentBlocksHeading'
@@ -77,6 +79,8 @@ function FlexibleContent({flexibleContent,latestPort,latestPosts,latestPeople}){
                         return <ContentSpotify key={i} data={layout} />
                     case 'ContentBlocksHeading':
                         return <ContentBlocksHeading key={i} data={layout} />
+                    case 'BlueQuote':
+                        return <BlueQuote key={i} data={layout} />
                     case 'FiftyFiftyParallax':
                         return <FiftyFiftyParallax key={i} data={layout} />
                     case 'FiftyFiftyParallax2':
