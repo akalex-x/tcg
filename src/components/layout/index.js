@@ -18,7 +18,7 @@ function Layout({ children }) {
         clearTimeout(showCounter)
         showCounter = setTimeout(function(){
             !showDVD ? setDVD(true) : null 
-        },20000)
+        },30000)
     }
 
     useEffect(()=>{

@@ -80,6 +80,21 @@
     img{
         margin-bottom: 1.5rem;
     }
+    figure{
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+        img{
+            margin: 0;
+        }
+        figcaption{
+            margin-top: .25rem;
+            font-family: $serif;
+            font-size: .85rem;
+            a{
+                text-decoration: underline;
+            }
+        }
+    }
     @media (min-width:960px){
         padding-bottom: 4.5rem;
     }

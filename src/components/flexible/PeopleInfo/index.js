@@ -1,5 +1,5 @@
 import styles from './people-info.module.scss'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import SectionIntro from 'components/section-intro'
 import ResImage from 'components/get-image'
 import Socials from 'components/socials'
@@ -10,6 +10,30 @@ function PeopleInfo({data}){
     const [person,setPerson] = useState(data[0])
 
     const acf = person.peopleSingle
+    
+    let $list = useRef(null);
+    // let size = 0; 
+
+    // useEffect(() => {
+
+    //     const sizePeople = () => {
+
+    //         const $children = $list.children        
+    //         for (var i = 0; i < $children.length; i++) {
+    //             const $child = $children[i];
+    //             console.log($child)
+    //             $child.click()
+    //         }
+
+    //     }
+
+    //     window.addEventListener("resize", sizePeople);
+
+    //     window.dispatchEvent(new Event('resize'));
+
+    //     return () => { window.removeEventListener("resize", sizePeople); }
+
+    // },[]);
 
     return(
         <>
@@ -21,7 +45,7 @@ function PeopleInfo({data}){
                 <div className="container people-wrap">
 
                     <div className={styles.people_section__names}>
-                        <ul>
+                        <ul ref={ el => $list = el }>
                             {
                                 data.map((people)=>{
                                     return(

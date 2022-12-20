@@ -9,6 +9,7 @@ function PortfolioLoop({latestPort,limit}){
     let $portLoop = useRef(null);
     const [sPort,setPort] = useState(null)
     const [showAll,setShow] = useState(false)
+    const [lastRow,setRow] = useState(null)
 
     const portfolios = [...latestPort];
     
@@ -25,30 +26,41 @@ function PortfolioLoop({latestPort,limit}){
 
         if( sPort != latestPort[index] ){
 
-            tl.to('.post_details',{
-                height: 0,
-                'margin-bottom': 0,
-                onComplete: () => {
-                    setPort(latestPort[index])
-                }
-            });
-
             const colCount = window.getComputedStyle($portLoop.current).getPropertyValue('grid-template-columns').split(' ').length
             const rowPosition = Math.floor(index / colCount) + 2;
             
-            tl.set('.post_details',{
-                'grid-row': rowPosition,
-            });
-            
-            tl.to('.post_details',{
-                delay:.05,
-                height: 'auto',
-                'margin-bottom': '3rem',
-                onComplete: () => {
-                    let $details = gsap.utils.selector($portLoop.current);
-                    $details('.post_details')[0].scrollIntoView({behavior: "smooth", block: "center"});
-                }
-            });
+            if( lastRow != rowPosition ){
+                
+                setRow(rowPosition)
+    
+                tl.to('.post_details',{
+                    height: 0,
+                    'margin-bottom': 0,
+                    onComplete: () => {
+                        setPort(latestPort[index])
+                    }
+                });
+                
+                tl.set('.post_details',{
+                    'grid-row': rowPosition,
+                });
+    
+                
+                tl.to('.post_details',{
+                    delay:.05,
+                    height: 'auto',
+                    'margin-bottom': '3rem',
+                    onComplete: () => {
+                        let $details = gsap.utils.selector($portLoop.current);
+                        $details('.post_details')[0].scrollIntoView({behavior: "smooth", block: "center"});
+                    }
+                });
+
+            }else{
+
+                setPort(latestPort[index])
+
+            }
 
             
         }else{
@@ -57,6 +69,7 @@ function PortfolioLoop({latestPort,limit}){
                 'margin-bottom': 0,
                 onComplete: () => {
                     setPort(null)
+                    setRow(null);
                 }
             });
         }
