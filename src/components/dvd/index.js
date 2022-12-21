@@ -5,7 +5,7 @@ function DVD(){
 
     useEffect( () => {
 
-        let speed = .01;
+        let speed = .002;
         let scale = 0.3; // Image scale (I work on 1080p monitor)
         let canvas;
         let ctx;
