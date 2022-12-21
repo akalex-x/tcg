@@ -25,8 +25,9 @@ function Layout({ children }) {
 
         document.addEventListener('mousemove', checkDVD)
         document.addEventListener('scroll', checkDVD)
+        document.addEventListener('click', checkDVD)
 
-        return () => [document.removeEventListener('mousemove', checkDVD),document.removeEventListener('scroll', checkDVD)];
+        return () => [document.removeEventListener('mousemove', checkDVD),document.removeEventListener('scroll', checkDVD),document.removeEventListener('click', checkDVD)];
 
     },[showDVD])
 

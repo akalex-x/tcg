@@ -53,12 +53,31 @@ function Article({post,adjacentPosts}){
                     </div>
 
                     { post.featuredImage &&
-                        <ResImage image={post.featuredImage.node} alt={post.title} size={'xxl'} />
+                        <>
+                            <figure>
+                                <ResImage image={post.featuredImage.node} alt={post.title} size={'xxl'} />
+                                { post.featuredImage.node.caption &&
+                                    <figcaption dangerouslySetInnerHTML={{ __html: post.featuredImage.node.caption }}></figcaption>
+                                }
+                            </figure>
+                        </>
                     }
 
                 </div>
 
-                <div className={styles.article_content} dangerouslySetInnerHTML={{ __html: post.content.replace(regex, '$1') }}></div>
+                <div className={styles.article_content}>
+                { post.postSingle.singlePostAcf &&
+                        <>
+                            { post.postSingle.singlePostAcf.excerpt &&
+                                <span className='excerpt'>{ post.postSingle.singlePostAcf.excerpt }</span>
+                            }
+                            { post.postSingle.singlePostAcf.subtitle &&
+                                <span className='h3'>{ post.postSingle.singlePostAcf.subtitle }</span>
+                            }
+                        </>
+                    }
+                    <div className="dynamic-content" dangerouslySetInnerHTML={{ __html: post.content.replace(regex, '$1') }}></div>
+                </div>
 
                 <AdjacentPosts posts={adjacentPosts} />
 

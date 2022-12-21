@@ -18,6 +18,21 @@
             margin-top: 0;
         }
     }
+    figure{
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+        img{
+            margin: 0;
+        }
+        figcaption{
+            margin-top: .5rem;
+            font-family: $serif;
+            font-size: .85rem;
+            a{
+                text-decoration: underline;
+            }
+        }
+    }
     &__extra,
     &__meta{
         display: flex;
@@ -77,6 +92,11 @@
 
 .article_content{
     padding-bottom: 3rem;
+    :global{
+        .excerpt{
+            font-style: italic;
+        }
+    }
     img{
         margin-bottom: 1.5rem;
     }
@@ -87,7 +107,7 @@
             margin: 0;
         }
         figcaption{
-            margin-top: .25rem;
+            margin-top: .5rem;
             font-family: $serif;
             font-size: .85rem;
             a{

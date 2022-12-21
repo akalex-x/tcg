@@ -117,6 +117,12 @@ export const QUERY_SINGLE_POST = gql`
           content
           date
           id
+          postSingle {
+            singlePostAcf {
+              excerpt
+              subtitle
+            }
+          }
           author {
             node {
               name
@@ -131,6 +137,7 @@ export const QUERY_SINGLE_POST = gql`
           featuredImage {
             node {
               sourceUrl
+              caption
               mediaDetails {
                 width
                 height
