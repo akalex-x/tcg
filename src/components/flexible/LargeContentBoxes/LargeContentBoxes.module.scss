@@ -1,7 +1,11 @@
+.content_boxs{
+    border-top: 1px solid black;
+}
+
 .content_box_wrap{
     @media (min-width:960px){
-        border-right: 1px solid black;
-        border-left: 1px solid black;
+        // border-right: 1px solid black;
+        // border-left: 1px solid black;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -23,7 +27,6 @@
 .content_box{
     padding: 1.5rem;
     text-align: center;
-    border-top: 1px solid black;
     p{
         font-size: 1.25rem;
     }

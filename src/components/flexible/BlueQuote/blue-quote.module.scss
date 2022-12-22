@@ -3,6 +3,12 @@
 .blue_quote{
     background-color: #10069f;
     text-align: center;
+    min-height: $mobHeight;
+    display: flex;
+    align-items: center;
+    @media (min-width:960px){
+        min-height: $deskHeight;
+    }
     &__emoji{
         display: block;
         text-align: center;
