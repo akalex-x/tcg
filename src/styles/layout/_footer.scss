@@ -19,6 +19,14 @@
             color: $blue;
         }
     }
+    &__terms{
+        padding:  1.5rem 1rem 3rem;
+        p{
+            font-family: $serif;
+            font-size: .9rem;
+            max-width: 960px;
+        }
+    }
     &__subscribe{
         padding: 1.5rem 1rem;
         h2{

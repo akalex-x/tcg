@@ -3,7 +3,7 @@ import Footer from 'components/footer'
 import DVD from 'components/dvd'
 import { useEffect, useState } from 'react'
 
-function Layout({ children }) {
+function Layout({ children, showTerms }) {
 
     const [showDVD,setDVD] = useState(false)
 
@@ -39,7 +39,7 @@ function Layout({ children }) {
             <main>
                 {children}
             </main>
-            <Footer />
+            <Footer showTerms={showTerms} />
             { showDVD &&
                 <DVD />
             }

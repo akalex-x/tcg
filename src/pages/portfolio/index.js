@@ -22,7 +22,7 @@ function PortfolioArhive({latestPort,acf}){
 
     return(
         <>
-            <Layout>
+            <Layout showTerms={true} >
                 <TitleBar title="Portfolio" />
                 <FeaturedPortfolio data={acf.featuredPortfolo} />
                 <CenteredContent data={centertedIntro} />
@@ -48,7 +48,7 @@ export async function getStaticProps(){
           latestPort:latestPort,
           acf:acf,
           revalidate: 30,
-          bodyClass: 'port-archive'
+          bodyClass: 'port-archive',
         }
     };
   

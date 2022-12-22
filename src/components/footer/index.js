@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Arrow from 'components/svgs/arrow'
 import { useRef,useState } from 'react'
 
-function Footer(){
+function Footer({showTerms}){
 
     const year = new Date().getFullYear()
 
@@ -67,9 +67,17 @@ function Footer(){
                         <li><a href="https://twitter.com/tcg_crypto" target="_blank"  rel="noreferrer">Twitter</a>/</li>
                         <li><a href="https://www.linkedin.com/company/the-chernin-group/" target="_blank"  rel="noreferrer">Linkedin</a>/</li>
                         <li><Link href="/contact"><a>Contact Us</a></Link>/</li>
-                        <li><a href="https://tcg.co/" target="_blank"  rel="noreferrer">tcg.co</a></li>
+                        <li><a href="https://tcg.co/" target="_blank"  rel="noreferrer">tcg.co</a>/</li>
+                        <li><a href="https://tcg.co/privacy/" target="_blank"  rel="noreferrer">Privacy Policy and Terms and Conditions</a></li>
                     </ul>
                 </div>
+                { showTerms ?
+                    <>
+                        <div className="gfooter__terms">
+                            <p>The list above includes portfolio investments held, directly or indirectly, by crypto-focused vehicles managed by TCG Capital Management, LP (“TCG”) as of 12/20/22. <a href="https://tcg.co/portfolio/" target="_blank"  rel="noreferrer">Click here</a> for a list of all portfolio companies managed by TCG.</p>
+                        </div>
+                    </>
+                : null }
             </footer>
         </>
     )
