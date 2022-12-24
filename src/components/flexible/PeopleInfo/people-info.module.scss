@@ -193,6 +193,7 @@
             margin-left: auto;
             border-left: 1px solid black;
             padding: 4.5rem 1rem 7.5rem;
+            min-height: $deskHeight;
             :global{
                 .socials-list{
                     margin-top: 3rem;
