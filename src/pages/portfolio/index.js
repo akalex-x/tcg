@@ -1,3 +1,5 @@
+import {getMetaData} from 'fetch/meta';
+
 import {getPort} from 'fetch/portfolio'
 
 import PortfolioArchive from 'components/portfolio/portfolio-archive'
@@ -37,6 +39,8 @@ export default PortfolioArhive
 
 export async function getStaticProps(){
 
+    const getMeta = await getMetaData('portfolio');
+
     let latestPort = await getPort(100);
 
     let acf = await getPortArchiveACF();
@@ -45,6 +49,7 @@ export async function getStaticProps(){
 
     return {
         props:{
+          meta: getMeta,
           latestPort:latestPort,
           acf:acf,
           revalidate: 30,

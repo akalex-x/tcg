@@ -1,3 +1,5 @@
+import {getMetaData} from 'fetch/meta';
+
 import {getPostPaths,getPost,getRelatedPosts,getMorePosts} from 'fetch/posts'
 import Article from 'components/journal/article'
 import RelatedArticles from 'components/journal/retlated-articles'
@@ -32,6 +34,8 @@ export async function getStaticProps(context){
 
     const { params } = context
 
+    const getMeta = await getMetaData('post',params.slug);
+
     const post = await getPost(params.slug);
     
     if (!post) {
@@ -57,6 +61,7 @@ export async function getStaticProps(context){
 
     return {
         props:{
+            meta: getMeta,
             post:post,
             related:related,
             morePosts:morePosts,

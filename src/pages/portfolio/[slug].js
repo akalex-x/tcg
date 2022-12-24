@@ -1,3 +1,5 @@
+import {getMetaData} from 'fetch/meta';
+
 import {getPortfolioPaths,getPortfolio} from 'fetch/portfolio'
 import PortfolioHero from 'components/portfolio/portfolio-hero'
 
@@ -23,6 +25,8 @@ export default function SinglePortfolio({portfolio,flexibleContent,latestPort,la
 export async function getStaticProps(context){
 
     const { params } = context
+
+    const getMeta = await getMetaData('Portfolio',params.slug);
 
     const getFlexible = await getFlexibleContent('Portfolio',params.slug);
 
@@ -51,6 +55,7 @@ export async function getStaticProps(context){
 
     return {
         props:{
+            meta: getMeta,
             portfolio:portfolio,
             flexibleContent:flexible_content,
             latestPort:latestPort,

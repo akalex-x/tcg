@@ -1,3 +1,5 @@
+import {getMetaData} from 'fetch/meta';
+
 import {getLatestPosts,getPostArchive,getPostsTotal,getPostAuthors} from 'fetch/posts'
 import TitleBar from 'components/title-bar'
 import PostArchive from 'components/journal/post-archive'
@@ -28,6 +30,8 @@ export default function Journal({latestPosts,cats,currentCat,postsTotal,authors}
 
 export async function getStaticProps(){
 
+    const getMeta = await getMetaData('posts');
+
     const latestPosts = await getLatestPosts(100, null,null);
 
     const postsTotal = await getPostsTotal();
@@ -38,6 +42,7 @@ export async function getStaticProps(){
 
     return {
         props:{
+          meta: getMeta,
           latestPosts: latestPosts,
           cats: featuredCategories,
           currentCat: null,

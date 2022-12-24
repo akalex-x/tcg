@@ -1,3 +1,5 @@
+import {getMetaData} from 'fetch/meta';
+
 import FlexibleContent from 'components/flexible';
 import {getFlexibleContent} from 'fetch/flexible';
 import {getPort} from 'fetch/portfolio'
@@ -19,6 +21,8 @@ export default function Home({flexibleContent,latestPort,latestPosts}) {
 
 export async function getStaticProps(){
 
+  const getMeta = await getMetaData('Page','/');
+
   const getFlexible = await getFlexibleContent('Page','/');
 
   const {flexible_content} = getFlexible.data[Object.keys(getFlexible.data)[0]]
@@ -38,6 +42,7 @@ export async function getStaticProps(){
 
   return {
       props:{
+        meta: getMeta,
         flexibleContent:flexible_content,
         latestPort:latestPort,
         latestPosts: latestPosts,

@@ -8,7 +8,7 @@ import Layout from 'components/layout'
 export default function Home({flexibleContent,latestPort,latestPosts}) {
   return (
     <>
-      { console.log(flexibleContent) }
+      {/* { console.log(flexibleContent) } */}
       <Layout>
         <FlexibleContent flexibleContent={flexibleContent} latestPort={latestPort} latestPosts={latestPosts} />
       </Layout>
