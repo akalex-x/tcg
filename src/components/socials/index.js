@@ -7,7 +7,7 @@ function Socials({socials}){
 
     return(
         <>
-            { socials && 
+            { socials.facebook || socials.twitter ||  socials.linkedin ? 
                 <ul className={ [styles.socials_list, 'socials-list'].join(' ')}>
                     {socials.facebook &&
                         <li><a href={socials.facebook} target="_blank" rel="noreferrer" ><Facebook /></a></li>
@@ -19,7 +19,7 @@ function Socials({socials}){
                         <li><a href={socials.linkedin} target="_blank" rel="noreferrer" ><LinkedIn /></a></li>
                     }
                 </ul>
-            }
+            : null }
         </>
     )
 
