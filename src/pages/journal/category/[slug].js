@@ -37,8 +37,6 @@ export default function JournalCategory({latestPosts,cats,currentCat,postsTotal,
 
 export async function getStaticPaths(){
 
-    const gSettings = await getGlobalSettings();
-
     const {blogArchive:cats} = await getPostArchive();
 
     const paths = []
@@ -55,6 +53,8 @@ export async function getStaticPaths(){
 }
 
 export async function getStaticProps(context){
+
+    const gSettings = await getGlobalSettings();
 
     const {params} = context
 
