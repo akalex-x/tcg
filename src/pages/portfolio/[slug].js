@@ -9,12 +9,14 @@ import {getPort} from 'fetch/portfolio'
 import {getLatestPosts} from 'fetch/posts'
 import {checkIfPostsAreNeeded} from 'lib/util';
 
+import { getGlobalSettings } from 'fetch/settings';
+
 import Layout from 'components/layout'
 
-export default function SinglePortfolio({portfolio,flexibleContent,latestPort,latestPosts}) {
+export default function SinglePortfolio({portfolio,flexibleContent,latestPort,latestPosts,gSettings}) {
   return (
     <>
-        <Layout>
+        <Layout gSettings={gSettings}>
             <PortfolioHero port={portfolio} />
             <FlexibleContent flexibleContent={flexibleContent} latestPort={latestPort} latestPosts={latestPosts} />
         </Layout>
@@ -23,6 +25,8 @@ export default function SinglePortfolio({portfolio,flexibleContent,latestPort,la
 }
 
 export async function getStaticProps(context){
+
+    const gSettings = await getGlobalSettings();
 
     const { params } = context
 
@@ -56,6 +60,7 @@ export async function getStaticProps(context){
     return {
         props:{
             meta: getMeta,
+            gSettings: gSettings,
             portfolio:portfolio,
             flexibleContent:flexible_content,
             latestPort:latestPort,

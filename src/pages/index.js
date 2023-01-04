@@ -6,12 +6,13 @@ import {getPort} from 'fetch/portfolio'
 import {getLatestPosts} from 'fetch/posts'
 import {checkIfPostsAreNeeded} from 'lib/util';
 import Layout from 'components/layout'
+import { getGlobalSettings } from 'fetch/settings';
 // import HomeHero from 'components/home-hero'
 
-export default function Home({flexibleContent,latestPort,latestPosts}) {
+export default function Home({flexibleContent,latestPort,latestPosts,gSettings}) {
   return (
     <>
-      <Layout>
+      <Layout gSettings={gSettings}>
         {/* <HomeHero /> */}
         <FlexibleContent flexibleContent={flexibleContent} latestPort={latestPort} latestPosts={latestPosts} />
       </Layout>
@@ -22,6 +23,7 @@ export default function Home({flexibleContent,latestPort,latestPosts}) {
 export async function getStaticProps(){
 
   const getMeta = await getMetaData('Page','/');
+  const gSettings = await getGlobalSettings();
 
   const getFlexible = await getFlexibleContent('Page','/');
 
@@ -43,6 +45,7 @@ export async function getStaticProps(){
   return {
       props:{
         meta: getMeta,
+        gSettings: gSettings,
         flexibleContent:flexible_content,
         latestPort:latestPort,
         latestPosts: latestPosts,

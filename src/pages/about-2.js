@@ -7,10 +7,12 @@ import {checkIfPostsAreNeeded} from 'lib/util';
 import Layout from 'components/layout'
 import TitleBar from 'components/title-bar'
 
-export default function About({flexibleContent,latestPort,latestPosts,latestPeople}) {
+import { getGlobalSettings } from 'fetch/settings';
+
+export default function About({flexibleContent,latestPort,latestPosts,latestPeople,gSettings}) {
   return (
     <>
-      <Layout>
+      <Layout gSettings={gSettings}>
         <TitleBar title="About" />
         <FlexibleContent flexibleContent={flexibleContent} latestPort={latestPort} latestPosts={latestPosts} latestPeople={latestPeople} />
       </Layout>
@@ -19,6 +21,8 @@ export default function About({flexibleContent,latestPort,latestPosts,latestPeop
 }
 
 export async function getStaticProps(){
+
+  const gSettings = await getGlobalSettings();
 
   const getFlexible = await getFlexibleContent('Page','/about-2');
 
@@ -41,6 +45,7 @@ export async function getStaticProps(){
 
   return {
       props:{
+        gSettings: gSettings,
         flexibleContent:flexible_content,
         latestPort:latestPort,
         latestPosts: latestPosts,

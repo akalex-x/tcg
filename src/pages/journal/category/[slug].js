@@ -6,7 +6,10 @@ import {useState,useEffect} from 'react'
 import {useRouter} from 'next/router'
 import Layout from 'components/layout'
 
-export default function JournalCategory({latestPosts,cats,currentCat,postsTotal,authors}){
+import { getGlobalSettings } from 'fetch/settings';
+
+
+export default function JournalCategory({latestPosts,cats,currentCat,postsTotal,authors,gSettings}){
 
     const [posts,setPosts] = useState(latestPosts)
 
@@ -22,7 +25,7 @@ export default function JournalCategory({latestPosts,cats,currentCat,postsTotal,
 
     return(
         <>
-            <Layout>
+            <Layout gSettings={gSettings}>
                 <TitleBar title="Journal" />
                 <PostFilters cats={cats} currentCat={currentCat} postsTotal={postsTotal} authors={authors} onFilter={ (authorId) => filterByAuthor(authorId) } />
                 <PostArchive posts={posts} />
@@ -33,6 +36,8 @@ export default function JournalCategory({latestPosts,cats,currentCat,postsTotal,
 }
 
 export async function getStaticPaths(){
+
+    const gSettings = await getGlobalSettings();
 
     const {blogArchive:cats} = await getPostArchive();
 
@@ -64,6 +69,7 @@ export async function getStaticProps(context){
     return {
         props:{
           latestPosts: latestPosts,
+          gSettings: gSettings,
           cats: featuredCategories,
           currentCat: params.slug,
           postsTotal:postsTotal,

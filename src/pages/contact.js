@@ -6,11 +6,12 @@ import {getPort} from 'fetch/portfolio'
 import {getLatestPosts} from 'fetch/posts'
 import {checkIfPostsAreNeeded} from 'lib/util';
 import Layout from 'components/layout'
+import { getGlobalSettings } from 'fetch/settings';
 
-export default function Contact({flexibleContent,latestPort,latestPosts}) {
+export default function Contact({flexibleContent,latestPort,latestPosts,gSettings}) {
   return (
     <>
-      <Layout>
+      <Layout gSettings={gSettings}>
         <FlexibleContent flexibleContent={flexibleContent} latestPort={latestPort} latestPosts={latestPosts} />
       </Layout>
     </>
@@ -18,6 +19,8 @@ export default function Contact({flexibleContent,latestPort,latestPosts}) {
 }
 
 export async function getStaticProps(){
+
+  const gSettings = await getGlobalSettings();
 
   const getMeta = await getMetaData('Page','/contact');
 
@@ -40,6 +43,7 @@ export async function getStaticProps(){
 
   return {
       props:{
+        gSettings: gSettings,
         meta: getMeta,
         flexibleContent:flexible_content,
         latestPort:latestPort,

@@ -6,7 +6,7 @@ import styles from './header.module.scss'
 import { useState, useRef, useEffect  } from 'react'
 import horizontalLoop from 'lib/horizontalLoop'
 
-function Header(){
+function Header({gBanner}){
 
     const [showMenu, setShowMenu] = useState(false)
 
@@ -33,9 +33,9 @@ function Header(){
             <header className={styles.site_header}>
 
                 <div className={styles.marquee} ref={el => $marquee = el}>
-                    <div className={styles.marquee__text}>08-01-2022   —   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                    <div className={styles.marquee__text}>08-01-2022   —   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                    <div className={styles.marquee__text}>08-01-2022   —   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    <div className={styles.marquee__text} dangerouslySetInnerHTML={{__html: gBanner}}></div>
+                    <div className={styles.marquee__text} dangerouslySetInnerHTML={{__html: gBanner}}></div>
+                    <div className={styles.marquee__text} dangerouslySetInnerHTML={{__html: gBanner}}></div>
                 </div>
 
                 <Link href="/">

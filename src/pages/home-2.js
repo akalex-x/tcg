@@ -4,12 +4,13 @@ import {getPort} from 'fetch/portfolio'
 import {getLatestPosts} from 'fetch/posts'
 import {checkIfPostsAreNeeded} from 'lib/util';
 import Layout from 'components/layout'
+import { getGlobalSettings } from 'fetch/settings';
 
-export default function Home({flexibleContent,latestPort,latestPosts}) {
+export default function Home({flexibleContent,latestPort,latestPosts,gSettings}) {
   return (
     <>
       {/* { console.log(flexibleContent) } */}
-      <Layout>
+      <Layout gSettings={gSettings}>
         <FlexibleContent flexibleContent={flexibleContent} latestPort={latestPort} latestPosts={latestPosts} />
       </Layout>
     </>
@@ -17,6 +18,8 @@ export default function Home({flexibleContent,latestPort,latestPosts}) {
 }
 
 export async function getStaticProps(){
+
+  const gSettings = await getGlobalSettings();
 
   const getFlexible = await getFlexibleContent('Page','/home-2');
 
@@ -37,6 +40,7 @@ export async function getStaticProps(){
 
   return {
       props:{
+        gSettings: gSettings,
         flexibleContent:flexible_content,
         latestPort:latestPort,
         latestPosts: latestPosts,

@@ -12,8 +12,10 @@ import {getPortArchiveACF} from 'fetch/portfolio';
 
 import Layout from 'components/layout'
 
+import { getGlobalSettings } from 'fetch/settings';
 
-function PortfolioArhive({latestPort,acf}){
+
+function PortfolioArhive({latestPort,acf,gSettings}){
   
     // console.log(acf)
     const centertedIntro = {
@@ -24,7 +26,7 @@ function PortfolioArhive({latestPort,acf}){
 
     return(
         <>
-            <Layout showTerms={true} >
+            <Layout showTerms={true} gSettings={gSettings}>
                 <TitleBar title="Portfolio" />
                 <FeaturedPortfolio data={acf.featuredPortfolo} />
                 <CenteredContent data={centertedIntro} />
@@ -39,6 +41,8 @@ export default PortfolioArhive
 
 export async function getStaticProps(){
 
+    const gSettings = await getGlobalSettings();
+
     const getMeta = await getMetaData('portfolio');
 
     let latestPort = await getPort(100);
@@ -50,6 +54,7 @@ export async function getStaticProps(){
     return {
         props:{
           meta: getMeta,
+          gSettings: gSettings,
           latestPort:latestPort,
           acf:acf,
           revalidate: 30,

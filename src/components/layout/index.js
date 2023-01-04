@@ -3,7 +3,10 @@ import Footer from 'components/footer'
 import DVD from 'components/dvd'
 import { useEffect, useState } from 'react'
 
-function Layout({ children, showTerms }) {
+function Layout({ children, showTerms, gSettings }) {
+
+    const globalSettings = gSettings.data.themeGeneralSettings
+    const headerSettings = globalSettings.settings_header.header
 
     const [showDVD,setDVD] = useState(false)
 
@@ -23,6 +26,8 @@ function Layout({ children, showTerms }) {
         },180000)
     }
 
+    const gBanner = headerSettings.bannerMessage
+
     useEffect(()=>{
 
         document.addEventListener('mousemove', checkDVD)
@@ -35,7 +40,7 @@ function Layout({ children, showTerms }) {
 
     return(
         <>
-            <Header />
+            <Header gBanner={gBanner} />
             <main>
                 {children}
             </main>

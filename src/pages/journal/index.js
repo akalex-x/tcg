@@ -7,7 +7,9 @@ import PostFilters from 'components/journal/post-filters'
 import { useState } from 'react'
 import Layout from 'components/layout'
 
-export default function Journal({latestPosts,cats,currentCat,postsTotal,authors}){
+import { getGlobalSettings } from 'fetch/settings';
+
+export default function Journal({latestPosts,cats,currentCat,postsTotal,authors,gSettings}){
 
     const [posts,setPosts] = useState(latestPosts)
 
@@ -18,7 +20,7 @@ export default function Journal({latestPosts,cats,currentCat,postsTotal,authors}
 
     return(
         <>
-            <Layout>
+            <Layout gSettings={gSettings}>
                 <TitleBar title="Journal" />
                 <PostFilters cats={cats} currentCat={currentCat} postsTotal={postsTotal} authors={authors} onFilter={ (authorId) => filterByAuthor(authorId) } />
                 <PostArchive posts={posts}/>
@@ -29,6 +31,8 @@ export default function Journal({latestPosts,cats,currentCat,postsTotal,authors}
 }
 
 export async function getStaticProps(){
+
+    const gSettings = await getGlobalSettings();
 
     const getMeta = await getMetaData('posts');
 
@@ -43,6 +47,7 @@ export async function getStaticProps(){
     return {
         props:{
           meta: getMeta,
+          gSettings: gSettings,
           latestPosts: latestPosts,
           cats: featuredCategories,
           currentCat: null,

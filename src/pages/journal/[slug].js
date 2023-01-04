@@ -10,11 +10,13 @@ import styles from './journal.module.scss'
 
 import Layout from 'components/layout'
 
+import { getGlobalSettings } from 'fetch/settings';
 
-export default function SingleJournal({post,related,morePosts,adjacentPosts}) {
+
+export default function SingleJournal({post,related,morePosts,adjacentPosts,gSettings}) {
   return (
     <>
-        <Layout>
+        <Layout gSettings={gSettings}>
             <div className={styles.journal}>
                 <ArticleBreadcrumbs post={post} />
                 <div className="container">
@@ -31,6 +33,8 @@ export default function SingleJournal({post,related,morePosts,adjacentPosts}) {
 }
 
 export async function getStaticProps(context){
+
+    const gSettings = await getGlobalSettings();
 
     const { params } = context
 
@@ -62,6 +66,7 @@ export async function getStaticProps(context){
     return {
         props:{
             meta: getMeta,
+            gSettings: gSettings,
             post:post,
             related:related,
             morePosts:morePosts,
