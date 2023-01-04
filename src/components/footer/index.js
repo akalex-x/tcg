@@ -47,7 +47,7 @@ function Footer({showTerms}){
                 <div className="gfooter__cta">
                     <div className="container">
                         <p>Work with us!</p>
-                        <p><a href="" target="_blank">Available positions with TCG Crypto</a> &nbsp;|&nbsp; <a href="">Portfolio Companies</a></p>
+                        <p><a href="https://demo.kloudklix.com/jobs?fixedBoard=tcg-crypto" target="_blank">Available positions with TCG Crypto</a> &nbsp;|&nbsp; <a href="https://demo.kloudklix.com/companies?fixedBoard=tcg-crypto">Portfolio Companies</a></p>
                     </div>
                 </div>
                 <form className='gfooter__subscribe' action="" onSubmit={ e => klaviyoSubmit(e) }>
