@@ -9,7 +9,7 @@ import Layout from 'components/layout'
 import { getGlobalSettings } from 'fetch/settings';
 
 
-export default function JournalCategory({latestPosts,cats,currentCat,postsTotal,authors,gSettings}){
+export default function JournalCategory({latestPosts,cats,currentCat,postsTotal,authors,featuredQuote,gSettings}){
 
     const [posts,setPosts] = useState(latestPosts)
 
@@ -28,7 +28,7 @@ export default function JournalCategory({latestPosts,cats,currentCat,postsTotal,
             <Layout gSettings={gSettings}>
                 <TitleBar title="Journal" />
                 <PostFilters cats={cats} currentCat={currentCat} postsTotal={postsTotal} authors={authors} onFilter={ (authorId) => filterByAuthor(authorId) } />
-                <PostArchive posts={posts} />
+                <PostArchive posts={posts} featuredQuote={featuredQuote}/>
             </Layout>
         </>
     )
@@ -60,7 +60,7 @@ export async function getStaticProps(context){
 
     const latestPosts = await getLatestPosts(100, params.slug,null);
 
-    const {blogArchive:{featuredCategories}} = await getPostArchive();
+    const {blogArchive:{featuredCategories,featuredQuote}} = await getPostArchive();
 
     const postsTotal = await getPostsTotal();
 
@@ -70,6 +70,7 @@ export async function getStaticProps(context){
         props:{
           latestPosts: latestPosts,
           gSettings: gSettings,
+          featuredQuote: featuredQuote,
           cats: featuredCategories,
           currentCat: params.slug,
           postsTotal:postsTotal,
