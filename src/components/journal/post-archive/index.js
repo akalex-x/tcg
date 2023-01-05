@@ -2,7 +2,7 @@ import styles from './post-archive.module.scss'
 import ArchiveLoop from 'components/journal/archive-loop';
 import {useState} from 'react'
 
-function PostArchive({posts}){
+function PostArchive({posts,featuredQuote}){
 
     const [showAll,setShow] = useState(false)
 
@@ -36,10 +36,10 @@ function PostArchive({posts}){
             <section className={styles.port_loop}>
                 <div className='container'>
                     
-                    <ArchiveLoop posts={startArray} />
+                    <ArchiveLoop posts={startArray} featuredQuote={featuredQuote} />
 
                     { showAll ? 
-                        <ArchiveLoop posts={moreArray} />
+                        <ArchiveLoop posts={moreArray} featuredQuote={featuredQuote} />
                     : null }
 
                     { moreArray.length && !showAll ? (

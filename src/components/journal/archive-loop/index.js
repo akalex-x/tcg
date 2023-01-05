@@ -2,7 +2,7 @@ import styles from './archive-loop.module.scss'
 import ArchiveCard from 'components/journal/archive-card'
 import Image from 'next/future/image'
 
-function ArchiveLoop({posts}){
+function ArchiveLoop({posts,featuredQuote}){
 
     let first = true
     let second = true
@@ -11,6 +11,7 @@ function ArchiveLoop({posts}){
     return(
         <>
             {/* {console.log(posts)} */}
+            {/* {console.log(featuredQuote)} */}
             {
                 posts.map( (array,i) => {
                     return(
@@ -46,9 +47,9 @@ function ArchiveLoop({posts}){
                                             { array.length == 3 && 
                                                 <div className={styles.quote}>
                                                     <blockquote>
-                                                        &quot;The true method of knowledge is experiment.&quot;
+                                                        &quot;{featuredQuote.quote}&quot;
                                                     </blockquote>
-                                                    <cite>William Blake</cite>
+                                                    <cite>{featuredQuote.cite}</cite>
                                                 </div>
                                             }
                                         </>

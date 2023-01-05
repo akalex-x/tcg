@@ -64,9 +64,13 @@ function PostFilters({cats,currentCat,postsTotal,authors,onFilter}){
                                     {
                                         currentAuthors.map((author)=>{
                                             return(
-                                                <button className='reset' key={author.userId} type='button' onClick={()=>{onFilter(author.userId)}}>{author.name}</button>
-                                                )
-                                            })
+                                                <>
+                                                    { author.userId != 7 &&
+                                                        <button className='reset' key={author.userId} type='button' data-id={author.userId} onClick={()=>{onFilter(author.userId)}}>{author.name}</button>
+                                                    }
+                                                </>
+                                            )
+                                        })
                                     }
                                 </div>
                             : null }
