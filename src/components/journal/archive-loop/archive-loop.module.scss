@@ -14,8 +14,10 @@
         blockquote{
             color: $blue;
             font-size: 1.5rem;
+            margin-bottom: 0;
         }
         cite{
+            margin-top: 1.5rem;
             font-family: $serif;
         }
     }

@@ -49,7 +49,9 @@ function ArchiveLoop({posts,featuredQuote}){
                                                     <blockquote>
                                                         &quot;{featuredQuote.quote}&quot;
                                                     </blockquote>
-                                                    <cite>{featuredQuote.cite}</cite>
+                                                    { featuredQuote.cite &&
+                                                        <cite>{featuredQuote.cite}</cite>
+                                                    }
                                                 </div>
                                             }
                                         </>
