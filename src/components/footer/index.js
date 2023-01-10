@@ -44,6 +44,13 @@ function Footer({showTerms}){
     return(
         <>
             <footer className="gfooter">
+                { showTerms ?
+                    <>
+                        <div className="gfooter__terms">
+                            <p>The list above includes portfolio investments held, directly or indirectly, by crypto-focused vehicles managed by TCG Capital Management, LP (“TCG”) as of 12/20/22. <a href="https://tcg.co/portfolio/" target="_blank"  rel="noreferrer">Click here</a> for a list of all portfolio companies managed by TCG. None of the investments above are held by The Chernin Group, LLC (“The Chernin Group”).</p>
+                        </div>
+                    </>
+                : null }
                 <div className="gfooter__cta">
                     <div className="container">
                         <p>Work with us!</p>
@@ -62,7 +69,7 @@ function Footer({showTerms}){
                     }
                 </form>
                 <div className="gfooter__copy"> 
-                    <p><a href="https://twitter.com/tcg_crypto" target="_blank"  rel="noreferrer">&copy; TCG crypto, {year}</a></p>
+                    <p>&copy; TCG crypto, {year}</p>
                     <ul>
                         <li><a href="https://twitter.com/tcg_crypto" target="_blank"  rel="noreferrer">Twitter</a>/</li>
                         <li><a href="https://www.linkedin.com/company/the-chernin-group/" target="_blank"  rel="noreferrer">Linkedin</a>/</li>
@@ -71,13 +78,6 @@ function Footer({showTerms}){
                         <li><a href="https://tcg.co/privacy/" target="_blank"  rel="noreferrer">Privacy Policy and Terms and Conditions</a></li>
                     </ul>
                 </div>
-                { showTerms ?
-                    <>
-                        <div className="gfooter__terms">
-                            <p>The list above includes portfolio investments held, directly or indirectly, by crypto-focused vehicles managed by TCG Capital Management, LP (“TCG”) as of 12/20/22. <a href="https://tcg.co/portfolio/" target="_blank"  rel="noreferrer">Click here</a> for a list of all portfolio companies managed by TCG.</p>
-                        </div>
-                    </>
-                : null }
             </footer>
         </>
     )
